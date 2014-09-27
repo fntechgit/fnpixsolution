@@ -1,0 +1,335 @@
+{
+  "created_time": "1410228043",
+  "text": "\"Working\" hard",
+  "from": {
+    "username": "rockinmike",
+    "profile_picture": "http://images.ak.instagram.com/profiles/profile_188995785_75sq_1345237428.jpg",
+    "id": "188995785",
+    "full_name": "Rockin Mike"
+  },
+  "id": "805373662630529979"
+}
+{
+  "created_time": "1410224760",
+  "text": "Spinac,h toasted coconut, tofu, coconut oil, habenero, spices",
+  "from": {
+    "username": "rockinmike",
+    "profile_picture": "http://images.ak.instagram.com/profiles/profile_188995785_75sq_1345237428.jpg",
+    "id": "188995785",
+    "full_name": "Rockin Mike"
+  },
+  "id": "805346119651183197"
+}
+{
+  "created_time": "1410221475",
+  "text": "Banana Red-Raspberry Rockin' Wellness smoothie and my PRS SE Clint Lowery. \n#seclintlowery\n#rockinwellness",
+  "from": {
+    "username": "garynoon",
+    "profile_picture": "http://photos-d.ak.instagram.com/hphotos-ak-xap1/10561077_1500346863536027_928684491_a.jpg",
+    "id": "15101012",
+    "full_name": "Walking With Giants"
+  },
+  "id": "805318564558918768"
+}
+{
+  "created_time": "1410219826",
+  "text": "Doing it",
+  "from": {
+    "username": "rockinmike",
+    "profile_picture": "http://images.ak.instagram.com/profiles/profile_188995785_75sq_1345237428.jpg",
+    "id": "188995785",
+    "full_name": "Rockin Mike"
+  },
+  "id": "805304732348074221"
+}
+{
+  "created_time": "1410204743",
+  "text": "@rockinwellness on the road",
+  "from": {
+    "username": "rockinmike",
+    "profile_picture": "http://images.ak.instagram.com/profiles/profile_188995785_75sq_1345237428.jpg",
+    "id": "188995785",
+    "full_name": "Rockin Mike"
+  },
+  "id": "805178207460149792"
+}
+{
+  "created_time": "1410198250",
+  "text": "Party at #vitaminshoppe",
+  "from": {
+    "username": "rockinmike",
+    "profile_picture": "http://images.ak.instagram.com/profiles/profile_188995785_75sq_1345237428.jpg",
+    "id": "188995785",
+    "full_name": "Rockin Mike"
+  },
+  "id": "805123736327703327"
+}
+{
+  "created_time": "1410187152",
+  "text": "What did people say? Price (afford), Taste (enjoy/drinkable), Time (preparation) and I would say significance (effect). Followed by \"isn't there one thing I can take\" which was a reality of 10... 20... 54... ingredients. \nTo me it's about sourcing, dose and quality then ACTION. \nThe mainstream concerns are addressed and the \"health freak\" quality is beyond what's known or at this point understood. \nWhat's next? The everyday household. People will still try to use the same excuses but it's just not true now. #Excuses made invalid. #RockinWellness #HealthFreak",
+  "from": {
+    "username": "rockinmike",
+    "profile_picture": "http://images.ak.instagram.com/profiles/profile_188995785_75sq_1345237428.jpg",
+    "id": "188995785",
+    "full_name": "Rockin Mike"
+  },
+  "id": "805030644111133247"
+}
+{
+  "created_time": "1410180966",
+  "text": "Breakfast!!!!!! #RockinWellness #Organic #Health #HealthyChoices #Fitness #Nutrients #Nutrition #Fruit #Strawberries #Bananas #AlmondMilk #GoalDigger #OnAMission",
+  "from": {
+    "username": "dapperlydope",
+    "profile_picture": "http://images.ak.instagram.com/profiles/profile_48698631_75sq_1396635394.jpg",
+    "id": "48698631",
+    "full_name": "Ja'Lia  Conner"
+  },
+  "id": "804978752252068235"
+}
+{
+  "created_time": "1410139703",
+  "text": "Artichoke, kidney beans, spinach, tofu, garlic, habenero, coconut oil, cacao butter, spices... Going to add toasted coconut",
+  "from": {
+    "username": "rockinmike",
+    "profile_picture": "http://images.ak.instagram.com/profiles/profile_188995785_75sq_1345237428.jpg",
+    "id": "188995785",
+    "full_name": "Rockin Mike"
+  },
+  "id": "804632610005076797"
+}
+{
+  "created_time": "1410138828",
+  "text": "Starting off with tofu in a cacao butter coconut oil habenero and spices",
+  "from": {
+    "username": "rockinmike",
+    "profile_picture": "http://images.ak.instagram.com/profiles/profile_188995785_75sq_1345237428.jpg",
+    "id": "188995785",
+    "full_name": "Rockin Mike"
+  },
+  "id": "804625271650797711"
+}
+{
+  "created_time": "1410132177",
+  "text": "The sweatshirt says it all... #eastquogue #rockinwellness #hamptons #healthfreak #beautifulboy",
+  "from": {
+    "username": "queenalib",
+    "profile_picture": "http://images.ak.instagram.com/profiles/profile_254252353_75sq_1391783440.jpg",
+    "id": "254252353",
+    "full_name": "Allison Schneider"
+  },
+  "id": "804569474650131073"
+}
+{
+  "created_time": "1410131877",
+  "text": "Both my boys, iPad obsessed. #ipad #rockinwellness #healthfreak",
+  "from": {
+    "username": "queenalib",
+    "profile_picture": "http://images.ak.instagram.com/profiles/profile_254252353_75sq_1391783440.jpg",
+    "id": "254252353",
+    "full_name": "Allison Schneider"
+  },
+  "id": "804566960097774035"
+}
+{
+  "created_time": "1410131345",
+  "text": "Thanks to my sister @godsgr8joi she hooked me up with this #RockinWellness !!! #Health #Fitness #Exercise #Active #Nutritional #Vitamins #Minerals #Antioxidants #Omega #Protein #Fiber #Energy #Organic #SuperFoods #Energy #OnAMission",
+  "from": {
+    "username": "dapperlydope",
+    "profile_picture": "http://images.ak.instagram.com/profiles/profile_48698631_75sq_1396635394.jpg",
+    "id": "48698631",
+    "full_name": "Ja'Lia  Conner"
+  },
+  "id": "804562499792323120"
+}
+{
+  "created_time": "1410124965",
+  "text": "We're bored #bored #mikes #rockinwellness #bat",
+  "from": {
+    "username": "ohheyynora",
+    "profile_picture": "http://photos-h.ak.instagram.com/hphotos-ak-xaf1/10598515_313261515508535_1231480802_a.jpg",
+    "id": "934124631",
+    "full_name": "Nora"
+  },
+  "id": "804508978318434886"
+}
+{
+  "created_time": "1410058527",
+  "text": "@rockinwellness and Health Freak ready for the night to start",
+  "from": {
+    "username": "rockinmike",
+    "profile_picture": "http://images.ak.instagram.com/profiles/profile_188995785_75sq_1345237428.jpg",
+    "id": "188995785",
+    "full_name": "Rockin Mike"
+  },
+  "id": "803951658014624003"
+}
+{
+  "created_time": "1410067405",
+  "text": "After 7 days of juice/raw foods. Broke down today with pizza. :-\\ tomorrow back at it though! :) #keepinghealthy #stayingfit #don'tgiveup #fitness #rockinwellness #raw #goodness #feelinggood #health #fitness",
+  "from": {
+    "username": "freeheartlover",
+    "profile_picture": "http://photos-h.ak.instagram.com/hphotos-ak-xaf1/10655128_808613032494023_395935243_a.jpg",
+    "id": "4629864",
+    "full_name": "Rosemary"
+  },
+  "id": "804026132374226936"
+}
+{
+  "created_time": "1410049979",
+  "text": "Battlerock september 27th,  21 days lets do it!! #teambladefist #scny #kickboxing #winningteam #smooth #gamebred #toofasttooprettty #nakmuay #infightstyle #muaythaiaddict #boxing #nakmuay #RockinWellness #healthfreak @cf_whitestone",
+  "from": {
+    "username": "kayocodie",
+    "profile_picture": "http://images.ak.instagram.com/profiles/profile_310239443_75sq_1395497055.jpg",
+    "id": "310239443",
+    "full_name": "Codie Payne"
+  },
+  "id": "803879953782632495"
+}
+{
+  "created_time": "1410048854",
+  "text": "Weekend night out shake. 3 scoops @rockinwellness and 1 packet #HealthFreak then 1 packet Health Freak in 20 ounces water to end the night.",
+  "from": {
+    "username": "rockinmike",
+    "profile_picture": "http://images.ak.instagram.com/profiles/profile_188995785_75sq_1345237428.jpg",
+    "id": "188995785",
+    "full_name": "Rockin Mike"
+  },
+  "id": "803870510076938440"
+}
+{
+  "created_time": "1410040451",
+  "text": "Getting it in with my #scny family. Iron sharpens iron. #nogames #teambladefist #scny #kickboxing #winningteam #smooth #gamebred #toofasttooprettty #bladefistnation #yokkao #infightstyle #muaythaiaddict #boxing #nakmuay #RockinWellness #healthfreak @cf_whitestone",
+  "from": {
+    "username": "kayocodie",
+    "profile_picture": "http://images.ak.instagram.com/profiles/profile_310239443_75sq_1395497055.jpg",
+    "id": "310239443",
+    "full_name": "Codie Payne"
+  },
+  "id": "803800021723345251"
+}
+{
+  "created_time": "1410038374",
+  "text": "#squarecircleny  #bladefistmuaythai  #rockinwellness  #asplife  #pooletc  #ecmma #muaythai  #nakmuay  #battlerock  #crossfitwhitestone",
+  "from": {
+    "username": "jungle_",
+    "profile_picture": "http://photos-a.ak.instagram.com/hphotos-ak-xpa1/10475204_294776830693136_498609801_a.jpg",
+    "id": "31839362",
+    "full_name": "Jungle George"
+  },
+  "id": "803782600127950121"
+}
+{
+  "created_time": "1410031233",
+  "text": "\"Anyone who does not know how to make the most of his luck has no right to complain if it passes him by.\" - Cervantes \nIn what ways do You make your own luck?\n#rockinwellness \n#walkingwithgiants \n#poweredbyrockinwellness",
+  "from": {
+    "username": "garynoon",
+    "profile_picture": "http://photos-d.ak.instagram.com/hphotos-ak-xap1/10561077_1500346863536027_928684491_a.jpg",
+    "id": "15101012",
+    "full_name": "Walking With Giants"
+  },
+  "id": "803722696512754830"
+}
+{
+  "created_time": "1410020096",
+  "text": "New #facemask from #mountainhardware arrived by way of #moosejaw. Bring on the Andes and after that some long haul #skiing! #climbing #alpinism #heavymetalathlete #julbo #rockinwellness #winter @moosejaw",
+  "from": {
+    "username": "magnusjb",
+    "profile_picture": "http://photos-c.ak.instagram.com/hphotos-ak-xpf1/10354336_791044224248170_441682738_a.jpg",
+    "id": "199884508",
+    "full_name": "Magnus B"
+  },
+  "id": "803629272018613265"
+}
+{
+  "created_time": "1410009788",
+  "text": "Rockin' Wellness will be at The Diet Shop today for our BACK TO SCHOOL SALE! 10% off ALL purchases today! There will be vendors and sampling, and our event will go from 10-5. We hope to see you there! #rockinwellness #thedietshop #ronkonkoma",
+  "from": {
+    "username": "thedietshop",
+    "profile_picture": "http://images.ak.instagram.com/profiles/anonymousUser.jpg",
+    "id": "1397601968",
+    "full_name": "TheDietShop"
+  },
+  "id": "803542807655400521"
+}
+{
+  "created_time": "1409998029",
+  "text": "Rockin' Blendness !\n\n@rockinwellness #Meridian #AlmondButter #AlmondBreeze #AlmondMilk #Banana #Blending #RockinWellness @rockinmike",
+  "from": {
+    "username": "beatrootbarney",
+    "profile_picture": "http://images.ak.instagram.com/profiles/profile_1099553486_75sq_1392592472.jpg",
+    "id": "1099553486",
+    "full_name": "Steve Barney"
+  },
+  "id": "803444165084347500"
+}
+{
+  "created_time": "1409969947",
+  "text": "Thomas the train & Aunt Andy what could be better? In for a visit from Austin, Texas. 9/5/14. #thomasthetrain #rockinwellness #happymommy #healthfreak #bestaunt #texas #beautifulboy #selfies #greatsmile #sisterlylove #missMySister",
+  "from": {
+    "username": "queenalib",
+    "profile_picture": "http://images.ak.instagram.com/profiles/profile_254252353_75sq_1391783440.jpg",
+    "id": "254252353",
+    "full_name": "Allison Schneider"
+  },
+  "id": "803208596134611184"
+}
+{
+  "created_time": "1409943428",
+  "text": "#rockinwellness #healthfreak",
+  "from": {
+    "username": "rockinmike",
+    "profile_picture": "http://images.ak.instagram.com/profiles/profile_188995785_75sq_1345237428.jpg",
+    "id": "188995785",
+    "full_name": "Rockin Mike"
+  },
+  "id": "802986135214901487"
+}
+{
+  "created_time": "1409935637",
+  "text": "Training camp in full effect for Wayne Barrett.  News from the world of #kickboxing soon.  #glory #gloryws #glorykickboxing #adidascombat #adidaskickboxing #rockinwellness @theblackzilians @adidascombatusa",
+  "from": {
+    "username": "mmalawyer",
+    "profile_picture": "http://images.ak.instagram.com/profiles/profile_316556835_75sq_1389261473.jpg",
+    "id": "316556835",
+    "full_name": "David M. Fish, MMA Manager"
+  },
+  "id": "802920776500818451"
+}
+{
+  "created_time": "1409870414",
+  "text": "Rockin my #RockinWellness tee for today's 2+1. can't figure out why I've been so darn slow. #olympicweightlifting #oly #ufcgym #forceweightlifting",
+  "from": {
+    "username": "beeflomein",
+    "profile_picture": "http://images.ak.instagram.com/profiles/profile_32211064_75sq_1376607534.jpg",
+    "id": "32211064",
+    "full_name": "beeflomein"
+  },
+  "id": "802373653358486841"
+}
+{
+  "created_time": "1409861374",
+  "text": "@chefelyse White Bean Hummus",
+  "from": {
+    "username": "rockinmike",
+    "profile_picture": "http://images.ak.instagram.com/profiles/profile_188995785_75sq_1345237428.jpg",
+    "id": "188995785",
+    "full_name": "Rockin Mike"
+  },
+  "id": "802297818328615688"
+}
+{
+  "created_time": "1409823835",
+  "text": "How I start my mornings #rockinwellness  #superfoods #healthy #healthfreak #fueltomymuscles #bladefistmuaythai",
+  "from": {
+    "username": "jungle_",
+    "profile_picture": "http://photos-a.ak.instagram.com/hphotos-ak-xpa1/10475204_294776830693136_498609801_a.jpg",
+    "id": "31839362",
+    "full_name": "Jungle George"
+  },
+  "id": "801982914895294300"
+}
+{
+  "created_time": "1409761149",
+  "text": "That Rockin' Wellness & Health Freak Combo! Feeling ENERGIZED!! #rockinwellness #healthfreak",
+  "from": {
+    "username":

@@ -1,0 +1,14 @@
+C:\Projects\facebook_photo_software\overrideSocial\bin\Debug\overrideSocial.dll
+C:\Projects\facebook_photo_software\overrideSocial\bin\Debug\overrideSocial.pdb
+C:\Projects\facebook_photo_software\overrideSocial\bin\Debug\Facebook.dll
+C:\Projects\facebook_photo_software\overrideSocial\bin\Debug\Facebook.xml
+C:\Projects\facebook_photo_software\overrideSocial\obj\Debug\overrideSocial.csprojResolveAssemblyReference.cache
+C:\Projects\facebook_photo_software\overrideSocial\obj\Debug\overrideSocial.dll
+C:\Projects\facebook_photo_software\overrideSocial\obj\Debug\overrideSocial.pdb
+C:\Projects\facebook_photo_software\overrideSocial\bin\Debug\overrideSocial.dll.config
+C:\Projects\facebook_photo_software\overrideSocial\bin\Debug\Newtonsoft.Json.dll
+C:\Projects\facebook_photo_software\overrideSocial\bin\Debug\Newtonsoft.Json.xml
+C:\Projects\facebook_photo_software\overrideSocial\bin\Debug\Hammock.ClientProfile.dll
+C:\Projects\facebook_photo_software\overrideSocial\bin\Debug\TweetSharp.dll
+C:\Projects\facebook_photo_software\overrideSocial\bin\Debug\Hammock.ClientProfile.pdb
+C:\Projects\facebook_photo_software\overrideSocial\bin\Debug\TweetSharp.pdb

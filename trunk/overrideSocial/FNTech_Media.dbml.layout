@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="FNTech_Media">
+  <DataContextMoniker Name="/FNTech_MediaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="fc31ecab-cefb-498d-b869-fadf28c05286" absoluteBounds="3.75, 0.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/FNTech_MediaDataContext/user" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d686bed9-1b81-4149-8bde-56d0dbf5d833" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="17f021e2-da6e-49bd-8b99-88ecce16b01f" absoluteBounds="3.75, 4.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/FNTech_MediaDataContext/setting" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c13ecbf9-9f32-4b39-b250-cc1196268996" absoluteBounds="3.765, 5.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aa7b7e5f-c08c-4098-82ed-0d024c3b0c0a" absoluteBounds="6.75, 1, 2, 5.0400211588541657">
+      <DataClassMoniker Name="/FNTech_MediaDataContext/media" />
+      <nestedChildShapes>
+        <elementListCompartment Id="97341ea3-7b02-432a-a135-4f81cf48f435" absoluteBounds="6.765, 1.46, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3ad561b3-afdd-4c44-9658-da190245abab" absoluteBounds="1, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/FNTech_MediaDataContext/platform" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1075943c-ac85-4702-8cfd-5e6558aec61e" absoluteBounds="1.0150000000000001, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="23152cd2-ee47-4943-b8a7-267c9b570ed8" absoluteBounds="0.875, 2.75, 2, 2.5401025390625">
+      <DataClassMoniker Name="/FNTech_MediaDataContext/tag" />
+      <nestedChildShapes>
+        <elementListCompartment Id="af5d2d2d-2cd1-4f47-ac03-35b2a9ccdc58" absoluteBounds="0.89000000000000012, 3.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
