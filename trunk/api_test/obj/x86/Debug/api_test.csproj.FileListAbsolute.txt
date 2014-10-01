@@ -15,3 +15,6 @@ C:\Projects\facebook_photo_software\api_test\bin\Debug\TweetSharp.dll
 C:\Projects\facebook_photo_software\api_test\bin\Debug\Hammock.ClientProfile.dll
 C:\Projects\facebook_photo_software\api_test\bin\Debug\TweetSharp.pdb
 C:\Projects\facebook_photo_software\api_test\bin\Debug\Hammock.ClientProfile.pdb
+E:\projects\facebook_photo_software\api_test\bin\Debug\api_test.exe.config
+E:\projects\facebook_photo_software\api_test\obj\x86\Debug\api_test.exe
+E:\projects\facebook_photo_software\api_test\obj\x86\Debug\api_test.pdb
