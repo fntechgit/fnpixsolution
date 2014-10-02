@@ -17,8 +17,10 @@ namespace overrideSocial
         mediaManager _media = new mediaManager();
 
         // pull by Instagram Hashtag
-        public Boolean fetch(string tag, Int32 count)
+        public Int32 fetch(string tag, Int32 count)
         {
+            Int32 total_count = 0;
+
             var config = new InstagramConfig("https://api.instagram.com/v1", "https://api.instagram.com/oauth", _settings.instagram_client_id(), _settings.instagram_client_secret(), "http://overridepro.com/portfolio");
 
             var tag_photos = new InstaSharp.Endpoints.Tags.Unauthenticated(config).Recent(tag, count);
@@ -57,14 +59,18 @@ namespace overrideSocial
                 m.tags = "#" + string.Join(" #", item.Tags);
 
                 _media.add(m);
+
+                total_count++;
             }
 
-            return true;
+            return total_count;
         }
 
         // pull by Instagram username
-        public Boolean fetch(string username, Int32 count, Boolean is_user)
+        public Int32 fetch(string username, Int32 count, Boolean is_user)
         {
+            Int32 total_count = 0;
+
             if (!is_user)
             {
                 // get by hashtag
@@ -117,9 +123,11 @@ namespace overrideSocial
                     m.tags = "#" + string.Join(" #", item.Tags);
 
                     _media.add(m);
+
+                    total_count++;
                 }
 
-                return true;
+                return total_count;
             }
         }
     }

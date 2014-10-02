@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "overrideSocial", "overrideS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api_test", "api_test\api_test.csproj", "{8070BC0B-796A-49B9-A6D8-D86D823936AC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fnpix", "fnpix\fnpix.csproj", "{2FDCEB23-4644-45BC-9079-13AB0A2329F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,16 @@ Global
 		{8070BC0B-796A-49B9-A6D8-D86D823936AC}.Release|Mixed Platforms.Build.0 = Release|x86
 		{8070BC0B-796A-49B9-A6D8-D86D823936AC}.Release|x86.ActiveCfg = Release|x86
 		{8070BC0B-796A-49B9-A6D8-D86D823936AC}.Release|x86.Build.0 = Release|x86
+		{2FDCEB23-4644-45BC-9079-13AB0A2329F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FDCEB23-4644-45BC-9079-13AB0A2329F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FDCEB23-4644-45BC-9079-13AB0A2329F1}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2FDCEB23-4644-45BC-9079-13AB0A2329F1}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2FDCEB23-4644-45BC-9079-13AB0A2329F1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2FDCEB23-4644-45BC-9079-13AB0A2329F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FDCEB23-4644-45BC-9079-13AB0A2329F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FDCEB23-4644-45BC-9079-13AB0A2329F1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2FDCEB23-4644-45BC-9079-13AB0A2329F1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2FDCEB23-4644-45BC-9079-13AB0A2329F1}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

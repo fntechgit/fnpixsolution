@@ -75,8 +75,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="settings.cs" />
+    <Compile Include="stats.cs" />
     <Compile Include="tags.cs" />
     <Compile Include="twitter.cs" />
+    <Compile Include="users.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

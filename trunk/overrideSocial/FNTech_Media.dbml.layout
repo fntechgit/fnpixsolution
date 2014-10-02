@@ -1,13 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="FNTech_Media">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.375, 8.5" name="FNTech_Media">
   <DataContextMoniker Name="/FNTech_MediaDataContext" />
   <nestedChildShapes>
-    <classShape Id="fc31ecab-cefb-498d-b869-fadf28c05286" absoluteBounds="3.75, 0.75, 2, 2.3478011067708335">
-      <DataClassMoniker Name="/FNTech_MediaDataContext/user" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d686bed9-1b81-4149-8bde-56d0dbf5d833" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="17f021e2-da6e-49bd-8b99-88ecce16b01f" absoluteBounds="3.75, 4.75, 2, 1.3862939453125005">
       <DataClassMoniker Name="/FNTech_MediaDataContext/setting" />
       <nestedChildShapes>
@@ -30,6 +24,18 @@
       <DataClassMoniker Name="/FNTech_MediaDataContext/tag" />
       <nestedChildShapes>
         <elementListCompartment Id="af5d2d2d-2cd1-4f47-ac03-35b2a9ccdc58" absoluteBounds="0.89000000000000012, 3.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="87874393-9cf9-4af8-be8b-4974c401a6a8" absoluteBounds="3.75, 0.875, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/FNTech_MediaDataContext/user" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3cc91cb7-048d-4c28-9222-168860f05f3b" absoluteBounds="3.765, 1.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="75b99ecc-d915-4714-a258-678b54d903fa" absoluteBounds="9.125, 0.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/FNTech_MediaDataContext/stat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a37e6864-c668-4cf7-8631-5fd8540e06dd" absoluteBounds="9.14, 0.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

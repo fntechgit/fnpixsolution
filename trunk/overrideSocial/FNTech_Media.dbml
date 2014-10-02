@@ -1,17 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="fntech_media" Class="FNTech_MediaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=SQL;Initial Catalog=fntech_media;Persist Security Info=True;User ID=sa" SettingsObjectName="overrideSocial.Properties.Settings" SettingsPropertyName="fntech_mediaConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.users" Member="users">
-    <Type Name="user">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="first_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="last_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="email" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="company" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="notify_every_minutes" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.settings" Member="settings">
     <Type Name="setting">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -63,6 +51,30 @@
       <Column Name="facebook" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="instagram" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="twitter" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.users" Member="users">
+    <Type Name="user">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="first_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="last_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="company" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="notify_every_minutes" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pic" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="pwd" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.stats" Member="stats">
+    <Type Name="stat">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pulldate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="instagram" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="twitter" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="facebook" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="total" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

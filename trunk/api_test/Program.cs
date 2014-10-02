@@ -15,6 +15,12 @@ namespace api_test
             twitter _twitter = new twitter();
             tags _tags = new tags();
             settings _settings = new settings();
+            stats _stats = new stats();
+
+            Int32 facebook_count = 0;
+            Int32 instagram_count = 0;
+            Int32 twitter_count = 0;
+            Int32 total_count = 0;
 
             Int32 fetch_count = _settings.refresh_count();
 
@@ -38,13 +44,13 @@ namespace api_test
                     {
                         Console.WriteLine("Importing Records from Instagram for Hashtag #" + t.value);
 
-                        _instagram.fetch(t.value, fetch_count);
+                        instagram_count = instagram_count + _instagram.fetch(t.value, fetch_count);
                     }
                     else
                     {
                         Console.WriteLine("Importing Records from Instagram for Username @" + t.value);
 
-                        _instagram.fetch(t.value, fetch_count, true);
+                        instagram_count = instagram_count + _instagram.fetch(t.value, fetch_count, true);
                     }
                 }
 
@@ -58,16 +64,28 @@ namespace api_test
                     {
                         Console.WriteLine("Importing Records from Twitter for Hashtag #" + t.value);
 
-                        _twitter.fetch(t.value, fetch_count);
+                        twitter_count = twitter_count + _twitter.fetch(t.value, fetch_count);
                     }
                     else
                     {
                         Console.WriteLine("Importing Records from Twitter for Username @" + t.value);
 
-                        _twitter.fetch(t.value, fetch_count, true);
+                        twitter_count = twitter_count + _twitter.fetch(t.value, fetch_count, true);
                     }
                 }
             }
+
+            total_count = instagram_count + twitter_count + facebook_count;
+
+            Statistic s = new Statistic();
+
+            s.facebook = facebook_count;
+            s.instagram = instagram_count;
+            s.pulldate = DateTime.Now;
+            s.total = total_count;
+            s.twitter = twitter_count;
+
+            _stats.add(s);
 
             Console.WriteLine("");
             Console.WriteLine("######################## ENDING UPDATE SEQUENCE ########################");

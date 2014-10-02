@@ -14,8 +14,10 @@ namespace overrideSocial
         mediaManager _media = new mediaManager();
 
         // get by twitter hashtag
-        public Boolean fetch(string tag, Int32 count)
+        public Int32 fetch(string tag, Int32 count)
         {
+            Int32 total = 0;
+
             var service = new TwitterService(_settings.twitter_api_key(), _settings.twitter_api_secret());
             service.AuthenticateWith(_settings.twitter_access_token(), _settings.twitter_access_token_secret());
 
@@ -85,15 +87,19 @@ namespace overrideSocial
                         }
 
                         _media.add(m);
+
+                        total++;
                     }
             }
 
-            return true;
+            return total;
         }
 
         // get by twitter username
-        public Boolean fetch(string tag, Int32 count, Boolean is_username)
+        public Int32 fetch(string tag, Int32 count, Boolean is_username)
         {
+            Int32 total = 0;
+
             var service = new TwitterService(_settings.twitter_api_key(), _settings.twitter_api_secret());
             service.AuthenticateWith(_settings.twitter_access_token(), _settings.twitter_access_token_secret());
 
@@ -155,10 +161,12 @@ namespace overrideSocial
                     }
 
                     _media.add(m);
+
+                    total++;
                 }
             }
 
-            return true;
+            return total;
         }
 
 

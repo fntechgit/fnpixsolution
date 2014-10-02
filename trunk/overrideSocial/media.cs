@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -92,6 +93,21 @@ namespace overrideSocial
             }
 
             return _entries;
+        }
+
+        public List<Media> get_unapproved()
+        {
+            return get_recent().Where(x => x.approved == false).ToList();
+        }
+
+        public List<Media> get_instagram()
+        {
+            return get_recent().Where(x => x.service == "Instagram").ToList();
+        }
+
+        public List<Media> get_twitter()
+        {
+            return get_recent().Where(x => x.service == "Twitter").ToList();
         } 
     }
 
