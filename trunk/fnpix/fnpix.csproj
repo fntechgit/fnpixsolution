@@ -50,6 +50,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="add_preference.aspx" />
+    <Content Include="add_user.aspx" />
+    <Content Include="approve.aspx" />
     <Content Include="assets\ajax\ajax-treeview-nodes.html" />
     <Content Include="assets\ajax\ui-elements-lightbox-ajax.html" />
     <Content Include="assets\ajax\ui-elements-modals-ajax.html" />
@@ -1586,72 +1589,20 @@
     <Content Include="assets\vendor\summernote\summernote.css" />
     <Content Include="assets\vendor\summernote\summernote.js" />
     <Content Include="dashboard.aspx" />
-    <Content Include="forms-advanced.html" />
-    <Content Include="forms-basic.html" />
-    <Content Include="forms-code-editor.html" />
-    <Content Include="forms-layouts.html" />
-    <Content Include="forms-validation.html" />
-    <Content Include="forms-wizard.html" />
+    <Content Include="delete_tag.aspx" />
+    <Content Include="delete_user.aspx" />
     <Content Include="global.asax" />
-    <Content Include="index.html" />
-    <Content Include="layouts-boxed.html" />
-    <Content Include="layouts-default.html" />
-    <Content Include="layouts-menu-collapsed.html" />
-    <Content Include="layouts-scroll.html" />
+    <Content Include="js\jquery.cycle2.js" />
+    <Content Include="js\jquery.flip.js" />
+    <Content Include="js\jquery.fnpix.media.js" />
     <Content Include="login.aspx" />
     <Content Include="logout.aspx" />
-    <Content Include="mailbox-compose.html" />
-    <Content Include="mailbox-email.html" />
-    <Content Include="mailbox-folder.html" />
-    <Content Include="maps-google-maps-builder.html" />
-    <Content Include="maps-google-maps.html" />
-    <Content Include="maps-vector.html" />
-    <Content Include="pages-404-withoutmenus.html" />
-    <Content Include="pages-404.html" />
-    <Content Include="pages-500.html" />
-    <Content Include="pages-blank.html" />
-    <Content Include="pages-calendar.html" />
-    <Content Include="pages-invoice-print.html" />
-    <Content Include="pages-invoice.html" />
-    <Content Include="pages-lock-screen-example.html" />
-    <Content Include="pages-lock-screen.html" />
-    <Content Include="pages-log-viewer.html" />
-    <Content Include="pages-media-gallery.html" />
-    <Content Include="pages-recover-password.html" />
-    <Content Include="pages-search-results.html" />
-    <Content Include="pages-session-timeout.html" />
-    <Content Include="pages-signin.html" />
-    <Content Include="pages-signup.html" />
-    <Content Include="pages-timeline.html" />
-    <Content Include="pages-user-profile.html" />
-    <Content Include="tables-advanced.html" />
-    <Content Include="tables-ajax.html" />
-    <Content Include="tables-basic.html" />
-    <Content Include="tables-editable.html" />
-    <Content Include="tables-pricing.html" />
-    <Content Include="tables-responsive.html" />
-    <Content Include="ui-elements-accordions.html" />
-    <Content Include="ui-elements-alerts.html" />
-    <Content Include="ui-elements-animations.html" />
-    <Content Include="ui-elements-blocks.html" />
-    <Content Include="ui-elements-buttons.html" />
-    <Content Include="ui-elements-carousels.html" />
-    <Content Include="ui-elements-charts.html" />
-    <Content Include="ui-elements-extra.html" />
-    <Content Include="ui-elements-grid-system.html" />
-    <Content Include="ui-elements-icons.html" />
-    <Content Include="ui-elements-lightbox.html" />
-    <Content Include="ui-elements-modals.html" />
-    <Content Include="ui-elements-nestable.html" />
-    <Content Include="ui-elements-notifications.html" />
-    <Content Include="ui-elements-panels.html" />
-    <Content Include="ui-elements-portlets.html" />
-    <Content Include="ui-elements-progressbars.html" />
-    <Content Include="ui-elements-sliders.html" />
-    <Content Include="ui-elements-tabs.html" />
-    <Content Include="ui-elements-tree-view.html" />
-    <Content Include="ui-elements-typography.html" />
-    <Content Include="ui-elements-widgets.html" />
+    <Content Include="media.aspx" />
+    <Content Include="preferences.aspx" />
+    <Content Include="services\manager.asmx" />
+    <Content Include="services\media.asmx" />
+    <Content Include="users.aspx" />
+    <Content Include="visual\effect1.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1661,12 +1612,47 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="add_preference.aspx.cs">
+      <DependentUpon>add_preference.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="add_preference.aspx.designer.cs">
+      <DependentUpon>add_preference.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="add_user.aspx.cs">
+      <DependentUpon>add_user.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="add_user.aspx.designer.cs">
+      <DependentUpon>add_user.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="approve.aspx.cs">
+      <DependentUpon>approve.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="approve.aspx.designer.cs">
+      <DependentUpon>approve.aspx</DependentUpon>
+    </Compile>
     <Compile Include="dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="delete_tag.aspx.cs">
+      <DependentUpon>delete_tag.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="delete_tag.aspx.designer.cs">
+      <DependentUpon>delete_tag.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="delete_user.aspx.cs">
+      <DependentUpon>delete_user.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="delete_user.aspx.designer.cs">
+      <DependentUpon>delete_user.aspx</DependentUpon>
     </Compile>
     <Compile Include="fnpix.master.cs">
       <DependentUpon>fnpix.master</DependentUpon>
@@ -1692,7 +1678,43 @@
     <Compile Include="logout.aspx.designer.cs">
       <DependentUpon>logout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="media.aspx.cs">
+      <DependentUpon>media.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="media.aspx.designer.cs">
+      <DependentUpon>media.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="preferences.aspx.cs">
+      <DependentUpon>preferences.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="preferences.aspx.designer.cs">
+      <DependentUpon>preferences.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="services\manager.asmx.cs">
+      <DependentUpon>manager.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="services\media.asmx.cs">
+      <DependentUpon>media.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="users.aspx.cs">
+      <DependentUpon>users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="users.aspx.designer.cs">
+      <DependentUpon>users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="visual\effect1.aspx.cs">
+      <DependentUpon>effect1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="visual\effect1.aspx.designer.cs">
+      <DependentUpon>effect1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\ajax\ajax-datatables-sample.json" />

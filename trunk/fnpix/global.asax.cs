@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Security;
-using System.Web.SessionState;
 using System.Web.Routing;
 
 namespace fnpix
@@ -25,6 +20,23 @@ namespace fnpix
 
             // ######################## DASHBOARD SECTION ################################### //
             routes.MapPageRoute("dashboard-route", "dashboard", "~/dashboard.aspx");
+
+            // ######################## MEDIA MANAGER SECTION ################################### //
+            routes.MapPageRoute("media-all-route", "media", "~/media.aspx");
+            routes.MapPageRoute("media-approve-route", "media/approve/{id}", "~/approve.aspx");
+            routes.MapPageRoute("media-unapproved-route", "media/{unapproved}", "~/media.aspx");
+
+            // ######################## SYSTEM PREFERENCES SECTION ################################### //
+            routes.MapPageRoute("preferences-route", "preferences", "~/preferences.aspx");
+            routes.MapPageRoute("preferences-add-route", "preferences/add", "~/add_preference.aspx");
+            routes.MapPageRoute("preferences-edit-route", "preferences/edit/{id}", "~/add_preference.aspx");
+            routes.MapPageRoute("preferences-delete-route", "preferences/delete/{id}", "~/delete_tag.aspx");
+
+            // ######################## USERS SECTION ################################### //
+            routes.MapPageRoute("users-route", "users", "~/users.aspx");
+            routes.MapPageRoute("users-add-route", "users/add", "~/add_user.aspx");
+            routes.MapPageRoute("users-edit-route", "users/edit/{id}", "~/add_user.aspx");
+            routes.MapPageRoute("users-delete-route", "users/delete/{id}", "~/delete_user.aspx");
 
             // this has to be last!!!!
             //routes.MapPageRoute("page-by-url-route", "{url}", "~/page.aspx");

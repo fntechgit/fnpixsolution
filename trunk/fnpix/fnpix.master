@@ -71,7 +71,7 @@
 			
 							<div class="dropdown-menu notification-menu">
 								<div class="notification-title">
-									<span class="pull-right label label-default">3</span>
+									<span class="pull-right label label-default"><%= unapproved_count %></span>
 									Unapproved
 								</div>
 			
@@ -117,7 +117,7 @@
 							<ul class="list-unstyled">
 								<li class="divider"></li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="/my-profile"><i class="fa fa-user"></i> My Profile</a>
+									<a role="menuitem" tabindex="-1" href="/users/edit/<%= Session["user_id"].ToString() %>"><i class="fa fa-user"></i> My Profile</a>
 								</li>
 								<li>
 									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
@@ -197,8 +197,10 @@
 		<script src="/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 		<script src="/assets/vendor/magnific-popup/magnific-popup.js"></script>
 		<script src="/assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
-		
-		<!-- Theme Base, Components and Settings -->
+
+        <asp:ContentPlaceHolder runat="server" ID="footer_scripts"></asp:ContentPlaceHolder>
+        
+        <!-- Theme Base, Components and Settings -->
 		<script src="/assets/javascripts/theme.js"></script>
 		
 		<!-- Theme Custom -->
@@ -206,8 +208,6 @@
 		
 		<!-- Theme Initialization Files -->
 		<script src="/assets/javascripts/theme.init.js"></script>
-        
-        <asp:ContentPlaceHolder runat="server" ID="footer_scripts"></asp:ContentPlaceHolder>
             
     </form>
 </body>

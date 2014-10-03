@@ -4,82 +4,82 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="navigation_sidebar" runat="server">
     <!-- start: sidebar goes into the  -->
-		        <aside id="sidebar-left" class="sidebar-left">
+	<aside id="sidebar-left" class="sidebar-left">
 				
-		            <div class="sidebar-header">
-		                <div class="sidebar-title">
-		                    Navigation
-		                </div>
-		                <div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
-		                    <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
-		                </div>
-		            </div>
+		<div class="sidebar-header">
+		    <div class="sidebar-title">
+		        Navigation
+		    </div>
+		    <div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
+		        <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+		    </div>
+		</div>
 				
-		            <div class="nano">
-		                <div class="nano-content">
-		                    <nav id="menu" class="nav-main" role="navigation">
-		                        <ul class="nav nav-main">
-		                            <li class="nav-active">
-		                                <a href="/">
-		                                    <i class="fa fa-tachometer" aria-hidden="true"></i>
-		                                    <span>Dashboard</span>
-		                                </a>
-		                            </li>
-		                            <li>
-		                                <a>
-		                                    <span class="pull-right label label-primary"><%= total_media %></span>
-		                                    <i class="fa fa-photo" aria-hidden="true"></i>
-		                                    <span>Media All</span>
-		                                </a>
-		                            </li>
-                                    <li>
-		                                <a>
-		                                    <span class="pull-right label label-primary"><%= unapproved_media %></span>
-		                                    <i class="fa fa-question-circle" aria-hidden="true"></i>
-		                                    <span>Unapproved Media</span>
-		                                </a>
-		                            </li>
-                                    <li>
-		                                <a>
-		                                    <span class="pull-right label label-primary"><%= instagram_media %></span>
-		                                    <i class="fa fa-instagram" aria-hidden="true"></i>
-		                                    <span>Instagram Media</span>
-		                                </a>
-		                            </li>
-                                    <li>
-		                                <a>
-		                                    <span class="pull-right label label-primary"><%= twitter_media %></span>
-		                                    <i class="fa fa-twitter" aria-hidden="true"></i>
-		                                    <span>Twitter Media</span>
-		                                </a>
-		                            </li>
-                                    <li>
-		                                <a>
-		                                    <span class="pull-right label label-primary"><%= facebook_media %></span>
-		                                    <i class="fa fa-facebook-square" aria-hidden="true"></i>
-		                                    <span>Facebook Media</span>
-		                                </a>
-		                            </li>
-                                    <li>
-		                                <a>
-		                                    <i class="fa fa-users" aria-hidden="true"></i>
-		                                    <span>Manage Users</span>
-		                                </a>
-		                            </li>
-                                    <li>
-		                                <a>
-		                                    <i class="fa fa-gears" aria-hidden="true"></i>
-		                                    <span>System Preferences</span>
-		                                </a>
-		                            </li>
-		                        </ul>
-		                    </nav>
-		                </div>
+		<div class="nano">
+		    <div class="nano-content">
+		        <nav id="menu" class="nav-main" role="navigation">
+		            <ul class="nav nav-main">
+		                <li class="nav-active">
+		                    <a href="/">
+		                        <i class="fa fa-tachometer" aria-hidden="true"></i>
+		                        <span>Dashboard</span>
+		                    </a>
+		                </li>
+		                <li>
+		                    <a href="/media">
+		                        <span class="pull-right label label-primary"><%= total_media %></span>
+		                        <i class="fa fa-photo" aria-hidden="true"></i>
+		                        <span>Media All</span>
+		                    </a>
+		                </li>
+                        <li>
+		                    <a href="/media/unapproved">
+		                        <span class="pull-right label label-primary"><%= unapproved_media %></span>
+		                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+		                        <span>Unapproved Media</span>
+		                    </a>
+		                </li>
+                        <li>
+		                    <a href="/media#instagram">
+		                        <span class="pull-right label label-primary"><%= instagram_media %></span>
+		                        <i class="fa fa-instagram" aria-hidden="true"></i>
+		                        <span>Instagram Media</span>
+		                    </a>
+		                </li>
+                        <li>
+		                    <a href="/media#twitter">
+		                        <span class="pull-right label label-primary"><%= twitter_media %></span>
+		                        <i class="fa fa-twitter" aria-hidden="true"></i>
+		                        <span>Twitter Media</span>
+		                    </a>
+		                </li>
+                        <li>
+		                    <a href="/media#facebook">
+		                        <span class="pull-right label label-primary"><%= facebook_media %></span>
+		                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+		                        <span>Facebook Media</span>
+		                    </a>
+		                </li>
+                        <li>
+		                    <a href="/users">
+		                        <i class="fa fa-users" aria-hidden="true"></i>
+		                        <span>Manage Users</span>
+		                    </a>
+		                </li>
+                        <li>
+		                    <a href="/preferences">
+		                        <i class="fa fa-gears" aria-hidden="true"></i>
+		                        <span>System Preferences</span>
+		                    </a>
+		                </li>
+		            </ul>
+		        </nav>
+		    </div>
 				
-		            </div>
+		</div>
 				
-		        </aside>
-		        <!-- end: sidebar -->
+	</aside>
+	<!-- end: sidebar -->
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="content_main" runat="server">
@@ -118,7 +118,8 @@
 		                                            <div class="summary">
 		                                                <h4 class="title">All Media</h4>
 		                                                <div class="info">
-		                                                    <strong class="amount"><%= all_media %></strong>
+		                                                    <strong class="amount"><%= total_media %></strong>
+                                                            <span class="text-primary">(<%= unapproved_media %> unapproved)</span>
 		                                                </div>
 		                                            </div>
 		                                            <div class="summary-footer">
@@ -146,7 +147,7 @@
 		                                                </div>
 		                                            </div>
 		                                            <div class="summary-footer">
-		                                                <a href="/media/instagram" class="text-muted text-uppercase">(view all)</a>
+		                                                <a href="/media#instagram" class="text-muted text-uppercase">(view all)</a>
 		                                            </div>
 		                                        </div>
 		                                    </div>
@@ -170,7 +171,7 @@
 		                                                </div>
 		                                            </div>
 		                                            <div class="summary-footer">
-		                                                <a href="/media/twitter" class="text-muted text-uppercase">(view all)</a>
+		                                                <a href="/media#twitter" class="text-muted text-uppercase">(view all)</a>
 		                                            </div>
 		                                        </div>
 		                                    </div>
@@ -194,7 +195,7 @@
 		                                                </div>
 		                                            </div>
 		                                            <div class="summary-footer">
-		                                                <a href="/media/facebook" class="text-muted text-uppercase">(view all)</a>
+		                                                <a href="/media#facebook" class="text-muted text-uppercase">(view all)</a>
 		                                            </div>
 		                                        </div>
 		                                    </div>
@@ -206,22 +207,7 @@
 		            </div>
 
 		            <div class="row">
-		                <div class="col-lg-6 col-md-12">
-		                    <section class="panel panel-transparent">
-		                        <header class="panel-heading">
-		                            <div class="panel-actions">
-		                                <a href="#" class="fa fa-caret-down"></a>
-		                                <a href="#" class="fa fa-times"></a>
-		                            </div>
-
-		                            <h2 class="panel-title">Global Stats</h2>
-		                        </header>
-		                        <div class="panel-body">
-		                            <div id="vectorMapWorld" style="height: 350px; width: 100%;"></div>
-		                        </div>
-		                    </section>
-		                </div>
-		                <div class="col-lg-6 col-md-12">
+		                <div class="col-lg-12 col-md-24">
 		                    <section class="panel">
 		                        <header class="panel-heading panel-heading-transparent">
 		                            <div class="panel-actions">
@@ -229,7 +215,7 @@
 		                                <a href="#" class="fa fa-times"></a>
 		                            </div>
 
-		                            <h2 class="panel-title">Projects Stats</h2>
+		                            <h2 class="panel-title">Recent Imports</h2>
 		                        </header>
 		                        <div class="panel-body">
 		                            <div class="table-responsive">
@@ -237,96 +223,16 @@
 		                                    <thead>
 		                                        <tr>
 		                                            <th>#</th>
-		                                            <th>Project</th>
+		                                            <th>Date Time</th>
 		                                            <th>Status</th>
-		                                            <th>Progress</th>
+		                                            <th>Instagram</th>
+                                                    <th>Twitter</th>
+                                                    <th>Facebook</th>
+                                                    <th>Total</th>
 		                                        </tr>
 		                                    </thead>
 		                                    <tbody>
-		                                        <tr>
-		                                            <td>1</td>
-		                                            <td>Porto - Responsive HTML5 Template</td>
-		                                            <td><span class="label label-success">Success</span></td>
-		                                            <td>
-		                                                <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-		                                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-		                                                        100%
-		                                                    </div>
-		                                                </div>
-		                                            </td>
-		                                        </tr>
-		                                        <tr>
-		                                            <td>2</td>
-		                                            <td>Porto - Responsive Drupal 7 Theme</td>
-		                                            <td><span class="label label-success">Success</span></td>
-		                                            <td>
-		                                                <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-		                                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-		                                                        100%
-		                                                    </div>
-		                                                </div>
-		                                            </td>
-		                                        </tr>
-		                                        <tr>
-		                                            <td>3</td>
-		                                            <td>Tucson - Responsive HTML5 Template</td>
-		                                            <td><span class="label label-warning">Warning</span></td>
-		                                            <td>
-		                                                <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-		                                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-		                                                        60%
-		                                                    </div>
-		                                                </div>
-		                                            </td>
-		                                        </tr>
-		                                        <tr>
-		                                            <td>4</td>
-		                                            <td>Tucson - Responsive Business WordPress Theme</td>
-		                                            <td><span class="label label-success">Success</span></td>
-		                                            <td>
-		                                                <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-		                                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
-		                                                        90%
-		                                                    </div>
-		                                                </div>
-		                                            </td>
-		                                        </tr>
-		                                        <tr>
-		                                            <td>5</td>
-		                                            <td>Porto - Responsive Admin HTML5 Template</td>
-		                                            <td><span class="label label-warning">Warning</span></td>
-		                                            <td>
-		                                                <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-		                                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
-		                                                        45%
-		                                                    </div>
-		                                                </div>
-		                                            </td>
-		                                        </tr>
-		                                        <tr>
-		                                            <td>6</td>
-		                                            <td>Porto - Responsive HTML5 Template</td>
-		                                            <td><span class="label label-danger">Danger</span></td>
-		                                            <td>
-		                                                <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-		                                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-		                                                        40%
-		                                                    </div>
-		                                                </div>
-		                                            </td>
-		                                        </tr>
-		                                        <tr>
-		                                            <td>7</td>
-		                                            <td>Porto - Responsive Drupal 7 Theme</td>
-		                                            <td><span class="label label-success">Success</span></td>
-		                                            <td>
-		                                                <div class="progress progress-sm progress-half-rounded mt-xs light">
-		                                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
-		                                                        95%
-		                                                    </div>
-		                                                </div>
-		                                            </td>
-		                                        </tr>
+		                                        <asp:PlaceHolder runat="server" ID="ph_imports" />
 		                                    </tbody>
 		                                </table>
 		                            </div>

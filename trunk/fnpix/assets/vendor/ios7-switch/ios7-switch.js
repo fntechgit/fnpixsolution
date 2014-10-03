@@ -3,7 +3,7 @@
  */
 
 function Switch(input) {
-  if ('checkbox' !== input.type) throw new Error('You can\'t make Switch out of non-checkbox input');
+  //if ('checkbox' !== input.type) throw new Error('You can\'t make Switch out of non-checkbox input');
 
   this.input = input;
   this.input.style.display = 'none'; // hide the actual input

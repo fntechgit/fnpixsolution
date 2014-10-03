@@ -1,14 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace overrideSocial
 {
     public class users
     {
         private FNTech_MediaDataContext db = new FNTech_MediaDataContext();
+
+        public Boolean delete(Int32 id)
+        {
+            user u = db.users.Single(x => x.id == id);
+
+            db.users.DeleteOnSubmit(u);
+
+            db.SubmitChanges();
+
+            return true;
+        }
 
         public User add(User u)
         {
@@ -38,7 +47,7 @@ namespace overrideSocial
             List<User> _users = new List<User>();
 
             var result = from us in db.users
-                orderby us.last_name, us.first_name
+                orderby us.first_name, us.last_name
                 select us;
 
             foreach (var item in result)

@@ -37,7 +37,7 @@
 	/*
 	Image Preview: Lightbox
 	*/
-	$('.thumb-preview a[href]').magnificPopup({
+	$('.thumb-preview a.thumb-image').magnificPopup({
 		type: 'image',
 		closeOnContentClick: true,
 		mainClass: 'mfp-img-mobile',

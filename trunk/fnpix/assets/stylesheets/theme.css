@@ -663,7 +663,6 @@ a:active {
 	}
 
 	html.fixed .inner-body {
-		margin-left: 300px;
 		border-top: 113px solid transparent;
 		margin-top: -110px;
 		min-height: 100vh;
@@ -872,7 +871,7 @@ a:active {
 
 	html.fixed .content-with-menu .inner-toolbar,
 	html.fixed.inner-menu-opened .content-with-menu .inner-toolbar {
-		left: 600px;
+		left: 300px;
 	}
 
 	html.fixed .inner-menu-toggle,
@@ -894,7 +893,7 @@ a:active {
 	html.fixed.sidebar-left-collapsed .content-with-menu .inner-toolbar,
 	html.fixed.sidebar-left-collapsed.sidebar-right-opened.inner-menu-opened .content-with-menu .inner-toolbar,
 	html.fixed.sidebar-left-collapsed.inner-menu-opened .content-with-menu .inner-toolbar {
-		left: 373px;
+		left: 70px;
 	}
 
 	html.fixed.sidebar-left-collapsed .inner-menu-toggle,

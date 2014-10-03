@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="fntech_media" Class="FNTech_MediaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=SQL;Initial Catalog=fntech_media;Persist Security Info=True;User ID=sa" SettingsObjectName="overrideSocial.Properties.Settings" SettingsPropertyName="fntech_mediaConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=198.178.124.58;Initial Catalog=fntech_media;Persist Security Info=True;User ID=sa" SettingsObjectName="overrideSocial.Properties.Settings" SettingsPropertyName="fntech_mediaConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.settings" Member="settings">
     <Type Name="setting">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

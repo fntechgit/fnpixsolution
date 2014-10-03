@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace overrideSocial
 {
@@ -34,6 +33,7 @@ namespace overrideSocial
             List<Statistic> _stats = new List<Statistic>();
 
             var result = from sts in db.stats
+                         orderby sts.id descending 
                 select sts;
 
             foreach (var item in result)
@@ -51,6 +51,11 @@ namespace overrideSocial
             }
 
             return _stats;
+        }
+
+        public List<Statistic> get_top(Int32 x)
+        {
+            return get_all().Take(x).ToList();
         }
     }
 
