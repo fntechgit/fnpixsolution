@@ -46,12 +46,14 @@ namespace overrideSocial
             md.source = m.source;
             md.tags = m.tags;
 
-            db.medias.InsertOnSubmit(md);
+            var result = from med in db.medias
+                where med.source == md.source
+                select med;
 
-            var result = get_recent().Where(x => x.source == md.source).ToList();
-
-            if (!result.Any())
+            if (result.Count() == 0)
             {
+                db.medias.InsertOnSubmit(md);
+
                 db.SubmitChanges();    
             }
 

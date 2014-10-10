@@ -81,7 +81,9 @@
     <Compile Include="users.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="FNTech_Media.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>FNTech_Media.designer.cs</LastGenOutput>
