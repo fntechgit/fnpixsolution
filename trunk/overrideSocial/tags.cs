@@ -26,6 +26,7 @@ namespace overrideSocial
                 ta.is_tag = item.is_tag;
                 ta.twitter = item.twitter;
                 ta.value = item.value;
+                ta.event_id = item.event_id;
 
                 _tags.Add(ta);
             }
@@ -54,6 +55,7 @@ namespace overrideSocial
                 ta.start_time = item.start_time;
                 ta.end_time = item.end_time;
                 ta.entire_event = item.entire_event;
+                ta.event_id = item.event_id;
 
                 _tags.Add(ta);
             }
@@ -76,6 +78,7 @@ namespace overrideSocial
             ta.start_time = t.start_time;
             ta.twitter = t.twitter;
             ta.value = t.value;
+            ta.event_id = t.event_id;
 
             return ta;
         }
@@ -92,6 +95,7 @@ namespace overrideSocial
             ta.start_time = t.start_time;
             ta.twitter = t.twitter;
             ta.value = t.value;
+            ta.event_id = t.event_id;
 
             db.tags.InsertOnSubmit(ta);
 
@@ -125,6 +129,7 @@ namespace overrideSocial
             ta.start_time = t.start_time;
             ta.twitter = t.twitter;
             ta.value = t.value;
+            ta.event_id = t.event_id;
 
             db.SubmitChanges();
 
@@ -143,5 +148,6 @@ namespace overrideSocial
         public Boolean facebook { get; set; }
         public Boolean instagram { get; set; }
         public Boolean twitter { get; set; }
+        public Int32 event_id { get; set; }
     }
 }

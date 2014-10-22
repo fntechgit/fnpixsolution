@@ -18,6 +18,7 @@ namespace overrideSocial
             st.pulldate = s.pulldate;
             st.total = s.total;
             st.twitter = s.twitter;
+            st.event_id = s.event_id;
             
             db.stats.InsertOnSubmit(st);
 
@@ -46,6 +47,7 @@ namespace overrideSocial
                 s.pulldate = item.pulldate;
                 s.total = item.total;
                 s.twitter = item.twitter;
+                s.event_id = item.event_id;
 
                 _stats.Add(s);
             }
@@ -67,5 +69,6 @@ namespace overrideSocial
         public Int32 twitter { get; set; }
         public Int32 facebook { get; set; }
         public Int32 total { get; set; }
+        public Int32 event_id { get; set; }
     }
 }

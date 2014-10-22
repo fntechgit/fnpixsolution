@@ -45,6 +45,8 @@ namespace overrideSocial
             md.is_video = m.is_video;
             md.source = m.source;
             md.tags = m.tags;
+            md.event_id = m.event_id;
+            md.tag_id = m.tag_id;
 
             var result = from med in db.medias
                 where med.source == md.source
@@ -92,6 +94,8 @@ namespace overrideSocial
                 m.approved = item.approved;
                 m.approved_by = item.approved_by;
                 m.approved_date = item.approved_date;
+                m.event_id = item.event_id;
+                m.tag_id = item.tag_id;
                 
                 _entries.Add(m);
             }
@@ -129,6 +133,8 @@ namespace overrideSocial
                 m.approved = item.approved;
                 m.approved_by = item.approved_by;
                 m.approved_date = item.approved_date;
+                m.event_id = item.event_id;
+                m.tag_id = item.tag_id;
 
                 _entries.Add(m);
             }
@@ -216,6 +222,7 @@ namespace overrideSocial
             md.approved_by = m.approved_by;
             md.approved_date = m.approved_date;
             md.id = m.id;
+            md.event_id = m.event_id;
 
             return md;
         }
@@ -245,5 +252,7 @@ namespace overrideSocial
         public Boolean is_video { get; set; }
         public string source { get; set; }
         public string tags { get; set; }
+        public Int32 event_id { get; set; }
+        public Int32 tag_id { get; set; }
     }
 }
