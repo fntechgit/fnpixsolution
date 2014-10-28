@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 
 namespace overrideSocial
 {
@@ -83,6 +84,59 @@ namespace overrideSocial
             return ta;
         }
 
+        public List<Tag> select(Int32 event_id, Boolean active)
+        {
+            List<Tag> _tags = new List<Tag>();
+
+            var result = from t in db.tags
+                         where t.event_id==event_id && t.entire_event == true || (t.start_time <= DateTime.Now && t.end_time >= DateTime.Now)
+                         select t;
+
+            foreach (var item in result)
+            {
+                Tag ta = new Tag();
+
+                ta.facebook = item.facebook;
+                ta.id = item.id;
+                ta.instagram = item.instagram;
+                ta.is_tag = item.is_tag;
+                ta.twitter = item.twitter;
+                ta.value = item.value;
+                ta.event_id = item.event_id;
+
+                _tags.Add(ta);
+            }
+
+            return _tags;
+        }
+
+        public List<Tag> select(Int32 event_id)
+        {
+            List<Tag> _tags = new List<Tag>();
+
+            var result = from t in db.tags
+                         where t.event_id == event_id
+                         orderby t.value
+                         select t;
+
+            foreach (var item in result)
+            {
+                Tag ta = new Tag();
+
+                ta.facebook = item.facebook;
+                ta.id = item.id;
+                ta.instagram = item.instagram;
+                ta.is_tag = item.is_tag;
+                ta.twitter = item.twitter;
+                ta.value = item.value;
+                ta.event_id = item.event_id;
+
+                _tags.Add(ta);
+            }
+
+            return _tags;
+        } 
+
         public Tag add(Tag t)
         {
             tag ta = new tag();
@@ -111,6 +165,15 @@ namespace overrideSocial
             tag t = db.tags.Single(x => x.id == id);
 
             db.tags.DeleteOnSubmit(t);
+
+            db.SubmitChanges();
+
+            // now we need to delete all media that was created using that tag
+            var result = from md in db.medias
+                where md.tag_id == id
+                select md;
+
+            db.medias.DeleteAllOnSubmit(result);
 
             db.SubmitChanges();
 

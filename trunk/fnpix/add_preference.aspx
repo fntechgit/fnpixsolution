@@ -101,7 +101,6 @@
                                     <a href="/preferences"><i class="fa fa-gears"></i> Preferences</a>
                                 </li>
 								<li><i class="fa fa-plus-circle"></i> <span><%= add_edit %> a Preference</span></li>
-								<li><span>Basic</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>

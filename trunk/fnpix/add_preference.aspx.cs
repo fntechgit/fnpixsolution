@@ -69,6 +69,11 @@ namespace fnpix
 
         protected void update(object sender, EventArgs e)
         {
+            if (Session["event_id"] == null)
+            {
+                Response.Redirect("/dashboard");
+            }
+
             Tag t = new Tag();
 
             Boolean is_update = false;
@@ -108,6 +113,8 @@ namespace fnpix
             }
             else
             {
+                t.event_id = Convert.ToInt32(Session["event_id"].ToString());
+
                 _tags.add(t);
             }
 

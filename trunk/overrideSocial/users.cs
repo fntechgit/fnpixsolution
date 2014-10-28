@@ -64,6 +64,7 @@ namespace overrideSocial
                 u.notify_every_minutes = item.notify_every_minutes;
                 u.password = item.pwd;
                 u.picture = item.pic;
+                u.security = item.security;
                 
                 _users.Add(u);
             }
@@ -87,6 +88,7 @@ namespace overrideSocial
             u.notify_every_minutes = us.notify_every_minutes;
             u.password = us.pwd;
             u.picture = us.pic;
+            u.security = us.security;
 
             return u;
         }
@@ -139,10 +141,32 @@ namespace overrideSocial
                 u.notify_every_minutes = item.notify_every_minutes;
                 u.password = item.pwd;
                 u.picture = item.pic;
+                u.security = item.security;
+
+                switch (u.security)
+                {
+                    case 1000:
+                        u.security_desc = "content";
+                        break;
+                    case 1001:
+                        u.security_desc = "event";
+                        break;
+                    case 1002:
+                        u.security_desc = "system";
+                        break;
+                    default:
+                        u.security_desc = "content";
+                        break;
+                }
             }
 
             return u;
         }
+
+        public List<User> get_by_security_level(Int32 id)
+        {
+            return get_all().Where(x => x.security == id).ToList();
+        } 
     }
 
     public class User
@@ -157,5 +181,7 @@ namespace overrideSocial
         public DateTime created { get; set; }
         public Boolean active { get; set; }
         public Int32 notify_every_minutes { get; set; }
+        public Int32 security { get; set; }
+        public string security_desc { get; set; }
     }
 }

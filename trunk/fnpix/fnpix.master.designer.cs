@@ -31,6 +31,15 @@ namespace fnpix {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// ddl_event control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_event;
+        
+        /// <summary>
         /// navigation_sidebar control.
         /// </summary>
         /// <remarks>

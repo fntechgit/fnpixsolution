@@ -97,10 +97,9 @@
 									</a>
 								</li>
                                 <li>
-                                    <a href="/users"><i class="fa fa-users"></i> System Users</a>
+                                    <a href="/users"><i class="fa fa-users"></i> Users</a>
                                 </li>
 								<li><i class="fa fa-user"></i> <span><%= add_edit %> a User</span></li>
-								<li><span>Basic</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>

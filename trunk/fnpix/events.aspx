@@ -1,5 +1,4 @@
-﻿<%@ Page Title="FNPIX > System Preferences" Language="C#" MasterPageFile="~/fnpix.master" AutoEventWireup="true" CodeBehind="preferences.aspx.cs" Inherits="fnpix.preferences" %>
-
+﻿<%@ Page Title="FNPIX > Manage Events" Language="C#" MasterPageFile="~/fnpix.master" AutoEventWireup="true" CodeBehind="events.aspx.cs" Inherits="fnpix.events" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
@@ -67,13 +66,13 @@
 		                        <span>Users</span>
 		                    </a>
 		                </li>
-                        <li class="nav-active">
+                        <li>
 		                    <a href="/preferences">
 		                        <i class="fa fa-gears" aria-hidden="true"></i>
 		                        <span>System Preferences</span>
 		                    </a>
 		                </li>
-                        <li id="event_link" runat="server" Visible="false">
+                        <li id="event_link" runat="server" Visible="false" class="nav-active">
 		                    <a href="/events">
 		                        <i class="fa fa-calendar" aria-hidden="true"></i>
 		                        <span>Events</span>
@@ -92,7 +91,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="content_main" runat="server">
     <section role="main" class="content-body">
 		<header class="page-header">
-			<h2>System Preferences</h2>
+			<h2>Manage Events</h2>
 					
 			<div class="right-wrapper pull-right">
 				<ol class="breadcrumbs">
@@ -101,7 +100,7 @@
 							<i class="fa fa-tachometer"></i>
 						</a>
 					</li>
-					<li><i class="fa fa-gears"></i> <span>System Preferences</span></li>
+					<li><i class="fa fa-calendar"></i> <span>Events</span></li>
 				</ol>
 					
 				<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -111,7 +110,7 @@
 		<!-- start: page -->
 			<section class="panel">
 			    
-                <a href="/preferences/add" class="mb-xs mt-xs mr-xs btn btn-success"><i class="fa fa-plus-circle"></i> Add Query Criteria</a>
+                <a href="/events/add" class="mb-xs mt-xs mr-xs btn btn-success"><i class="fa fa-plus-circle"></i> Add New Event</a>
 
 				<header class="panel-heading">
 					<div class="panel-actions">
@@ -119,18 +118,18 @@
 						<a href="#" class="fa fa-times"></a>
 					</div>
 						
-					<h2 class="panel-title">Query Criteria</h2>
+					<h2 class="panel-title">Events</h2>
 				</header>
 				<div class="panel-body">
 					<table class="table table-no-more table-bordered table-striped mb-none">
 						<thead>
 							<tr>
-								<th>Tag</th>
-								<th class="hidden-xs hidden-sm">Facebook</th>
-								<th class="hidden-xs hidden-sm">Twitter</th>
-                                <th class="hidden-xs hidden-sm">Instagram</th>
-								<th class="hidden-xs hidden-sm">Type</th>
-                                <th class="text-right">Entire Event</th>
+								<th>Title</th>
+								<th class="hidden-xs hidden-sm">Client</th>
+								<th class="hidden-xs hidden-sm">Address</th>
+                                <th class="hidden-xs hidden-sm">City, State Zip</th>
+								<th class="hidden-xs hidden-sm">Country</th>
+                                <th class="text-right">Moderate</th>
 								<th class="text-right">Start</th>
 								<th class="text-right">End</th>
                                 <th>Actions</th>

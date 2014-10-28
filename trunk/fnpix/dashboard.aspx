@@ -249,7 +249,7 @@
     <script src="assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
 	<script src="assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
 	<script src="assets/vendor/jquery-appear/jquery.appear.js"></script>
-	<script src="assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+	
 	<script src="assets/vendor/jquery-easypiechart/jquery.easypiechart.js"></script>
 	<script src="assets/vendor/flot/jquery.flot.js"></script>
 	<script src="assets/vendor/flot-tooltip/jquery.flot.tooltip.js"></script>
@@ -273,5 +273,5 @@
 	<script src="assets/vendor/jqvmap/maps/continents/jquery.vmap.south-america.js"></script>
     
     <!-- Examples -->
-	<script src="assets/javascripts/dashboard/examples.dashboard.js"></script>
+	
 </asp:Content>

@@ -38,6 +38,12 @@ namespace fnpix
             routes.MapPageRoute("users-edit-route", "users/edit/{id}", "~/add_user.aspx");
             routes.MapPageRoute("users-delete-route", "users/delete/{id}", "~/delete_user.aspx");
 
+            // ######################## EVENTS SECTION ################################### //
+            routes.MapPageRoute("events-manage-route", "events", "~/events.aspx");
+            routes.MapPageRoute("events-add-route", "events/add", "~/add_event.aspx");
+            routes.MapPageRoute("events-edit-rotue", "events/edit/{id}", "~/add_event.aspx");
+            routes.MapPageRoute("events-delete-route", "events/delete/{id}", "~/delete_event.aspx");
+
             // this has to be last!!!!
             //routes.MapPageRoute("page-by-url-route", "{url}", "~/page.aspx");
         }

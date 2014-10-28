@@ -10,7 +10,7 @@
 namespace fnpix {
     
     
-    public partial class preferences {
+    public partial class events {
         
         /// <summary>
         /// event_link control.

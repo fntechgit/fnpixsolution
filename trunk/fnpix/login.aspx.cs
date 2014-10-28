@@ -28,6 +28,7 @@ namespace fnpix
                 Session["company_name"] = u.company;
                 Session["user_email"] = u.email;
                 Session["user_pic"] = u.picture;
+                Session["user_access"] = u.security_desc;
 
                 Response.Redirect("/dashboard");
             }

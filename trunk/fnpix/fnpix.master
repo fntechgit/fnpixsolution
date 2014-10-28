@@ -55,6 +55,11 @@
 					<a href="/" class="logo">
 						<img src="/assets/images/logo.png" height="35" alt="FNPIX" />
 					</a>
+                    <div>
+                        <div class="col-md-2" style="padding-top:10px;">
+                            <asp:DropDownList runat="server" ID="ddl_event" AutoPostBack="true" CssClass="form-control" OnSelectedIndexChanged="change_event" data-plugin-multiselect />							
+						</div>
+					</div>
 					<div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
 						<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
 					</div>
@@ -83,7 +88,7 @@
 													<i class="fa fa-thumbs-down bg-danger"></i>
 												</div>
 												<span class="title"><%= unapproved_count %> PIX to Approve</span>
-												<span class="message"><%= DateTime.Now.TimeOfDay %></span>
+												<span class="message"><%= DateTime.Now.ToShortTimeString() %></span>
 											</a>
 										</li>
 									</ul>
@@ -197,6 +202,7 @@
 		<script src="/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 		<script src="/assets/vendor/magnific-popup/magnific-popup.js"></script>
 		<script src="/assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+        <script src="/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"></script>
 
         <asp:ContentPlaceHolder runat="server" ID="footer_scripts"></asp:ContentPlaceHolder>
         
@@ -208,6 +214,10 @@
 		
 		<!-- Theme Initialization Files -->
 		<script src="/assets/javascripts/theme.init.js"></script>
+        
+        <script src="/assets/javascripts/forms/examples.advanced.form.js" /></script>
+        
+        <script src="/assets/javascripts/dashboard/examples.dashboard.js"></script>
             
     </form>
 </body>
