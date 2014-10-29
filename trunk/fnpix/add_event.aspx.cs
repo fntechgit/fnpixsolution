@@ -109,10 +109,9 @@ namespace fnpix
             DropNetClient _client = new DropNetClient(_settings.dropbox_api_key(), _settings.dropbox_api_secret());
 
             Session["request_token"] = _client.GetToken();
+            Session["dropbox_event_id"] = Page.RouteData.Values["id"] as string;
 
-
-
-            var url = _client.BuildAuthorizeUrl();
+            var url = _client.BuildAuthorizeUrl(_settings.dropbox_return_url());
 
             Response.Redirect(url);
         }

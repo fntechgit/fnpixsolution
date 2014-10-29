@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml.Linq;
 using overrideSocial;
+using DropNet;
 
 namespace fnpix
 {
@@ -29,48 +30,42 @@ namespace fnpix
         {
             get_totals();
 
+            DropNetClient _client = new DropNetClient(_settings.dropbox_api_key(), _settings.dropbox_api_secret());
+
             check_levels(Session["user_access"] as string);
 
-            // check for edit
-            if (Page.RouteData.Values["id"] != null)
+            if (Session["request_token"] != null)
             {
-                btn_process.Text = "Update";
-                add_edit = "Update";
+                Event ev = _events.@select(Convert.ToInt32(Session["dropbox_event_id"] as string));
+
+                _client.UserLogin = Session["request_token"] as DropNet.Models.UserLogin;
+
+                var access_token = _client.GetAccessToken();
+
+                var account_info = _client.AccountInfo();
+
+                ev.request_token = access_token.Token.ToString();
+                ev.access_token = access_token.Secret.ToString();
+                ev.dropbox_country = account_info.country;
+                ev.dropbox_email = account_info.email;
+                ev.dropbox_quota = account_info.quota_info.quota.ToString();
+                ev.dropbox_referral = account_info.referral_link;
+                ev.dropbox_uid = account_info.uid;
+                ev.dropbox_username = account_info.display_name;
+
+                ev = _events.update(ev);
+
+                username.Attributes.Add("placeholder", account_info.display_name);
+                email.Attributes.Add("placeholder", ev.dropbox_email);
+                quota.Attributes.Add("placeholder", ev.dropbox_quota);
+                referral.Attributes.Add("placeholder", ev.dropbox_referral);
+                uid.Attributes.Add("placeholder", ev.dropbox_uid.ToString());
+                country.Attributes.Add("placeholder", ev.dropbox_country);
             }
             else
             {
-                btn_process.Text = "Add";
+                Response.Redirect("/events");
             }
-
-            if (!Page.IsPostBack)
-            {
-                if (Page.RouteData.Values["id"] != null)
-                {
-                    Event ev = _events.@select(Convert.ToInt32(Page.RouteData.Values["id"] as string));
-
-                    title.Text = ev.title;
-                    description.Text = ev.description;
-                    client.Text = ev.client;
-                    address.Text = ev.address;
-                    address2.Text = ev.address2;
-                    city.Text = ev.city;
-                    state.Text = ev.state;
-                    zip.Text = ev.zip;
-                    country.Text = ev.country;
-                    hdn_latitude.Value = ev.latitude.ToString();
-                    hdn_longitude.Value = ev.longitude.ToString();
-                    start_date.Text = ev.start.ToShortDateString();
-                    start_time.Text = ev.start.ToShortTimeString();
-                    end_date.Text = ev.end.ToShortDateString();
-                    end_time.Text = ev.end.ToShortTimeString();
-                    moderate.Checked = ev.moderate;
-                    listenSlider.Value = ev.interval.ToString();
-
-                    pnl_map.Visible = true;
-                    btn_dropbox.Visible = true;
-                }
-            }
-
         }
 
         private void get_totals()
@@ -101,92 +96,6 @@ namespace fnpix
                     Response.Redirect("/dashboard");
                     break;
             }
-        }
-
-        protected void dropbox(object sender, EventArgs e)
-        {
-            DropNetClient _client = new DropNetClient(_settings.dropbox_api_key(), _settings.dropbox_api_secret());
-
-            Session["request_token"] = _client.GetToken();
-
-
-
-            var url = _client.BuildAuthorizeUrl();
-
-            Response.Redirect(url);
-        }
-
-        protected void update(object sender, EventArgs e)
-        {
-            Event ev = new Event();
-
-            Boolean is_update = false;
-
-            if (Page.RouteData.Values["id"] != null)
-            {
-                is_update = true;
-
-                ev = _events.@select(Convert.ToInt32(Page.RouteData.Values["id"] as string));
-            }
-
-            ev.title = title.Text.ToString();
-            ev.client = client.Text.ToString();
-            ev.description = description.Text.ToString();
-            ev.address = address.Text.ToString();
-            ev.address2 = address2.Text.ToString();
-            ev.city = city.Text.ToString();
-            ev.state = state.Text.ToString();
-            ev.zip = zip.Text.ToString();
-            ev.country = country.SelectedValue.ToString();
-            ev.interval = Convert.ToInt32(listenSlider.Value);
-            ev.moderate = moderate.Checked;
-
-            if (!string.IsNullOrEmpty(start_date.Text.ToString()) && !string.IsNullOrEmpty(start_time.Text.ToString()))
-            {
-                ev.start = ((DateTime)Convert.ToDateTime(start_date.Text.ToString())).Date.Add(((DateTime)Convert.ToDateTime(start_time.Text.ToString())).TimeOfDay);
-            }
-
-            if (!string.IsNullOrEmpty(end_date.Text.ToString()) && !string.IsNullOrEmpty(end_time.Text.ToString()))
-            {
-                ev.end = ((DateTime)Convert.ToDateTime(end_date.Text.ToString())).Date.Add(((DateTime)Convert.ToDateTime(end_time.Text.ToString())).TimeOfDay);
-            }
-
-            var theaddress = ev.address + " " + ev.city + " " + ev.state + " " + ev.country;
-            var requestUri = string.Format("http://maps.googleapis.com/maps/api/geocode/xml?address={0}&sensor=false", Uri.EscapeDataString(theaddress));
-
-            var request = WebRequest.Create(requestUri);
-            var response = request.GetResponse();
-            var xdoc = XDocument.Load(response.GetResponseStream());
-
-            var result = xdoc.Element("GeocodeResponse").Element("result");
-
-            try
-            {
-                var locationElement = result.Element("geometry").Element("location");
-
-                ev.latitude = Convert.ToDecimal(locationElement.Element("lat").Value);
-                ev.longitude = Convert.ToDecimal(locationElement.Element("lng").Value);
-            }
-            catch (NullReferenceException ex)
-            {
-                ev.latitude = null;
-                ev.longitude = null;
-            }
-
-            if (is_update)
-            {
-                ev = _events.update(ev);
-            }
-            else
-            {
-                ev.created_by = Session["user_name"].ToString();
-                ev.created_date = DateTime.Now;
-                ev.created_by_int = Convert.ToInt32(Session["user_id"].ToString());
-
-                ev = _events.add(ev);
-            }
-
-            pnl_success.Visible = true;
         }
     }
 }

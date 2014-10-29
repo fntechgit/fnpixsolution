@@ -127,6 +127,9 @@
 								<li>
 									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
 								</li>
+                                <li>
+                                    <asp:LinkButton runat="server" role="menuitem" TabIndex="-1" OnClick="auth_dropbox"><i class="fa fa-dropbox"></i> Authorize Dropbox</asp:LinkButton>
+                                </li>
 								<li>
 									<a role="menuitem" tabindex="-1" href="/logout"><i class="fa fa-power-off"></i> Logout</a>
 								</li>

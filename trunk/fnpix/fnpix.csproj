@@ -1603,6 +1603,7 @@
     <Content Include="delete_tag.aspx" />
     <Content Include="delete_user.aspx" />
     <Content Include="dropbox.aspx" />
+    <Content Include="dropbox_media.aspx" />
     <Content Include="events.aspx" />
     <Content Include="global.asax" />
     <Content Include="js\jquery.cycle2.js" />
@@ -1616,7 +1617,13 @@
     <Content Include="services\manager.asmx" />
     <Content Include="services\media.asmx" />
     <Content Include="users.aspx" />
+    <Content Include="visual\bullet.png" />
+    <Content Include="visual\dropbox.aspx" />
     <Content Include="visual\effect1.aspx" />
+    <Content Include="visual\jquery.imagefit.js" />
+    <Content Include="visual\js-image-slider.css" />
+    <Content Include="visual\js-image-slider.js" />
+    <Content Include="visual\loading.gif" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1703,6 +1710,13 @@
     <Compile Include="dropbox.aspx.designer.cs">
       <DependentUpon>dropbox.aspx</DependentUpon>
     </Compile>
+    <Compile Include="dropbox_media.aspx.cs">
+      <DependentUpon>dropbox_media.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dropbox_media.aspx.designer.cs">
+      <DependentUpon>dropbox_media.aspx</DependentUpon>
+    </Compile>
     <Compile Include="events.aspx.cs">
       <DependentUpon>events.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1770,6 +1784,13 @@
     </Compile>
     <Compile Include="users.aspx.designer.cs">
       <DependentUpon>users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="visual\dropbox.aspx.cs">
+      <DependentUpon>dropbox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="visual\dropbox.aspx.designer.cs">
+      <DependentUpon>dropbox.aspx</DependentUpon>
     </Compile>
     <Compile Include="visual\effect1.aspx.cs">
       <DependentUpon>effect1.aspx</DependentUpon>

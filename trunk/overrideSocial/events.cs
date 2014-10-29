@@ -45,6 +45,12 @@ namespace overrideSocial
             ev.last_update = ev.create_date.AddMinutes(e.interval*-1);
             ev.request_token = null;
             ev.access_token = null;
+            ev.dropbox_country = null;
+            ev.dropbox_email = null;
+            ev.dropbox_quota = null;
+            ev.dropbox_referral = null;
+            ev.dropbox_uid = null;
+            ev.dropbox_username = null;
 
             db.event_masters.InsertOnSubmit(ev);
 
@@ -93,6 +99,14 @@ namespace overrideSocial
             ev.title = e.title;
             ev.zip = e.zip;
             ev.last_update = e.last_update;
+            ev.access_token = e.access_token;
+            ev.request_token = e.request_token;
+            ev.dropbox_country = e.dropbox_country;
+            ev.dropbox_email = e.dropbox_email;
+            ev.dropbox_quota = e.dropbox_quota;
+            ev.dropbox_referral = e.dropbox_referral;
+            ev.dropbox_uid = e.dropbox_uid;
+            ev.dropbox_username = e.dropbox_username;
 
             db.SubmitChanges();
 
@@ -146,6 +160,14 @@ namespace overrideSocial
             e.title = ev.title;
             e.zip = ev.zip;
             e.last_update = ev.last_update;
+            e.access_token = ev.access_token;
+            e.request_token = ev.request_token;
+            e.dropbox_country = ev.dropbox_country;
+            e.dropbox_email = ev.dropbox_email;
+            e.dropbox_quota = ev.dropbox_quota;
+            e.dropbox_referral = ev.dropbox_referral;
+            e.dropbox_uid = ev.dropbox_uid;
+            e.dropbox_username = ev.dropbox_username;
 
             return e;
         }
@@ -186,6 +208,14 @@ namespace overrideSocial
                 e.title = ev.title;
                 e.zip = ev.zip;
                 e.last_update = ev.last_update;
+                e.access_token = ev.access_token;
+                e.request_token = ev.request_token;
+                e.dropbox_country = ev.dropbox_country;
+                e.dropbox_email = ev.dropbox_email;
+                e.dropbox_quota = ev.dropbox_quota;
+                e.dropbox_referral = ev.dropbox_referral;
+                e.dropbox_uid = ev.dropbox_uid;
+                e.dropbox_username = ev.dropbox_username;
 
                 _events.Add(e);
             }
@@ -220,6 +250,11 @@ namespace overrideSocial
             return select_list(true).Where(x => x.last_update.AddMinutes(x.interval) <= DateTime.Now).ToList();
         }
 
+        public List<Event> dropbox_authorized()
+        {
+            return select_list(true).Where(x => !string.IsNullOrEmpty(x.access_token)).ToList();
+        } 
+
         #endregion
     }
 
@@ -250,6 +285,12 @@ namespace overrideSocial
         public DateTime last_update { get; set; }
         public string request_token { get; set; }
         public string access_token { get; set; }
+        public string dropbox_username { get; set; }
+        public string dropbox_email { get; set; }
+        public string dropbox_country { get; set; }
+        public string dropbox_quota { get; set; }
+        public Int64? dropbox_uid { get; set; }
+        public string dropbox_referral { get; set; }
     }
 
     #endregion

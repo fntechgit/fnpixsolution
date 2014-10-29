@@ -50,6 +50,12 @@ namespace fnpix
             routes.MapPageRoute("permissions-edit-route", "permissions/edit/{id}/{permission_id}", "~/add_permission.aspx");
             routes.MapPageRoute("permissions-delete-route", "permissions/delete/{user_id}/{id}", "~/delete_permission.aspx");
 
+            // ######################## DROPBOX SECTION ################################### //
+            routes.MapPageRoute("dropbox-setup-route", "dropbox-setup", "~/dropbox.aspx");
+            routes.MapPageRoute("dropbox-media-main-route", "dropbox", "~/dropbox_media.aspx");
+            routes.MapPageRoute("dropbox-media-unapproved-route", "dropbox/{unapproved}", "~/dropbox_media.aspx");
+            routes.MapPageRoute("dropbox-visual-theme-route", "displays/dropbox/{id}", "~/visual/dropbox.aspx");
+
             // this has to be last!!!!
             //routes.MapPageRoute("page-by-url-route", "{url}", "~/page.aspx");
         }

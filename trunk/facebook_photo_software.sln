@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fnpix_updater", "api_test\f
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fnpix", "fnpix\fnpix.csproj", "{2FDCEB23-4644-45BC-9079-13AB0A2329F1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fnpix_dropbox_updater", "fnpix_dropbox_updater\fnpix_dropbox_updater.csproj", "{C5B6CC34-BF10-40F2-8754-25E5F1C6E177}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,16 @@ Global
 		{2FDCEB23-4644-45BC-9079-13AB0A2329F1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{2FDCEB23-4644-45BC-9079-13AB0A2329F1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{2FDCEB23-4644-45BC-9079-13AB0A2329F1}.Release|x86.ActiveCfg = Release|Any CPU
+		{C5B6CC34-BF10-40F2-8754-25E5F1C6E177}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{C5B6CC34-BF10-40F2-8754-25E5F1C6E177}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{C5B6CC34-BF10-40F2-8754-25E5F1C6E177}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{C5B6CC34-BF10-40F2-8754-25E5F1C6E177}.Debug|x86.ActiveCfg = Debug|x86
+		{C5B6CC34-BF10-40F2-8754-25E5F1C6E177}.Debug|x86.Build.0 = Debug|x86
+		{C5B6CC34-BF10-40F2-8754-25E5F1C6E177}.Release|Any CPU.ActiveCfg = Release|x86
+		{C5B6CC34-BF10-40F2-8754-25E5F1C6E177}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{C5B6CC34-BF10-40F2-8754-25E5F1C6E177}.Release|Mixed Platforms.Build.0 = Release|x86
+		{C5B6CC34-BF10-40F2-8754-25E5F1C6E177}.Release|x86.ActiveCfg = Release|x86
+		{C5B6CC34-BF10-40F2-8754-25E5F1C6E177}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

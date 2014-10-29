@@ -17,6 +17,7 @@ namespace fnpix
 
         private overrideSocial.mediaManager _media = new overrideSocial.mediaManager();
         private overrideSocial.stats _stats = new overrideSocial.stats();
+        private overrideSocial.dropbox _dropbox = new overrideSocial.dropbox();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,7 +30,9 @@ namespace fnpix
             List<Media> _twitter = _media.get_twitter(Convert.ToInt32(Session["event_id"].ToString()));
             List<Media> _instagram = _media.get_instagram(Convert.ToInt32(Session["event_id"].ToString()));
             List<Media> _unapproved = _media.get_unapproved(Convert.ToInt32(Session["event_id"].ToString()));
+            List<Dropbox> _dropbox_total = _dropbox.select_list(Convert.ToInt32(Session["event_id"].ToString()));
 
+            facebook_media = _dropbox_total.Count.ToString("0.#");
             total_media = _all.Count.ToString("0.#");
             all_media = total_media;
             instagram_media = _instagram.Count.ToString("0.#");

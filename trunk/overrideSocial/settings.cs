@@ -77,6 +77,23 @@ namespace overrideSocial
             return get_by_id(3);
         }
 
+        public string dropbox_return_url()
+        {
+            return get_by_id(4);
+        }
+
+        public Boolean dropbox_moderate()
+        {
+            if (get_by_id(5) == "true")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         #endregion
 
         public Boolean moderate_event()

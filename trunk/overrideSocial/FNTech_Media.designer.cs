@@ -66,6 +66,9 @@ namespace overrideSocial
     partial void Insertevent_master(event_master instance);
     partial void Updateevent_master(event_master instance);
     partial void Deleteevent_master(event_master instance);
+    partial void Insertdropbox_media(dropbox_media instance);
+    partial void Updatedropbox_media(dropbox_media instance);
+    partial void Deletedropbox_media(dropbox_media instance);
     #endregion
 		
 		public FNTech_MediaDataContext() : 
@@ -191,6 +194,14 @@ namespace overrideSocial
 			get
 			{
 				return this.GetTable<event_master>();
+			}
+		}
+		
+		public System.Data.Linq.Table<dropbox_media> dropbox_medias
+		{
+			get
+			{
+				return this.GetTable<dropbox_media>();
 			}
 		}
 		
@@ -2717,6 +2728,18 @@ namespace overrideSocial
 		
 		private string _access_token;
 		
+		private string _dropbox_username;
+		
+		private string _dropbox_email;
+		
+		private string _dropbox_country;
+		
+		private string _dropbox_quota;
+		
+		private System.Nullable<long> _dropbox_uid;
+		
+		private string _dropbox_referral;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2765,6 +2788,18 @@ namespace overrideSocial
     partial void Onrequest_tokenChanged();
     partial void Onaccess_tokenChanging(string value);
     partial void Onaccess_tokenChanged();
+    partial void Ondropbox_usernameChanging(string value);
+    partial void Ondropbox_usernameChanged();
+    partial void Ondropbox_emailChanging(string value);
+    partial void Ondropbox_emailChanged();
+    partial void Ondropbox_countryChanging(string value);
+    partial void Ondropbox_countryChanged();
+    partial void Ondropbox_quotaChanging(string value);
+    partial void Ondropbox_quotaChanged();
+    partial void Ondropbox_uidChanging(System.Nullable<long> value);
+    partial void Ondropbox_uidChanged();
+    partial void Ondropbox_referralChanging(string value);
+    partial void Ondropbox_referralChanged();
     #endregion
 		
 		public event_master()
@@ -3208,6 +3243,572 @@ namespace overrideSocial
 					this._access_token = value;
 					this.SendPropertyChanged("access_token");
 					this.Onaccess_tokenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dropbox_username", DbType="VarChar(MAX)")]
+		public string dropbox_username
+		{
+			get
+			{
+				return this._dropbox_username;
+			}
+			set
+			{
+				if ((this._dropbox_username != value))
+				{
+					this.Ondropbox_usernameChanging(value);
+					this.SendPropertyChanging();
+					this._dropbox_username = value;
+					this.SendPropertyChanged("dropbox_username");
+					this.Ondropbox_usernameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dropbox_email", DbType="VarChar(MAX)")]
+		public string dropbox_email
+		{
+			get
+			{
+				return this._dropbox_email;
+			}
+			set
+			{
+				if ((this._dropbox_email != value))
+				{
+					this.Ondropbox_emailChanging(value);
+					this.SendPropertyChanging();
+					this._dropbox_email = value;
+					this.SendPropertyChanged("dropbox_email");
+					this.Ondropbox_emailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dropbox_country", DbType="VarChar(50)")]
+		public string dropbox_country
+		{
+			get
+			{
+				return this._dropbox_country;
+			}
+			set
+			{
+				if ((this._dropbox_country != value))
+				{
+					this.Ondropbox_countryChanging(value);
+					this.SendPropertyChanging();
+					this._dropbox_country = value;
+					this.SendPropertyChanged("dropbox_country");
+					this.Ondropbox_countryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dropbox_quota", DbType="VarChar(50)")]
+		public string dropbox_quota
+		{
+			get
+			{
+				return this._dropbox_quota;
+			}
+			set
+			{
+				if ((this._dropbox_quota != value))
+				{
+					this.Ondropbox_quotaChanging(value);
+					this.SendPropertyChanging();
+					this._dropbox_quota = value;
+					this.SendPropertyChanged("dropbox_quota");
+					this.Ondropbox_quotaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dropbox_uid", DbType="BigInt")]
+		public System.Nullable<long> dropbox_uid
+		{
+			get
+			{
+				return this._dropbox_uid;
+			}
+			set
+			{
+				if ((this._dropbox_uid != value))
+				{
+					this.Ondropbox_uidChanging(value);
+					this.SendPropertyChanging();
+					this._dropbox_uid = value;
+					this.SendPropertyChanged("dropbox_uid");
+					this.Ondropbox_uidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dropbox_referral", DbType="VarChar(MAX)")]
+		public string dropbox_referral
+		{
+			get
+			{
+				return this._dropbox_referral;
+			}
+			set
+			{
+				if ((this._dropbox_referral != value))
+				{
+					this.Ondropbox_referralChanging(value);
+					this.SendPropertyChanging();
+					this._dropbox_referral = value;
+					this.SendPropertyChanged("dropbox_referral");
+					this.Ondropbox_referralChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.dropbox")]
+	public partial class dropbox_media : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _extension;
+		
+		private string _filename;
+		
+		private string _path;
+		
+		private string _size;
+		
+		private string _uid;
+		
+		private string _thumbnail;
+		
+		private string _stream;
+		
+		private System.Nullable<System.DateTime> _modified_date;
+		
+		private bool _approved;
+		
+		private System.DateTime _create_date;
+		
+		private System.Nullable<int> _approved_by;
+		
+		private System.Nullable<System.DateTime> _approved_date;
+		
+		private bool _is_video;
+		
+		private int _event_id;
+		
+		private string _username;
+		
+		private string _email;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnextensionChanging(string value);
+    partial void OnextensionChanged();
+    partial void OnfilenameChanging(string value);
+    partial void OnfilenameChanged();
+    partial void OnpathChanging(string value);
+    partial void OnpathChanged();
+    partial void OnsizeChanging(string value);
+    partial void OnsizeChanged();
+    partial void OnuidChanging(string value);
+    partial void OnuidChanged();
+    partial void OnthumbnailChanging(string value);
+    partial void OnthumbnailChanged();
+    partial void OnstreamChanging(string value);
+    partial void OnstreamChanged();
+    partial void Onmodified_dateChanging(System.Nullable<System.DateTime> value);
+    partial void Onmodified_dateChanged();
+    partial void OnapprovedChanging(bool value);
+    partial void OnapprovedChanged();
+    partial void Oncreate_dateChanging(System.DateTime value);
+    partial void Oncreate_dateChanged();
+    partial void Onapproved_byChanging(System.Nullable<int> value);
+    partial void Onapproved_byChanged();
+    partial void Onapproved_dateChanging(System.Nullable<System.DateTime> value);
+    partial void Onapproved_dateChanged();
+    partial void Onis_videoChanging(bool value);
+    partial void Onis_videoChanged();
+    partial void Onevent_idChanging(int value);
+    partial void Onevent_idChanged();
+    partial void OnusernameChanging(string value);
+    partial void OnusernameChanged();
+    partial void OnemailChanging(string value);
+    partial void OnemailChanged();
+    #endregion
+		
+		public dropbox_media()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_extension", DbType="VarChar(10)")]
+		public string extension
+		{
+			get
+			{
+				return this._extension;
+			}
+			set
+			{
+				if ((this._extension != value))
+				{
+					this.OnextensionChanging(value);
+					this.SendPropertyChanging();
+					this._extension = value;
+					this.SendPropertyChanged("extension");
+					this.OnextensionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_filename", DbType="VarChar(MAX)")]
+		public string filename
+		{
+			get
+			{
+				return this._filename;
+			}
+			set
+			{
+				if ((this._filename != value))
+				{
+					this.OnfilenameChanging(value);
+					this.SendPropertyChanging();
+					this._filename = value;
+					this.SendPropertyChanged("filename");
+					this.OnfilenameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_path", DbType="VarChar(MAX)")]
+		public string path
+		{
+			get
+			{
+				return this._path;
+			}
+			set
+			{
+				if ((this._path != value))
+				{
+					this.OnpathChanging(value);
+					this.SendPropertyChanging();
+					this._path = value;
+					this.SendPropertyChanged("path");
+					this.OnpathChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_size", DbType="VarChar(50)")]
+		public string size
+		{
+			get
+			{
+				return this._size;
+			}
+			set
+			{
+				if ((this._size != value))
+				{
+					this.OnsizeChanging(value);
+					this.SendPropertyChanging();
+					this._size = value;
+					this.SendPropertyChanged("size");
+					this.OnsizeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_uid", DbType="VarChar(50)")]
+		public string uid
+		{
+			get
+			{
+				return this._uid;
+			}
+			set
+			{
+				if ((this._uid != value))
+				{
+					this.OnuidChanging(value);
+					this.SendPropertyChanging();
+					this._uid = value;
+					this.SendPropertyChanged("uid");
+					this.OnuidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thumbnail", DbType="VarChar(MAX)")]
+		public string thumbnail
+		{
+			get
+			{
+				return this._thumbnail;
+			}
+			set
+			{
+				if ((this._thumbnail != value))
+				{
+					this.OnthumbnailChanging(value);
+					this.SendPropertyChanging();
+					this._thumbnail = value;
+					this.SendPropertyChanged("thumbnail");
+					this.OnthumbnailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_stream", DbType="VarChar(MAX)")]
+		public string stream
+		{
+			get
+			{
+				return this._stream;
+			}
+			set
+			{
+				if ((this._stream != value))
+				{
+					this.OnstreamChanging(value);
+					this.SendPropertyChanging();
+					this._stream = value;
+					this.SendPropertyChanged("stream");
+					this.OnstreamChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_modified_date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> modified_date
+		{
+			get
+			{
+				return this._modified_date;
+			}
+			set
+			{
+				if ((this._modified_date != value))
+				{
+					this.Onmodified_dateChanging(value);
+					this.SendPropertyChanging();
+					this._modified_date = value;
+					this.SendPropertyChanged("modified_date");
+					this.Onmodified_dateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_approved", DbType="Bit NOT NULL")]
+		public bool approved
+		{
+			get
+			{
+				return this._approved;
+			}
+			set
+			{
+				if ((this._approved != value))
+				{
+					this.OnapprovedChanging(value);
+					this.SendPropertyChanging();
+					this._approved = value;
+					this.SendPropertyChanged("approved");
+					this.OnapprovedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_create_date", DbType="DateTime NOT NULL")]
+		public System.DateTime create_date
+		{
+			get
+			{
+				return this._create_date;
+			}
+			set
+			{
+				if ((this._create_date != value))
+				{
+					this.Oncreate_dateChanging(value);
+					this.SendPropertyChanging();
+					this._create_date = value;
+					this.SendPropertyChanged("create_date");
+					this.Oncreate_dateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_approved_by", DbType="Int")]
+		public System.Nullable<int> approved_by
+		{
+			get
+			{
+				return this._approved_by;
+			}
+			set
+			{
+				if ((this._approved_by != value))
+				{
+					this.Onapproved_byChanging(value);
+					this.SendPropertyChanging();
+					this._approved_by = value;
+					this.SendPropertyChanged("approved_by");
+					this.Onapproved_byChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_approved_date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> approved_date
+		{
+			get
+			{
+				return this._approved_date;
+			}
+			set
+			{
+				if ((this._approved_date != value))
+				{
+					this.Onapproved_dateChanging(value);
+					this.SendPropertyChanging();
+					this._approved_date = value;
+					this.SendPropertyChanged("approved_date");
+					this.Onapproved_dateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_is_video", DbType="Bit NOT NULL")]
+		public bool is_video
+		{
+			get
+			{
+				return this._is_video;
+			}
+			set
+			{
+				if ((this._is_video != value))
+				{
+					this.Onis_videoChanging(value);
+					this.SendPropertyChanging();
+					this._is_video = value;
+					this.SendPropertyChanged("is_video");
+					this.Onis_videoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_event_id", DbType="Int NOT NULL")]
+		public int event_id
+		{
+			get
+			{
+				return this._event_id;
+			}
+			set
+			{
+				if ((this._event_id != value))
+				{
+					this.Onevent_idChanging(value);
+					this.SendPropertyChanging();
+					this._event_id = value;
+					this.SendPropertyChanged("event_id");
+					this.Onevent_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="VarChar(50)")]
+		public string username
+		{
+			get
+			{
+				return this._username;
+			}
+			set
+			{
+				if ((this._username != value))
+				{
+					this.OnusernameChanging(value);
+					this.SendPropertyChanging();
+					this._username = value;
+					this.SendPropertyChanged("username");
+					this.OnusernameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(MAX)")]
+		public string email
+		{
+			get
+			{
+				return this._email;
+			}
+			set
+			{
+				if ((this._email != value))
+				{
+					this.OnemailChanging(value);
+					this.SendPropertyChanging();
+					this._email = value;
+					this.SendPropertyChanged("email");
+					this.OnemailChanged();
 				}
 			}
 		}

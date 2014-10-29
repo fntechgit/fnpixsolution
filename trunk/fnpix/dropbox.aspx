@@ -109,7 +109,7 @@
 						</div>
 					</header>
                     
-                    <asp:Panel runat="server" ID="pnl_success" Visible="false">
+                    <asp:Panel runat="server" ID="pnl_success" Visible="true">
                         <div class="alert alert-success">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                             <strong>Success!</strong> You have successfully setup the Dropbox Link for this Event
@@ -134,17 +134,59 @@
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="search_text">Authorization</label>
 												<div class="col-md-6">
-												    
+												    <img src="/assets/images/dropbox.png" alt="Dropbox" width="300" />
 												</div>
 											</div>
                                             
                                             <div class="form-group">
+												<label class="col-md-3 control-label" for="inputDisabled">Username</label>
+												<div class="col-md-6">
+												    <asp:TextBox runat="server" ID="username" CssClass="form-control" Enabled="false" />
+												</div>
+											</div>
+                                            
+                                            <div class="form-group">
+												<label class="col-md-3 control-label" for="inputDisabled">EMail</label>
+												<div class="col-md-6">
+												    <asp:TextBox runat="server" ID="email" CssClass="form-control" Enabled="false" />
+												</div>
+											</div>
+                                            
+                                            <div class="form-group">
+												<label class="col-md-3 control-label" for="inputDisabled">Quota</label>
+												<div class="col-md-6">
+												    <asp:TextBox runat="server" ID="quota" CssClass="form-control" Enabled="false" />
+												</div>
+											</div>
+                                            
+                                            <div class="form-group">
+												<label class="col-md-3 control-label" for="inputDisabled">Referral Link</label>
+												<div class="col-md-6">
+												    <asp:TextBox runat="server" ID="referral" CssClass="form-control" Enabled="false" />
+												</div>
+											</div>
+                                            
+                                            <div class="form-group">
+												<label class="col-md-3 control-label" for="inputDisabled">Country</label>
+												<div class="col-md-6">
+												    <asp:TextBox runat="server" ID="country" CssClass="form-control" Enabled="false" />
+												</div>
+											</div>
+                                            
+                                            <div class="form-group">
+												<label class="col-md-3 control-label" for="inputDisabled">Dropbox UserID</label>
+												<div class="col-md-6">
+												    <asp:TextBox runat="server" ID="uid" CssClass="form-control" Enabled="false" />
+												</div>
+											</div>
+                                            
+                                           <%-- <div class="form-group">
 												<label class="control-label col-md-3"></label>
 												<div class="col-md-9">
 													<asp:Button runat="server" ID="btn_process" CssClass="mb-xs mt-xs mr-xs btn btn-primary" Text="Submit" OnClick="update" />
                                                     <asp:Button runat="server" ID="btn_dropbox" CssClass="mb-xs mt-xs mr-xs btn btn-primary" Text="Setup Dropbox" OnClick="dropbox" Visible="false" />
 												</div>
-											</div>
+											</div>--%>
                                             
                                             
 

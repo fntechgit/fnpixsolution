@@ -54,10 +54,10 @@
 		                    </a>
 		                </li>
                         <li>
-		                    <a href="/media#facebook">
+		                    <a href="/dropbox">
 		                        <span class="pull-right label label-primary"><%= facebook_media %></span>
 		                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
-		                        <span>Facebook Media</span>
+		                        <span>Dropbox Media</span>
 		                    </a>
 		                </li>
                         <li>
@@ -184,18 +184,18 @@
 		                                    <div class="widget-summary">
 		                                        <div class="widget-summary-col widget-summary-col-icon">
 		                                            <div class="summary-icon bg-quartenary">
-		                                                <i class="fa fa-facebook-square"></i>
+		                                                <i class="fa fa-dropbox"></i>
 		                                            </div>
 		                                        </div>
 		                                        <div class="widget-summary-col">
 		                                            <div class="summary">
-		                                                <h4 class="title">Facebook</h4>
+		                                                <h4 class="title">Dropbox</h4>
 		                                                <div class="info">
 		                                                    <strong class="amount"><%= facebook_media %></strong>
 		                                                </div>
 		                                            </div>
 		                                            <div class="summary-footer">
-		                                                <a href="/media#facebook" class="text-muted text-uppercase">(view all)</a>
+		                                                <a href="/dropbox" class="text-muted text-uppercase">(view all)</a>
 		                                            </div>
 		                                        </div>
 		                                    </div>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using overrideSocial;
+using DropNet;
 
 namespace fnpix
 {
@@ -14,7 +15,7 @@ namespace fnpix
 
         private overrideSocial.mediaManager _media = new overrideSocial.mediaManager();
         private overrideSocial.permissions _permissions = new overrideSocial.permissions();
-
+        private overrideSocial.settings _settings = new overrideSocial.settings();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -59,6 +60,18 @@ namespace fnpix
             Session["event_id"] = ddl_event.SelectedValue.ToString();
 
             Response.Redirect(Request.Url.ToString());
+        }
+
+        protected void auth_dropbox(object sender, EventArgs e)
+        {
+            DropNetClient _client = new DropNetClient(_settings.dropbox_api_key(), _settings.dropbox_api_secret());
+
+            Session["request_token"] = _client.GetToken();
+            Session["dropbox_event_id"] = Session["event_id"].ToString();
+
+            var url = _client.BuildAuthorizeUrl(_settings.dropbox_return_url());
+
+            Response.Redirect(url);
         }
 
         protected void Page_PreInit(object sender, EventArgs e)
