@@ -543,6 +543,7 @@
 												<label class="control-label col-md-3"></label>
 												<div class="col-md-9">
 													<asp:Button runat="server" ID="btn_process" CssClass="mb-xs mt-xs mr-xs btn btn-primary" Text="Submit" OnClick="update" />
+                                                    <asp:Button runat="server" ID="btn_dropbox" CssClass="mb-xs mt-xs mr-xs btn btn-primary" Text="Setup Dropbox" OnClick="dropbox" Visible="false" />
 												</div>
 											</div>
                                             

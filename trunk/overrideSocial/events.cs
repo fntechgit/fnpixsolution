@@ -43,6 +43,8 @@ namespace overrideSocial
             ev.create_date = DateTime.Now;
             ev.created_by = e.created_by;
             ev.last_update = ev.create_date.AddMinutes(e.interval*-1);
+            ev.request_token = null;
+            ev.access_token = null;
 
             db.event_masters.InsertOnSubmit(ev);
 
@@ -246,6 +248,8 @@ namespace overrideSocial
         public Int32 created_by_int { get; set; }
         public DateTime created_date { get; set; }
         public DateTime last_update { get; set; }
+        public string request_token { get; set; }
+        public string access_token { get; set; }
     }
 
     #endregion

@@ -15,6 +15,7 @@ namespace fnpix
         private overrideSocial.mediaManager _media = new overrideSocial.mediaManager();
         private overrideSocial.permissions _permissions = new overrideSocial.permissions();
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["user_id"] == null)
@@ -68,6 +69,11 @@ namespace fnpix
             }
             else
             {
+                if (Session["event_id"] == null)
+                {
+                    Session["event_id"] = _permissions.select_permitted_events(Convert.ToInt32(Session["user_id"].ToString()))[0].id.ToString();
+                }
+
                 user_picture = "/uploads/" + Session["user_pic"].ToString();
                 user_name = Session["user_name"].ToString();
                 company_name = Session["company_name"].ToString();

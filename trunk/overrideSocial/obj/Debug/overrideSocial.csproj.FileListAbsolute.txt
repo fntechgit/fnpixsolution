@@ -26,3 +26,6 @@ E:\projects\facebook_photo_software\overrideSocial\bin\Debug\TweetSharp.pdb
 E:\projects\facebook_photo_software\overrideSocial\obj\Debug\overrideSocial.dll
 E:\projects\facebook_photo_software\overrideSocial\obj\Debug\overrideSocial.pdb
 E:\projects\facebook_photo_software\overrideSocial\obj\Debug\overrideSocial.csprojResolveAssemblyReference.cache
+E:\projects\facebook_photo_software\overrideSocial\bin\Debug\DropNet.dll
+E:\projects\facebook_photo_software\overrideSocial\bin\Debug\RestSharp.dll
+E:\projects\facebook_photo_software\overrideSocial\bin\Debug\RestSharp.xml

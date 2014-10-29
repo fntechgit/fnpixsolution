@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using RestSharp.Extensions;
 
 namespace overrideSocial
 {
@@ -60,6 +61,20 @@ namespace overrideSocial
         public string twitter_access_token_secret()
         {
             return @"Zljk61eXQnsTnGu6PMIeRupmMdKYm8dzykEx3YbB79Zu5";
+        }
+
+        #endregion
+
+        #region dropbox
+
+        public string dropbox_api_key()
+        {
+            return get_by_id(2);
+        }
+
+        public string dropbox_api_secret()
+        {
+            return get_by_id(3);
         }
 
         #endregion

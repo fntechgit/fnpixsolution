@@ -68,10 +68,10 @@
         <elementListCompartment Id="f85d4419-a592-4e9e-bfbc-3d7e6c37d830" absoluteBounds="11.14, 4.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="20924b68-6de9-447b-8ed6-e67bec8861b9" absoluteBounds="1, 2.5, 2, 4.6554182942708326">
+    <classShape Id="eb0dc919-29dd-4769-a7e6-eed3b4414ec7" absoluteBounds="1, 2.625, 2, 5.0400211588541657">
       <DataClassMoniker Name="/FNTech_MediaDataContext/event_master" />
       <nestedChildShapes>
-        <elementListCompartment Id="6c9e2c83-e53b-4190-a1da-691f76efd1f7" absoluteBounds="1.0150000000000001, 2.96, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2bc2cd66-5d54-49a6-983c-907502c6f2f6" absoluteBounds="1.0150000000000001, 3.085, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

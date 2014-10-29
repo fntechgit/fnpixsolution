@@ -8,6 +8,7 @@ namespace fnpix
         #region declarations
 
         private overrideSocial.users _users = new overrideSocial.users();
+        private overrideSocial.permissions _permissions = new overrideSocial.permissions();
 
         #endregion
 
@@ -29,6 +30,8 @@ namespace fnpix
                 Session["user_email"] = u.email;
                 Session["user_pic"] = u.picture;
                 Session["user_access"] = u.security_desc;
+
+                Session["event_id"] = _permissions.select_permitted_events(Convert.ToInt32(Session["user_id"].ToString()))[0].id.ToString();
 
                 Response.Redirect("/dashboard");
             }

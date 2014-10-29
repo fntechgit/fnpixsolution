@@ -151,6 +151,8 @@
       <Column Name="create_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="created_by" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="last_update" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="request_token" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="access_token" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.events_get_authorized" Method="events_get_authorized">

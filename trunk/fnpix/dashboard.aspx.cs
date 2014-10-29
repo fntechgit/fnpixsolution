@@ -20,6 +20,11 @@ namespace fnpix
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(Session["event_id"] as string))
+            {
+                Response.Redirect("/login");
+            }
+
             List<Media> _all = _media.get_all(Convert.ToInt32(Session["event_id"].ToString()));
             List<Media> _twitter = _media.get_twitter(Convert.ToInt32(Session["event_id"].ToString()));
             List<Media> _instagram = _media.get_instagram(Convert.ToInt32(Session["event_id"].ToString()));

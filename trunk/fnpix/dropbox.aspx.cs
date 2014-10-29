@@ -7,11 +7,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml.Linq;
 using overrideSocial;
-using DropNet;
 
 namespace fnpix
 {
-    public partial class add_event : System.Web.UI.Page
+    public partial class dropbox : System.Web.UI.Page
     {
         public string add_edit = "Add";
 
@@ -164,7 +163,7 @@ namespace fnpix
             try
             {
                 var locationElement = result.Element("geometry").Element("location");
-                
+
                 ev.latitude = Convert.ToDecimal(locationElement.Element("lat").Value);
                 ev.longitude = Convert.ToDecimal(locationElement.Element("lng").Value);
             }

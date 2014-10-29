@@ -2713,6 +2713,10 @@ namespace overrideSocial
 		
 		private System.DateTime _last_update;
 		
+		private string _request_token;
+		
+		private string _access_token;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2757,6 +2761,10 @@ namespace overrideSocial
     partial void Oncreated_byChanged();
     partial void Onlast_updateChanging(System.DateTime value);
     partial void Onlast_updateChanged();
+    partial void Onrequest_tokenChanging(string value);
+    partial void Onrequest_tokenChanged();
+    partial void Onaccess_tokenChanging(string value);
+    partial void Onaccess_tokenChanged();
     #endregion
 		
 		public event_master()
@@ -3160,6 +3168,46 @@ namespace overrideSocial
 					this._last_update = value;
 					this.SendPropertyChanged("last_update");
 					this.Onlast_updateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_request_token", DbType="VarChar(MAX)")]
+		public string request_token
+		{
+			get
+			{
+				return this._request_token;
+			}
+			set
+			{
+				if ((this._request_token != value))
+				{
+					this.Onrequest_tokenChanging(value);
+					this.SendPropertyChanging();
+					this._request_token = value;
+					this.SendPropertyChanged("request_token");
+					this.Onrequest_tokenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_access_token", DbType="VarChar(MAX)")]
+		public string access_token
+		{
+			get
+			{
+				return this._access_token;
+			}
+			set
+			{
+				if ((this._access_token != value))
+				{
+					this.Onaccess_tokenChanging(value);
+					this.SendPropertyChanging();
+					this._access_token = value;
+					this.SendPropertyChanged("access_token");
+					this.Onaccess_tokenChanged();
 				}
 			}
 		}

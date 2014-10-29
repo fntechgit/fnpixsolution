@@ -14,3 +14,6 @@ E:\projects\facebook_photo_software\fnpix\bin\Newtonsoft.Json.xml
 E:\projects\facebook_photo_software\fnpix\bin\Facebook.xml
 E:\projects\facebook_photo_software\fnpix\bin\Hammock.ClientProfile.pdb
 E:\projects\facebook_photo_software\fnpix\obj\Debug\fnpix.csprojResolveAssemblyReference.cache
+E:\projects\facebook_photo_software\fnpix\bin\DropNet.dll
+E:\projects\facebook_photo_software\fnpix\bin\RestSharp.dll
+E:\projects\facebook_photo_software\fnpix\bin\RestSharp.xml

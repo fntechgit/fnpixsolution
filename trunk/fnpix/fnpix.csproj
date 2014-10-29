@@ -33,7 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DropNet">
+      <HintPath>..\packages\DropNet.1.9.6\lib\net40\DropNet.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.104.1\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -2025,6 +2031,7 @@
     <None Include="assets\vendor\style-switcher\less\skin.less" />
     <None Include="assets\vendor\style-switcher\less\variables.less" />
     <Content Include="fnpix.master" />
+    <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\vendor\flot\examples\gauge\" />
