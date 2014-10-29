@@ -1602,6 +1602,7 @@
     <Content Include="delete_permission.aspx" />
     <Content Include="delete_tag.aspx" />
     <Content Include="delete_user.aspx" />
+    <Content Include="dropbox.aspx" />
     <Content Include="events.aspx" />
     <Content Include="global.asax" />
     <Content Include="js\jquery.cycle2.js" />
@@ -1694,6 +1695,13 @@
     </Compile>
     <Compile Include="delete_user.aspx.designer.cs">
       <DependentUpon>delete_user.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dropbox.aspx.cs">
+      <DependentUpon>dropbox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dropbox.aspx.designer.cs">
+      <DependentUpon>dropbox.aspx</DependentUpon>
     </Compile>
     <Compile Include="events.aspx.cs">
       <DependentUpon>events.aspx</DependentUpon>
