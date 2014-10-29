@@ -48,9 +48,18 @@ namespace fnpix
                     current_image.ImageUrl = "/uploads/" + u.picture;
                     listenSlider.Value = u.notify_every_minutes.ToString();
                     active.Checked = u.active;
+                    security.SelectedValue = u.security.ToString();
 
                     pnl_current_image.Visible = true;
+
+                    btn_add_permission.NavigateUrl = "/permissions/add/" + u.id;
+                    btn_add_permission.Visible = true;
                 }
+            }
+
+            if (Session["user_access"] != null)
+            {
+                check_levels(Session["user_access"] as string);
             }
         }
 
@@ -74,6 +83,7 @@ namespace fnpix
             u.company = company.Text.ToString();
             u.active = active.Checked;
             u.notify_every_minutes = Convert.ToInt32(listenSlider.Value.ToString());
+            u.security = Convert.ToInt32(security.SelectedValue.ToString());
 
             if (image.HasFile)
             {
@@ -109,16 +119,30 @@ namespace fnpix
 
         private void get_totals()
         {
-            List<Media> _all = _media.get_recent();
-            List<Media> _twitter = _media.get_twitter();
-            List<Media> _instagram = _media.get_instagram();
-            List<Media> _unapproved = _media.get_unapproved();
+            List<Media> _all = _media.get_all(Convert.ToInt32(Session["event_id"].ToString()));
+            List<Media> _twitter = _media.get_twitter(Convert.ToInt32(Session["event_id"].ToString()));
+            List<Media> _instagram = _media.get_instagram(Convert.ToInt32(Session["event_id"].ToString()));
+            List<Media> _unapproved = _media.get_unapproved(Convert.ToInt32(Session["event_id"].ToString()));
 
             total_media = _all.Count.ToString("0.#");
             all_media = total_media;
             instagram_media = _instagram.Count.ToString("0.#");
             twitter_media = _twitter.Count.ToString("0.#");
             unapproved_media = _unapproved.Count.ToString("0.#");
+        }
+
+        private void check_levels(string user_level)
+        {
+            switch (user_level)
+            {
+                case "system":
+                    event_link.Visible = true;
+                    break;
+                case "event":
+                    break;
+                case "content":
+                    break;
+            }
         }
     }
 }

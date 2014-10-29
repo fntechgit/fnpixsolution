@@ -123,10 +123,10 @@ namespace fnpix
 
         private void get_totals()
         {
-            List<Media> _all = _media.get_recent();
-            List<Media> _twitter = _media.get_twitter();
-            List<Media> _instagram = _media.get_instagram();
-            List<Media> _unapproved = _media.get_unapproved();
+            List<Media> _all = _media.get_all(Convert.ToInt32(Session["event_id"].ToString()));
+            List<Media> _twitter = _media.get_twitter(Convert.ToInt32(Session["event_id"].ToString()));
+            List<Media> _instagram = _media.get_instagram(Convert.ToInt32(Session["event_id"].ToString()));
+            List<Media> _unapproved = _media.get_unapproved(Convert.ToInt32(Session["event_id"].ToString()));
 
             total_media = _all.Count.ToString("0.#");
             all_media = total_media;

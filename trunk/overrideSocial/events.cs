@@ -42,6 +42,7 @@ namespace overrideSocial
             ev.zip = e.zip;
             ev.create_date = DateTime.Now;
             ev.created_by = e.created_by;
+            ev.last_update = ev.create_date.AddMinutes(e.interval*-1);
 
             db.event_masters.InsertOnSubmit(ev);
 
@@ -89,6 +90,7 @@ namespace overrideSocial
             ev.state = e.state;
             ev.title = e.title;
             ev.zip = e.zip;
+            ev.last_update = e.last_update;
 
             db.SubmitChanges();
 
@@ -141,6 +143,7 @@ namespace overrideSocial
             e.state = ev.state;
             e.title = ev.title;
             e.zip = ev.zip;
+            e.last_update = ev.last_update;
 
             return e;
         }
@@ -180,6 +183,7 @@ namespace overrideSocial
                 e.state = ev.state;
                 e.title = ev.title;
                 e.zip = ev.zip;
+                e.last_update = ev.last_update;
 
                 _events.Add(e);
             }
@@ -209,6 +213,11 @@ namespace overrideSocial
             return select_list(active).Where(x => x.start <= start).Where(x => x.end <= end).ToList();
         }
 
+        public List<Event> ready_for_pull()
+        {
+            return select_list(true).Where(x => x.last_update.AddMinutes(x.interval) <= DateTime.Now).ToList();
+        }
+
         #endregion
     }
 
@@ -236,6 +245,7 @@ namespace overrideSocial
         public string created_by { get; set; }
         public Int32 created_by_int { get; set; }
         public DateTime created_date { get; set; }
+        public DateTime last_update { get; set; }
     }
 
     #endregion

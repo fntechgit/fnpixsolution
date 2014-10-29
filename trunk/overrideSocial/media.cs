@@ -6,8 +6,14 @@ namespace overrideSocial
 {
     public class mediaManager
     {
+        #region declarations
+
         FNTech_MediaDataContext db = new FNTech_MediaDataContext();
         settings _settings = new settings();
+
+        #endregion
+
+        #region controllers
 
         public Media add(Media m)
         {
@@ -103,6 +109,46 @@ namespace overrideSocial
             return _entries;
         }
 
+        public List<Media> get_all(Int32 event_id)
+        {
+            List<Media> _entries = new List<Media>();
+
+            var result = from themedia in db.medias
+                         where themedia.event_id == event_id
+                         orderby themedia.createdate descending
+                         select themedia;
+
+            foreach (var item in result)
+            {
+                Media m = new Media();
+
+                m.createdate = Convert.ToDateTime(item.createdate);
+                m.description = item.description;
+                m.full_name = item.full_name;
+                m.id = item.id;
+                m.latitude = item.latitude;
+                m.likes = item.likes;
+                m.link = item.link;
+                m.location_name = item.location_name;
+                m.longitude = item.longitude;
+                m.profilepic = item.profilepic;
+                m.service = item.service;
+                m.username = item.username;
+                m.source_id = item.source_id;
+                m.source = item.source;
+                m.tags = item.tags;
+                m.approved = item.approved;
+                m.approved_by = item.approved_by;
+                m.approved_date = item.approved_date;
+                m.event_id = item.event_id;
+                m.tag_id = item.tag_id;
+
+                _entries.Add(m);
+            }
+
+            return _entries;
+        }
+
         public List<Media> get_reverse()
         {
             List<Media> _entries = new List<Media>();
@@ -147,9 +193,19 @@ namespace overrideSocial
             return get_recent().Where(x => x.approved == false).ToList();
         }
 
+        public List<Media> get_unapproved(Int32 event_id)
+        {
+            return get_all(event_id).Where(x => x.approved == false).ToList();
+        }
+
         public List<Media> get_instagram()
         {
             return get_recent().Where(x => x.service == "Instagram").Where(x => x.approved == true).ToList();
+        }
+
+        public List<Media> get_instagram(Int32 event_id)
+        {
+            return get_all(event_id).Where(x => x.service == "Instagram").Where(x => x.approved == true).ToList();
         }
 
         public List<Media> get_instagram_reverse()
@@ -160,6 +216,11 @@ namespace overrideSocial
         public List<Media> get_twitter()
         {
             return get_recent().Where(x => x.service == "Twitter").Where(x => x.approved == true).ToList();
+        }
+
+        public List<Media> get_twitter(Int32 event_id)
+        {
+            return get_all(event_id).Where(x => x.service == "Twitter").Where(x => x.approved == true).ToList();
         }
 
         public List<Media> get_twitter_reverse()
@@ -223,10 +284,15 @@ namespace overrideSocial
             md.approved_date = m.approved_date;
             md.id = m.id;
             md.event_id = m.event_id;
+            md.tag_id = m.tag_id;
 
             return md;
         }
+
+        #endregion
     }
+
+    #region Model
 
     public class Media
     {
@@ -255,4 +321,6 @@ namespace overrideSocial
         public Int32 event_id { get; set; }
         public Int32 tag_id { get; set; }
     }
+
+    #endregion
 }

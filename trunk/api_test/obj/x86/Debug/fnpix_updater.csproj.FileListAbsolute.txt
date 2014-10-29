@@ -1,0 +1,17 @@
+E:\projects\facebook_photo_software\api_test\bin\Debug\api_test.exe.config
+E:\projects\facebook_photo_software\api_test\bin\Debug\api_test.exe
+E:\projects\facebook_photo_software\api_test\bin\Debug\api_test.pdb
+E:\projects\facebook_photo_software\api_test\bin\Debug\overrideSocial.dll
+E:\projects\facebook_photo_software\api_test\bin\Debug\TweetSharp.dll
+E:\projects\facebook_photo_software\api_test\bin\Debug\InstaSharp.dll
+E:\projects\facebook_photo_software\api_test\bin\Debug\Newtonsoft.Json.dll
+E:\projects\facebook_photo_software\api_test\bin\Debug\Facebook.dll
+E:\projects\facebook_photo_software\api_test\bin\Debug\Hammock.ClientProfile.dll
+E:\projects\facebook_photo_software\api_test\bin\Debug\overrideSocial.pdb
+E:\projects\facebook_photo_software\api_test\bin\Debug\TweetSharp.pdb
+E:\projects\facebook_photo_software\api_test\bin\Debug\Newtonsoft.Json.xml
+E:\projects\facebook_photo_software\api_test\bin\Debug\Facebook.xml
+E:\projects\facebook_photo_software\api_test\bin\Debug\Hammock.ClientProfile.pdb
+E:\projects\facebook_photo_software\api_test\obj\x86\Debug\fnpix_updater.csprojResolveAssemblyReference.cache
+E:\projects\facebook_photo_software\api_test\obj\x86\Debug\api_test.exe
+E:\projects\facebook_photo_software\api_test\obj\x86\Debug\api_test.pdb

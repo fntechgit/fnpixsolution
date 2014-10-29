@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "overrideSocial", "overrideSocial\overrideSocial.csproj", "{44FF47B2-421C-4D11-8EF1-4F4A47E3D056}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api_test", "api_test\api_test.csproj", "{8070BC0B-796A-49B9-A6D8-D86D823936AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fnpix_updater", "api_test\fnpix_updater.csproj", "{8070BC0B-796A-49B9-A6D8-D86D823936AC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fnpix", "fnpix\fnpix.csproj", "{2FDCEB23-4644-45BC-9079-13AB0A2329F1}"
 EndProject

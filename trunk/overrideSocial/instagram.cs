@@ -13,7 +13,7 @@ namespace overrideSocial
         mediaManager _media = new mediaManager();
 
         // pull by Instagram Hashtag
-        public Int32 fetch(string tag, Int32 count)
+        public Int32 fetch(string tag, Int32 count, Int32 event_id, Int32 tag_id)
         {
             Int32 total_count = 0;
 
@@ -34,6 +34,8 @@ namespace overrideSocial
                 m.width = item.Images.StandardResolution.Width;
                 m.height = item.Images.StandardResolution.Height;
                 m.link = item.Link;
+                m.event_id = event_id;
+                m.tag_id = tag_id;
 
                 dynamic dyn = JsonConvert.DeserializeObject(item.Caption);
 
@@ -63,14 +65,14 @@ namespace overrideSocial
         }
 
         // pull by Instagram username
-        public Int32 fetch(string username, Int32 count, Boolean is_user)
+        public Int32 fetch(string username, Int32 count, Boolean is_user, Int32 event_id, Int32 tag_id)
         {
             Int32 total_count = 0;
 
             if (!is_user)
             {
                 // get by hashtag
-                return fetch(username, count);
+                return fetch(username, count, event_id, tag_id);
             }
             else
             {
@@ -101,6 +103,8 @@ namespace overrideSocial
                     m.width = item.Images.StandardResolution.Width;
                     m.height = item.Images.StandardResolution.Height;
                     m.link = item.Link;
+                    m.event_id = event_id;
+                    m.tag_id = tag_id;
 
                     dynamic dyn = JsonConvert.DeserializeObject(item.Caption);
 

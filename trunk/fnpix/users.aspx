@@ -64,13 +64,19 @@
                         <li class="nav-active">
 		                    <a href="/users">
 		                        <i class="fa fa-users" aria-hidden="true"></i>
-		                        <span>Manage Users</span>
+		                        <span>Users</span>
 		                    </a>
 		                </li>
                         <li>
 		                    <a href="/preferences">
 		                        <i class="fa fa-gears" aria-hidden="true"></i>
 		                        <span>System Preferences</span>
+		                    </a>
+		                </li>
+                         <li id="event_link" runat="server" Visible="false">
+		                    <a href="/events">
+		                        <i class="fa fa-calendar" aria-hidden="true"></i>
+		                        <span>Events</span>
 		                    </a>
 		                </li>
 		            </ul>

@@ -13,6 +13,15 @@ namespace fnpix {
     public partial class add_user {
         
         /// <summary>
+        /// event_link control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl event_link;
+        
+        /// <summary>
         /// pnl_success control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace fnpix {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox last_name;
+        
+        /// <summary>
+        /// security control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList security;
         
         /// <summary>
         /// company control.
@@ -119,5 +137,14 @@ namespace fnpix {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_process;
+        
+        /// <summary>
+        /// btn_add_permission control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink btn_add_permission;
     }
 }

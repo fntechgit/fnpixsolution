@@ -1,7 +1,7 @@
 ﻿using System;
 using overrideSocial;
 
-namespace api_test
+namespace fnpix_updater
 {
     class Program
     {
@@ -21,68 +21,94 @@ namespace api_test
 
             Int32 fetch_count = _settings.refresh_count();
 
+            overrideSocial.events _events = new overrideSocial.events();
+
             Console.WriteLine("######################## BEGINNING UPDATE SEQUENCE ########################");
             Console.WriteLine("");
 
-            Console.WriteLine("Checking for Active Tags & Usernames to Import...");
+            Console.WriteLine("######################## CHECKING FOR EVENTS THAT ARE READY FOR UPDATE ########################");
             Console.WriteLine("");
 
-            foreach (Tag t in _tags.get_active())
+            // loop through EVENTS that are DUE and UPDATE
+            foreach (Event ev in _events.ready_for_pull())
             {
-                Console.WriteLine("Beginning Evaluation for Term: " + t.value);
+                Console.WriteLine(ev.title + " with last update time of: " + ev.last_update.ToShortDateString() + " @ " + ev.last_update.ToShortTimeString());
                 Console.WriteLine("");
 
-                if (t.instagram)
+                Console.WriteLine("Checking for Active Tags & Usernames to Import...");
+                Console.WriteLine("");
+
+                instagram_count = 0;
+                twitter_count = 0;
+                facebook_count = 0;
+                total_count = 0;
+
+                foreach (Tag t in _tags.select(ev.id, true))
                 {
-                    Console.WriteLine("###################### INSTAGRAM PULL #########################");
+                    Console.WriteLine("Beginning Evaluation for Term: " + t.value);
                     Console.WriteLine("");
 
-                    if (t.is_tag)
+                    if (t.instagram)
                     {
-                        Console.WriteLine("Importing Records from Instagram for Hashtag #" + t.value);
+                        Console.WriteLine("###################### INSTAGRAM PULL #########################");
+                        Console.WriteLine("");
 
-                        instagram_count = instagram_count + _instagram.fetch(t.value, fetch_count);
+                        if (t.is_tag)
+                        {
+                            Console.WriteLine("Importing Records from Instagram for Hashtag #" + t.value);
+
+                            instagram_count = instagram_count + _instagram.fetch(t.value, fetch_count, ev.id, t.id);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Importing Records from Instagram for Username @" + t.value);
+
+                            instagram_count = instagram_count + _instagram.fetch(t.value, fetch_count, true, ev.id, t.id);
+                        }
                     }
-                    else
-                    {
-                        Console.WriteLine("Importing Records from Instagram for Username @" + t.value);
 
-                        instagram_count = instagram_count + _instagram.fetch(t.value, fetch_count, true);
+                    if (t.twitter)
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("###################### TWITTER PULL #########################");
+                        Console.WriteLine("");
+
+                        if (t.is_tag)
+                        {
+                            Console.WriteLine("Importing Records from Twitter for Hashtag #" + t.value);
+
+                            twitter_count = twitter_count + _twitter.fetch(t.value, fetch_count, ev.id, t.id);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Importing Records from Twitter for Username @" + t.value);
+
+                            twitter_count = twitter_count + _twitter.fetch(t.value, fetch_count, true, ev.id, t.id);
+                        }
                     }
                 }
 
-                if (t.twitter)
-                {
-                    Console.WriteLine("");
-                    Console.WriteLine("###################### TWITTER PULL #########################");
-                    Console.WriteLine("");
+                total_count = instagram_count + twitter_count + facebook_count;
 
-                    if (t.is_tag)
-                    {
-                        Console.WriteLine("Importing Records from Twitter for Hashtag #" + t.value);
+                Statistic s = new Statistic();
 
-                        twitter_count = twitter_count + _twitter.fetch(t.value, fetch_count);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Importing Records from Twitter for Username @" + t.value);
+                s.facebook = facebook_count;
+                s.instagram = instagram_count;
+                s.pulldate = DateTime.Now;
+                s.total = total_count;
+                s.twitter = twitter_count;
+                s.event_id = ev.id;
 
-                        twitter_count = twitter_count + _twitter.fetch(t.value, fetch_count, true);
-                    }
-                }
+                _stats.add(s);
+
+                ev.last_update = DateTime.Now;
+
+                _events.update(ev);
+
+                Console.WriteLine("");
+                Console.WriteLine("######################## ENDING UPDATE FOR EVENT " + ev.title + " ########################");
+
             }
-
-            total_count = instagram_count + twitter_count + facebook_count;
-
-            Statistic s = new Statistic();
-
-            s.facebook = facebook_count;
-            s.instagram = instagram_count;
-            s.pulldate = DateTime.Now;
-            s.total = total_count;
-            s.twitter = twitter_count;
-
-            _stats.add(s);
 
             Console.WriteLine("");
             Console.WriteLine("######################## ENDING UPDATE SEQUENCE ########################");

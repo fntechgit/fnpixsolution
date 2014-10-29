@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq.Expressions;
 using TweetSharp;
 
 namespace overrideSocial
@@ -9,7 +10,7 @@ namespace overrideSocial
         mediaManager _media = new mediaManager();
 
         // get by twitter hashtag
-        public Int32 fetch(string tag, Int32 count)
+        public Int32 fetch(string tag, Int32 count, Int32 event_id, Int32 tag_id)
         {
             Int32 total = 0;
 
@@ -35,8 +36,12 @@ namespace overrideSocial
                 Console.WriteLine(ex.InnerException);
             }
 
-            foreach (var item in tweets.Statuses)
+            try
+                    {
+            
+                foreach (var item in tweets.Statuses)
                 {
+                    
                     Media m = new Media();
 
                     m.added_to_db_date = DateTime.Now;
@@ -60,6 +65,8 @@ namespace overrideSocial
                     m.link = "https://twitter.com/" + item.User.ScreenName + "/status/" + item.Id.ToString();
                     m.profilepic = item.User.ProfileImageUrl;
                     m.service = "Twitter";
+                    m.event_id = event_id;
+                    m.tag_id = tag_id;
 
                     foreach (var hashtag in item.Entities.HashTags)
                     {
@@ -85,13 +92,22 @@ namespace overrideSocial
 
                         total++;
                     }
+                    
+                }
+
+                    }
+            catch (NullReferenceException ex)
+            {
+                Console.WriteLine(ex.Message + ": " + ex.InnerException);
             }
+
+            
 
             return total;
         }
 
         // get by twitter username
-        public Int32 fetch(string tag, Int32 count, Boolean is_username)
+        public Int32 fetch(string tag, Int32 count, Boolean is_username, Int32 event_id, Int32 tag_id)
         {
             Int32 total = 0;
 
@@ -141,6 +157,9 @@ namespace overrideSocial
                 }
 
                 m.username = tag;
+
+                m.event_id = event_id;
+                m.tag_id = tag_id;
 
                 // ################## NOW THE IMAGE STUFF 
                 foreach (TwitterMedia photo in item.Entities.Media)

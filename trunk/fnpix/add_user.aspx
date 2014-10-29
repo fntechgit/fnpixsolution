@@ -65,13 +65,19 @@
                         <li class="nav-active">
 		                    <a href="/users">
 		                        <i class="fa fa-users" aria-hidden="true"></i>
-		                        <span>Manage Users</span>
+		                        <span>Users</span>
 		                    </a>
 		                </li>
                         <li>
 		                    <a href="/preferences">
 		                        <i class="fa fa-gears" aria-hidden="true"></i>
 		                        <span>System Preferences</span>
+		                    </a>
+		                </li>
+                        <li id="event_link" runat="server" Visible="false">
+		                    <a href="/events">
+		                        <i class="fa fa-calendar" aria-hidden="true"></i>
+		                        <span>Events</span>
 		                    </a>
 		                </li>
 		            </ul>
@@ -142,6 +148,17 @@
 											</div>
                                             
                                             <div class="form-group">
+												<label class="col-md-3 control-label">Master Security Level</label>
+												<div class="col-md-6">
+												    <asp:DropDownList runat="server" ID="security" data-plugin-multiselect>
+                                                        <asp:ListItem Value="1000">Content Editor</asp:ListItem>
+                                                        <asp:ListItem Value="1001">Event Administrator</asp:ListItem>
+                                                        <asp:ListItem Value="1002">System Administrator</asp:ListItem>
+                                                    </asp:DropDownList>
+												</div>
+											</div>
+                                            
+                                            <div class="form-group">
 												<label class="col-md-3 control-label" for="search_text">Company</label>
 												<div class="col-md-6">
 												    <asp:TextBox runat="server" ID="company" CssClass="form-control" ClientIDMode="Static" />
@@ -203,6 +220,7 @@
 												<label class="control-label col-md-3"></label>
 												<div class="col-md-9">
 													<asp:Button runat="server" ID="btn_process" CssClass="mb-xs mt-xs mr-xs btn btn-primary" Text="Submit" OnClick="update" />
+                                                    <asp:HyperLink runat="server" ID="btn_add_permission" CssClass="mb-xs mt-xs mr-xs btn btn-primary" Visible="false">Add Permission</asp:HyperLink>
 												</div>
 											</div>
                                             

@@ -48,7 +48,7 @@ namespace fnpix
                 }
             }
 
-            List<Media> _unapproved = _media.get_unapproved();
+            List<Media> _unapproved = _media.get_unapproved(Convert.ToInt32(Session["event_id"].ToString()));
 
             unapproved_count = _unapproved.Count.ToString("0.#");
         }
