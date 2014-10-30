@@ -18,14 +18,50 @@ namespace fnpix.services
     [System.Web.Script.Services.ScriptService]
     public class manager : System.Web.Services.WebService
     {
+        private overrideSocial.mediaManager _media = new overrideSocial.mediaManager();
+        private overrideSocial.dropbox _dropbox = new overrideSocial.dropbox();
 
-        [WebMethod]
-        public string HelloWorld()
+        [WebMethod(Description = "Approve Dropbox Items Async", EnableSession = true)]
+        public Boolean approve_dropbox(string images)
         {
-            return "Hello World";
+            if (Context.Session["user_id"] != null)
+            {
+                // process the images
+                List<string> _images = images.Split(',').ToList<string>();
+
+                foreach (string s in _images)
+                {
+                    _dropbox.approve(Convert.ToInt32(s), Convert.ToInt32(Context.Session["user_id"] as string));
+                }
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
-        private overrideSocial.mediaManager _media = new overrideSocial.mediaManager();
+        [WebMethod(Description = "Unapprove Dropbox List", EnableSession = true)]
+        public Boolean unapprove_dropbox(string images)
+        {
+            if (Context.Session["user_id"] != null)
+            {
+                // process the images
+                List<string> _images = images.Split(',').ToList<string>();
+
+                foreach (string s in _images)
+                {
+                    _dropbox.unapprove(Convert.ToInt32(s));
+                }
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         [WebMethod(Description = "Approve Items Async", EnableSession = true)]
         public Boolean approve_list(string images)

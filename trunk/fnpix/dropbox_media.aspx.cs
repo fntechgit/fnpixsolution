@@ -51,20 +51,24 @@ namespace fnpix
 
         private void render_media(List<Dropbox> result)
         {
-            string approve = "approved";
+            string approve, approved_label, approve_action;
 
             foreach (Dropbox m in result)
             {
                 if (m.approved)
                 {
-                    approve = "approved";
+                    approve = @"approved";
+                    approved_label = @"UNAPPROVE";
+                    approve_action = @"unapprove";
                 }
                 else
                 {
-                    approve = "unapproved";
+                    approve = @"unapproved";
+                    approved_label = @"APPROVE";
+                    approve_action = @"approve";
                 }
 
-                pn_photos.Controls.Add(new LiteralControl("<div class=\"isotope-item " + approve + " col-sm-6 col-md-4 col-lg-3\"><div class=\"thumbnail\"><div class=\"thumb-preview\"><a class=\"thumb-image\" href=\"" + m.stream + "\"><img src=\"" + m.stream + "\" class=\"img-responsive\" alt=\"" + m.filename + "\"></a><div class=\"mg-thumb-options\"><div class=\"mg-zoom\"><i class=\"fa fa-search\"></i></div><div class=\"mg-toolbar\"><div class=\"mg-option checkbox-custom checkbox-inline\"><input type=\"checkbox\" id=\"file_" + m.id.ToString() + "\" value=\"" + m.id.ToString() + "\"><label for=\"file_" + m.id.ToString() + "\">SELECT</label></div><div class=\"mg-group pull-right\"><a href=\"/dropbox/approve/" + m.id + "\">APPROVE</a><button class=\"dropdown-toggle mg-toggle\" type=\"button\" data-toggle=\"dropdown\"><i class=\"fa fa-caret-up\"></i></button><ul class=\"dropdown-menu mg-menu\" role=\"menu\"><li><a href=\"" + m.stream + "\"><i class=\"fa fa-download\"></i> Download</a></li></ul></div></div></div></div><h5 class=\"mg-title text-semibold\">" + m.username + "<small> <a href=\"" + m.stream + "\" target=\"_blank\">Detail</a></small></h5><div class=\"mg-description\"><small class=\"pull-left text-muted\">" + m.size + "</small><small class=\"pull-right text-muted\">" + Convert.ToDateTime(m.modified_date).ToShortDateString() + "</small></div></div></div>"));
+                pn_photos.Controls.Add(new LiteralControl("<div class=\"isotope-item " + approve + " col-sm-6 col-md-4 col-lg-3\"><div class=\"thumbnail\"><div class=\"thumb-preview\"><a class=\"thumb-image\" href=\"" + m.stream + "\"><img src=\"" + m.stream + "\" class=\"img-responsive\" alt=\"" + m.filename + "\"></a><div class=\"mg-thumb-options\"><div class=\"mg-zoom\"><i class=\"fa fa-search\"></i></div><div class=\"mg-toolbar\"><div class=\"mg-option checkbox-custom checkbox-inline\"><input type=\"checkbox\" id=\"file_" + m.id.ToString() + "\" value=\"" + m.id.ToString() + "\"><label for=\"file_" + m.id.ToString() + "\">SELECT</label></div><div class=\"mg-group pull-right\"><a href=\"/dropbox/" + approve_action + "/" + m.id + "\">" + approved_label + "</a><button class=\"dropdown-toggle mg-toggle\" type=\"button\" data-toggle=\"dropdown\"><i class=\"fa fa-caret-up\"></i></button><ul class=\"dropdown-menu mg-menu\" role=\"menu\"><li><a href=\"" + m.stream + "\"><i class=\"fa fa-download\"></i> Download</a></li></ul></div></div></div></div><h5 class=\"mg-title text-semibold\">" + m.username + "<small> <a href=\"" + m.stream + "\" target=\"_blank\">Detail</a></small></h5><div class=\"mg-description\"><small class=\"pull-left text-muted\">" + m.size + "</small><small class=\"pull-right text-muted\">" + Convert.ToDateTime(m.modified_date).ToShortDateString() + "</small></div></div></div>"));
             }
         }
     }

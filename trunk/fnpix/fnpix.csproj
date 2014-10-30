@@ -1604,10 +1604,12 @@
     <Content Include="delete_user.aspx" />
     <Content Include="dropbox.aspx" />
     <Content Include="dropbox_media.aspx" />
+    <Content Include="dropbox_update.aspx" />
     <Content Include="events.aspx" />
     <Content Include="global.asax" />
     <Content Include="js\jquery.cycle2.js" />
     <Content Include="js\jquery.flip.js" />
+    <Content Include="js\jquery.fnpix.dropbox.js" />
     <Content Include="js\jquery.fnpix.media.js" />
     <Content Include="login.aspx" />
     <Content Include="logout.aspx" />
@@ -1718,6 +1720,13 @@
     </Compile>
     <Compile Include="dropbox_media.aspx.designer.cs">
       <DependentUpon>dropbox_media.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dropbox_update.aspx.cs">
+      <DependentUpon>dropbox_update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dropbox_update.aspx.designer.cs">
+      <DependentUpon>dropbox_update.aspx</DependentUpon>
     </Compile>
     <Compile Include="events.aspx.cs">
       <DependentUpon>events.aspx</DependentUpon>

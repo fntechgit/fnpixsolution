@@ -56,7 +56,7 @@
                         <li>
 		                    <a href="/dropbox">
 		                        <span class="pull-right label label-primary"><%= facebook_media %></span>
-		                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+		                        <i class="fa fa-dropbox" aria-hidden="true"></i>
 		                        <span>Dropbox Media</span>
 		                    </a>
 		                </li>

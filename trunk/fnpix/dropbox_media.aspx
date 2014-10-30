@@ -3,7 +3,7 @@
     
     <!-- Specific Page Vendor CSS -->	<link rel="stylesheet" href="/assets/vendor/isotope/jquery.isotope.css" />
     
-    <script type="text/javascript" src="/js/jquery.fnpix.media.js"></script>
+    <script type="text/javascript" src="/js/jquery.fnpix.dropbox.js"></script>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="navigation_sidebar" runat="server">
