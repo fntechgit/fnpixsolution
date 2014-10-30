@@ -74,6 +74,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FNTech_Media.dbml</DependentUpon>
     </Compile>
+    <Compile Include="functions.cs" />
     <Compile Include="instagram.cs" />
     <Compile Include="log.cs" />
     <Compile Include="media.cs" />

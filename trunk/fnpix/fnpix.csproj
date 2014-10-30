@@ -1620,6 +1620,8 @@
     <Content Include="visual\bullet.png" />
     <Content Include="visual\dropbox.aspx" />
     <Content Include="visual\effect1.aspx" />
+    <Content Include="visual\effect2.aspx" />
+    <Content Include="visual\fnpix.displays.css" />
     <Content Include="visual\jquery.imagefit.js" />
     <Content Include="visual\js-image-slider.css" />
     <Content Include="visual\js-image-slider.js" />
@@ -1798,6 +1800,13 @@
     </Compile>
     <Compile Include="visual\effect1.aspx.designer.cs">
       <DependentUpon>effect1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="visual\effect2.aspx.cs">
+      <DependentUpon>effect2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="visual\effect2.aspx.designer.cs">
+      <DependentUpon>effect2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

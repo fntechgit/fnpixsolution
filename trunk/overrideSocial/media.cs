@@ -102,6 +102,8 @@ namespace overrideSocial
                 m.approved_date = item.approved_date;
                 m.event_id = item.event_id;
                 m.tag_id = item.tag_id;
+                m.latitude = item.latitude;
+                m.longitude = item.longitude;
                 
                 _entries.Add(m);
             }

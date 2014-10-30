@@ -10,7 +10,7 @@
 namespace fnpix.visual {
     
     
-    public partial class dropbox {
+    public partial class effect2 {
         
         /// <summary>
         /// form1 control.
@@ -22,30 +22,39 @@ namespace fnpix.visual {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// ph_images control.
+        /// hdn_max control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder ph_images;
+        protected global::System.Web.UI.WebControls.HiddenField hdn_max;
         
         /// <summary>
-        /// hdn_effect control.
+        /// hdn_min control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdn_effect;
+        protected global::System.Web.UI.WebControls.HiddenField hdn_min;
         
         /// <summary>
-        /// hdn_timeout control.
+        /// hdn_interval control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdn_timeout;
+        protected global::System.Web.UI.WebControls.HiddenField hdn_interval;
+        
+        /// <summary>
+        /// ph_photos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder ph_photos;
     }
 }
