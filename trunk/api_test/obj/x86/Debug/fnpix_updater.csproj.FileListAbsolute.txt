@@ -15,3 +15,6 @@ E:\projects\facebook_photo_software\api_test\bin\Debug\Hammock.ClientProfile.pdb
 E:\projects\facebook_photo_software\api_test\obj\x86\Debug\fnpix_updater.csprojResolveAssemblyReference.cache
 E:\projects\facebook_photo_software\api_test\obj\x86\Debug\api_test.exe
 E:\projects\facebook_photo_software\api_test\obj\x86\Debug\api_test.pdb
+E:\projects\facebook_photo_software\api_test\bin\Debug\DropNet.dll
+E:\projects\facebook_photo_software\api_test\bin\Debug\RestSharp.dll
+E:\projects\facebook_photo_software\api_test\bin\Debug\RestSharp.xml

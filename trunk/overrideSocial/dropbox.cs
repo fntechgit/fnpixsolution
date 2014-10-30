@@ -229,6 +229,82 @@ namespace overrideSocial
 
             return is_video;
         }
+
+        public Boolean log_file(DropNet.Models.MetaData md, Event ev)
+        {
+            DropNetClient _client = new DropNetClient(_settings.dropbox_api_key(), _settings.dropbox_api_secret(), ev.request_token, ev.access_token);
+
+            Console.WriteLine("Extension: " + md.Extension);
+            Console.WriteLine("Name: " + md.Name);
+            Console.WriteLine("Path: " + md.Path);
+            Console.WriteLine("Root: " + md.Root);
+            Console.WriteLine("Size: " + md.Size);
+            Console.WriteLine("Hash: " + md.Hash);
+            Console.WriteLine("Icon: " + md.Icon);
+            Console.WriteLine("REV: " + md.Rev);
+            Console.WriteLine("REVISION: " + md.Revision.ToString());
+            Console.WriteLine("Modified: " + md.Modified);
+            Console.WriteLine("Modified Date: " + md.ModifiedDate.ToShortDateString());
+
+            var mediaLink = _client.GetMedia(md.Path);
+
+            Console.WriteLine("Media Link: " + mediaLink.Url);
+            Console.WriteLine("Expires: " + mediaLink.Expires);
+
+            Console.WriteLine("");
+
+            Dropbox d = new Dropbox();
+
+            Boolean moderate = _settings.dropbox_moderate();
+
+            if (!moderate)
+            {
+                d.approved = true;
+                d.approved_by = 1;
+                d.approved_date = DateTime.Now;
+            }
+
+            d.create_date = DateTime.Now;
+            d.email = ev.dropbox_email;
+            d.event_id = ev.id;
+            d.extension = md.Extension;
+            d.filename = md.Name;
+
+            if (video_check(d.extension))
+            {
+                d.is_video = true;
+            }
+            else
+            {
+                d.is_video = false;
+            }
+
+            d.modified_date = md.ModifiedDate;
+            d.path = md.Path;
+            d.size = md.Size;
+            d.stream = mediaLink.Url;
+            d.uid = ev.dropbox_uid.ToString();
+            d.username = ev.dropbox_username;
+
+            Dropbox db_test = select(d.path);
+
+            if (db_test.id > 0)
+            {
+                d.id = db_test.id;
+
+                update(d);
+
+                Console.WriteLine(d.filename + " Updated");
+            }
+            else
+            {
+                insert(d);
+
+                Console.WriteLine(d.filename + " Inserted");
+            }
+
+            return true;
+        }
     }
 
     public class Dropbox

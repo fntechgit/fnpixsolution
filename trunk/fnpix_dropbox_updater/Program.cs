@@ -37,71 +37,19 @@ namespace fnpix_dropbox_updater
 
                 foreach (DropNet.Models.MetaData md in metaDeta.Contents)
                 {
-                    Console.WriteLine("Extension: " + md.Extension);
-                    Console.WriteLine("Name: " + md.Name);
-                    Console.WriteLine("Path: " + md.Path);
-                    Console.WriteLine("Root: " + md.Root);
-                    Console.WriteLine("Size: " + md.Size);
-                    Console.WriteLine("Hash: " + md.Hash);
-                    Console.WriteLine("Icon: " + md.Icon);
-                    Console.WriteLine("REV: " + md.Rev);
-                    Console.WriteLine("REVISION: " + md.Revision.ToString());
-                    Console.WriteLine("Modified: " + md.Modified);
-                    Console.WriteLine("Modified Date: " + md.ModifiedDate.ToShortDateString());
-
-                    var mediaLink = _client.GetMedia(md.Path);
-
-                    Console.WriteLine("Media Link: " + mediaLink.Url);
-                    Console.WriteLine("Expires: " + mediaLink.Expires);
-
-                    Console.WriteLine("");
-
-                    Dropbox d = new Dropbox();
-
-                    if (!moderate)
+                    if (md.Is_Dir)
                     {
-                        d.approved = true;
-                        d.approved_by = 1;
-                        d.approved_date = DateTime.Now;
-                    }
-
-                    d.create_date = DateTime.Now;
-                    d.email = ev.dropbox_email;
-                    d.event_id = ev.id;
-                    d.extension = md.Extension;
-                    d.filename = md.Name;
-
-                    if (_dropbox.video_check(d.extension))
-                    {
-                        d.is_video = true;
+                        foreach (DropNet.Models.MetaData md2 in _client.GetMetaData(md.Path).Contents)
+                        {
+                            if (!md2.Is_Dir)
+                            {
+                                _dropbox.log_file(md2, ev);
+                            }
+                        }
                     }
                     else
                     {
-                        d.is_video = false;
-                    }
-
-                    d.modified_date = md.ModifiedDate;
-                    d.path = md.Path;
-                    d.size = md.Size;
-                    d.stream = mediaLink.Url;
-                    d.uid = ev.dropbox_uid.ToString();
-                    d.username = ev.dropbox_username;
-
-                    Dropbox db_test = _dropbox.@select(d.path);
-
-                    if (db_test.id > 0)
-                    {
-                        d.id = db_test.id;
-
-                        _dropbox.update(d);
-
-                        Console.WriteLine(d.filename + " Updated");
-                    }
-                    else
-                    {
-                        _dropbox.insert(d);
-
-                        Console.WriteLine(d.filename + " Inserted");
+                        _dropbox.log_file(md, ev);
                     }
                 }
 
