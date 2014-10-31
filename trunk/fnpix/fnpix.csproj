@@ -1620,14 +1620,117 @@
     <Content Include="services\media.asmx" />
     <Content Include="users.aspx" />
     <Content Include="visual\bullet.png" />
+    <Content Include="visual\css\crystal-gallery-system.css" />
+    <Content Include="visual\css\crystal-gallery.css" />
+    <Content Include="visual\demo.css" />
     <Content Include="visual\dropbox.aspx" />
     <Content Include="visual\effect1.aspx" />
     <Content Include="visual\effect2.aspx" />
+    <Content Include="visual\effect3.aspx" />
+    <Content Include="visual\effect4.aspx" />
+    <Content Include="visual\examples\dummy\abstract.jpg" />
+    <Content Include="visual\examples\dummy\abstract_thumb.jpg" />
+    <Content Include="visual\examples\examples.css" />
+    <Content Include="visual\examples\fullscreen.html" />
+    <Content Include="visual\examples\fullwidth.html" />
+    <Content Include="visual\examples\slider.html" />
+    <Content Include="visual\examples\variations.html" />
     <Content Include="visual\fnpix.displays.css" />
+    <Content Include="visual\gfx\20\btn-autopause.png" />
+    <Content Include="visual\gfx\20\btn-autoplay.png" />
+    <Content Include="visual\gfx\20\btn-contact.png" />
+    <Content Include="visual\gfx\20\btn-from-fullscreen.png" />
+    <Content Include="visual\gfx\20\btn-fullscreen.png" />
+    <Content Include="visual\gfx\20\btn-hide-bottom.png" />
+    <Content Include="visual\gfx\20\btn-hide-left.png" />
+    <Content Include="visual\gfx\20\btn-hide-right.png" />
+    <Content Include="visual\gfx\20\btn-hide-top.png" />
+    <Content Include="visual\gfx\20\btn-info.png" />
+    <Content Include="visual\gfx\30\btn-autopause.png" />
+    <Content Include="visual\gfx\30\btn-autoplay.png" />
+    <Content Include="visual\gfx\30\btn-contact.png" />
+    <Content Include="visual\gfx\30\btn-from-fullscreen.png" />
+    <Content Include="visual\gfx\30\btn-fullscreen.png" />
+    <Content Include="visual\gfx\30\btn-hide-bottom.png" />
+    <Content Include="visual\gfx\30\btn-hide-left.png" />
+    <Content Include="visual\gfx\30\btn-hide-right.png" />
+    <Content Include="visual\gfx\30\btn-hide-top.png" />
+    <Content Include="visual\gfx\30\btn-info.png" />
+    <Content Include="visual\gfx\bg-dark.png" />
+    <Content Include="visual\gfx\bg-loader.png" />
+    <Content Include="visual\gfx\btn-close.png" />
+    <Content Include="visual\gfx\btn-next.png" />
+    <Content Include="visual\gfx\btn-prev.png" />
+    <Content Include="visual\gfx\btn-video.png" />
+    <Content Include="visual\gfx\cursor-closedhand.cur" />
+    <Content Include="visual\gfx\cursor-openhand.cur" />
+    <Content Include="visual\gfx\social-500px.png" />
+    <Content Include="visual\gfx\social-deviantart.png" />
+    <Content Include="visual\gfx\social-facebook.png" />
+    <Content Include="visual\gfx\social-flickr.png" />
+    <Content Include="visual\gfx\social-google.png" />
+    <Content Include="visual\gfx\social-instagram.png" />
+    <Content Include="visual\gfx\social-social-2.png" />
+    <Content Include="visual\gfx\social-twitter.png" />
+    <Content Include="visual\images\border.png" />
+    <Content Include="visual\images\controls.png" />
+    <Content Include="visual\images\loading.gif" />
+    <Content Include="visual\images\loading_background.png" />
+    <Content Include="visual\images\overlay.png" />
     <Content Include="visual\jquery.imagefit.js" />
     <Content Include="visual\js-image-slider.css" />
     <Content Include="visual\js-image-slider.js" />
+    <Content Include="visual\js\crystalGallery.js" />
+    <Content Include="visual\js\crystalGallery.min.js" />
+    <Content Include="visual\js\crystalGallery.pack.js" />
+    <Content Include="visual\js\jquery.easing.min.js" />
+    <Content Include="visual\js\jquery.mousewheel.min.js" />
     <Content Include="visual\loading.gif" />
+    <Content Include="visual\PolaroidGallery\bg.jpg" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\cata_down.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\cata_over.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\cata_up.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\left_down.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\left_over.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\left_up.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\music-x_down.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\music-x_over.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\music-x_up.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\music_down.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\music_over.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\music_up.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\next_down.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\next_over.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\next_up.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\pause_down.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\pause_over.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\pause_up.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\play_down.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\play_over.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\play_up.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\prev_down.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\prev_over.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\prev_up.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\right_down.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\right_over.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\right_up.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\x_down.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\x_over.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\buttons\x_up.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\mu.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\preloader.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\topBarBg.png" />
+    <Content Include="visual\PolaroidGallery\bi-imgs\wenli.jpg" />
+    <Content Include="visual\PolaroidGallery\fallback\gallery.xml" />
+    <Content Include="visual\PolaroidGallery\fallback\PolaroidGallery.swf" />
+    <Content Include="visual\PolaroidGallery\fallback\readMe.txt" />
+    <Content Include="visual\PolaroidGallery\fallback\swfobject.js" />
+    <Content Include="visual\PolaroidGallery\jquery-1.7.min.js" />
+    <Content Include="visual\PolaroidGallery\jquery.FlashTang.PolaroidGallery.js" />
+    <Content Include="visual\PolaroidGallery\jquery.FlashTang.PolaroidGallery.min.js" />
+    <Content Include="visual\PolaroidGallery\library.js" />
+    <Content Include="visual\PolaroidGallery\music\readMe.txt" />
+    <Content Include="visual\PolaroidGallery\style.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1816,6 +1919,20 @@
     </Compile>
     <Compile Include="visual\effect2.aspx.designer.cs">
       <DependentUpon>effect2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="visual\effect3.aspx.cs">
+      <DependentUpon>effect3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="visual\effect3.aspx.designer.cs">
+      <DependentUpon>effect3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="visual\effect4.aspx.cs">
+      <DependentUpon>effect4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="visual\effect4.aspx.designer.cs">
+      <DependentUpon>effect4.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -2079,9 +2196,17 @@
     <None Include="assets\vendor\style-switcher\less\variables.less" />
     <Content Include="fnpix.master" />
     <Content Include="packages.config" />
+    <None Include="visual\gfx\Thumbs.db" />
+    <None Include="visual\php\getImageData.php" />
+    <None Include="visual\PolaroidGallery\.DS_Store" />
+    <None Include="visual\PolaroidGallery\bi-imgs\.DS_Store" />
+    <None Include="visual\PolaroidGallery\bi-imgs\buttons\.DS_Store" />
+    <None Include="visual\PolaroidGallery\fallback\.DS_Store" />
+    <None Include="visual\PolaroidGallery\music\.DS_Store" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\vendor\flot\examples\gauge\" />
+    <Folder Include="visual\php\cache\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\overrideSocial\overrideSocial.csproj">

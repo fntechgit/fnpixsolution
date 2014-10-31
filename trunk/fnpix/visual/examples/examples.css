@@ -1,0 +1,206 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    font-family: Arial, sans-serif;
+}
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+    outline: none;
+}
+
+img {
+    border: none;
+}
+
+.clear {
+    clear: both;
+    height: 0px;
+    visibility: hidden;
+}
+
+.after-clear:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+
+
+body {
+    background: #000000;    
+}
+
+
+h1, h2, h3, h4 {
+    font-family: 'Cabin Condensed';
+    color: #ffffff;
+    font-size: 60px;       
+    text-align: center;                                                              
+}
+
+h1 a, 
+h2 a {
+    text-decoration: none;
+    display: inline-block;
+    outline: none;
+}
+
+h2 {
+    font-size: 37px;
+    padding-top: 0px;
+    margin-top: -5px;
+}
+
+h3 {
+    font-size: 30px; 
+}
+
+h3.page-teaser {
+    font-size: 21px;
+    font-family: Arial;
+    padding: 40px 0px;
+}
+
+h4 {
+    font-size: 25px;  
+}
+
+a.buy-link-header {
+    left: 50%;
+    margin-left: 340px;
+    position: absolute;
+    top: 36px;
+}
+
+div.fixed-slider {
+    margin: 20px auto;
+    width: 900px;
+}
+
+div.fixed-slider div.crystal-gallery-slider {
+    padding: 10px;
+    width: 880px; 
+    height: 480px;
+}
+                                    
+div.fixed-slider div.crystal-holder,
+div.fixed-slider div.crystal-image, 
+div.fixed-slider div.crystal-thumbnailbg {
+    background: transparent;    
+}
+
+div.crystal-photo-description-inner h3 {
+    font-size: 17px;
+    padding-bottom: 7px;
+    font-family: 'Cabin Condensed';
+    font-weight: bold;
+    text-align: left;
+}
+
+div.crystal-photo-description-inner {
+    line-height: 15px;
+}
+
+div.fullwidth-slider div.crystal-gallery-fullwidth {
+    padding: 0px 0px 10px;
+    width: 100%; 
+    height: 400px;
+}
+
+div.fullwidth-slider div.crystal-thumbnails-left div.crystal-thumbnails-categories {
+    padding: 20px;
+}
+
+div.fullwidth-slider div.crystal-thumbnails-left div.crystal-logo td.crystal-logo-padding {
+    padding: 15px 0px;
+}
+
+div.crystal-gallery-banner {
+    width: 600px;
+    height: 120px;
+    margin: 20px auto 0px;
+    border: 4px solid #232222;
+}       
+
+img.crystal-gallery-banner-shadow {
+    margin: 0px auto;
+    display: block;
+}
+
+div.small-banners-center {
+    width: 608px;
+    margin: 20px auto 0px;
+}
+
+div.crystal-gallery-banner-left {
+    width: 285px;
+    height: 285px;
+    float: left;
+    border: 4px solid #232222;
+}
+
+img.crystal-gallery-banner-left-shadow {
+    width: 285px;
+    height: 15px;
+    float: left;
+    margin-left: 4px;
+}
+
+div.crystal-gallery-banner-right {
+    width: 285px;
+    height: 285px;
+    float: right;
+    border: 4px solid #232222;
+}
+     

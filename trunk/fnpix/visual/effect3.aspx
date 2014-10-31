@@ -1,16 +1,58 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="effect3.aspx.cs" Inherits="fnpix.visual.effect3" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head runat="server">
-    <title></title>
+    <!-- META -->
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		
+	<!-- TITLE -->
+		<title>FNPIX DISPLAY VIEW 3</title>
+		
+	<!-- STYLES -->
+		<link href="//fonts.googleapis.com/css?family=Open+Sans:400,600|Alfa+Slab+One" rel="stylesheet" type="text/css" />
+		<link href="/visual/magicwall.min.css" rel="stylesheet" />
+		<link href="/visual/demo.css" rel="stylesheet" />
+
+		<style type="text/css">
+			html, body, #main-wrap{
+				padding: 0;
+				margin: 0;
+				overflow: hidden;
+				width: 100%;
+				height: 100%;
+			}
+			
+			.magicwall{
+				width: 100%;
+				height: 100%;
+			}
+
+		</style>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    
-    </div>
+    <div id="main-wrap" style="width:1920px;height:1080px;">
+			<div id="demo" class="magicwall">
+				<ul class="magicwall-grid">
+				    <asp:PlaceHolder runat="server" ID="ph_images" />
+				</ul>
+			</div><!-- .magicwall -->
+		</div><!-- #main-wrap -->
+		
+	<!-- SCRIPTS -->
+		<script type="text/javascript" src="/visual/jquery.1.9.1.min.js"></script>
+		<script type="text/javascript" src="/visual/jquery.easing.min.js"></script>
+		<script type="text/javascript" src="/visual/jquery.magicwall.min.js"></script>
+		<script type="text/javascript">
+			$(".magicwall").magicWall({
+				maxItemWidth: <%= max_width %>,
+				maxItemHeight: <%= max_height %>,
+                delay: <%= delay %>
+			});
+		</script>
     </form>
 </body>
 </html>

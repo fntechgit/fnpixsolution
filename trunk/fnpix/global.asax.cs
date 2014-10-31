@@ -58,7 +58,9 @@ namespace fnpix
             routes.MapPageRoute("dropbox-approve-unapprove-route", "dropbox/{status}/{id}", "~/dropbox_update.aspx");
 
             // ######################## DISPLAYS SECTION ################################### //
+            routes.MapPageRoute("visual-display-mixed-route-1", "displays/mixed1/{id}", "~/visual/effect1.aspx");
             routes.MapPageRoute("visual-display-instagram-route", "displays/instagram/{id}", "~/visual/effect2.aspx");
+            routes.MapPageRoute("visual-display-magicwall-route", "displays/magicwall/{id}", "~/visual/effect3.aspx");
 
             // this has to be last!!!!
             //routes.MapPageRoute("page-by-url-route", "{url}", "~/page.aspx");

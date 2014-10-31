@@ -26,16 +26,15 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-speed="1000" style="height:1080px;width:1080px;overflow:hidden;float:left;">
-        <asp:PlaceHolder runat="server" ID="ph_instagram_images_1" />
-    </div>
-    <div class="cycle-slideshow" data-cycle-fx="scrollVert" data-cycle-speed="1500" style="width:840px;height:540px;overflow: hidden;float:left;">
-        <asp:PlaceHolder runat="server" ID="ph_twitter_images" />
-    </div>
-    <div class="cycle-slideshow"   data-cycle-fx="scrollHorz" data-cycle-speed="2500" style="width:840px;height:540px;overflow: hidden;float:left;">
-        <asp:PlaceHolder runat="server" ID="ph_twitter_reverse" />
-    </div>
-
+        <div class="cycle-slideshow" data-cycle-fx="flipHorz" data-cycle-speed="1000" style="height:1080px;width:1080px;overflow:hidden;float:left;">
+            <asp:PlaceHolder runat="server" ID="ph_instagram_images_1" />
+        </div>
+        <div class="cycle-slideshow" data-cycle-fx="scrollVert" data-cycle-speed="1500" style="width:840px;height:540px;overflow: hidden;float:left;">
+            <asp:PlaceHolder runat="server" ID="ph_twitter_images" />
+        </div>
+        <div class="cycle-slideshow"   data-cycle-fx="scrollHorz" data-cycle-speed="2500" style="width:840px;height:540px;overflow: hidden;float:left;">
+            <asp:PlaceHolder runat="server" ID="ph_twitter_reverse" />
+        </div>
     </form>
 </body>
 </html>

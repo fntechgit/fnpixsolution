@@ -151,6 +151,11 @@ namespace overrideSocial
             return _entries;
         }
 
+        public List<Media> get_all(Int32 event_id, Boolean approved)
+        {
+            return get_all(event_id).Where(x => x.approved == approved).ToList();
+        } 
+
         public List<Media> get_reverse()
         {
             List<Media> _entries = new List<Media>();
@@ -190,6 +195,11 @@ namespace overrideSocial
             return _entries;
         }
 
+        public List<Media> get_reverse(Int32 event_id)
+        {
+            return get_reverse().Where(x => x.event_id == event_id).ToList();
+        } 
+
         public List<Media> get_unapproved()
         {
             return get_recent().Where(x => x.approved == false).ToList();
@@ -215,6 +225,11 @@ namespace overrideSocial
             return get_reverse().Where(x => x.service == "Instagram").Where(x => x.approved == true).ToList();
         }
 
+        public List<Media> get_instagram_reverse(Int32 event_id)
+        {
+            return get_reverse(event_id).Where(x => x.service == "Instagram").Where(x => x.approved == true).ToList();
+        }
+
         public List<Media> get_twitter()
         {
             return get_recent().Where(x => x.service == "Twitter").Where(x => x.approved == true).ToList();
@@ -228,6 +243,11 @@ namespace overrideSocial
         public List<Media> get_twitter_reverse()
         {
             return get_reverse().Where(x => x.service == "Twitter").Where(x => x.approved == true).ToList();
+        }
+
+        public List<Media> get_twitter_reverse(Int32 event_id)
+        {
+            return get_reverse(event_id).Where(x => x.service == "Twitter").Where(x => x.approved == true).ToList();
         } 
 
         public Media approve(Media m)

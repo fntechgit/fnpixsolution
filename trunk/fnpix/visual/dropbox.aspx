@@ -1,68 +1,58 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="dropbox.aspx.cs" Inherits="fnpix.visual.dropbox" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="/visual/jquery.imagefit.js"></script>
-    <script src="http://malsup.github.io/jquery.cycle2.js"></script>
-    <script src="http://malsup.github.io/jquery.cycle2.tile.js"></script>
+<html lang="en">
+<head id="Head1" runat="server">
+    <!-- META -->
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		
+	<!-- TITLE -->
+		<title>FNPIX DISPLAY VIEW 3</title>
+		
+	<!-- STYLES -->
+		<link href="//fonts.googleapis.com/css?family=Open+Sans:400,600|Alfa+Slab+One" rel="stylesheet" type="text/css" />
+		<link href="/visual/magicwall.min.css" rel="stylesheet" />
+		<link href="/visual/demo.css" rel="stylesheet" />
 
-    <style type="text/css">
-        
-        body {
-            border: 0;
-            background-color: #000000;
-            margin: 0;
-            width: 1920px;
-            height: 1080px;
-        }
-        
-        .imagefit {border: 1px solid #666;overflow: hidden; width: 1920px;height: 1080px;}
-        
-        img { width: 100%; }
-        
-        #slider { width: 1920px;height: 1080px;overflow: hidden;}
-        
-    </style>
-    
-    
-    <script type="text/javascript">
+		<style type="text/css">
+			html, body, #main-wrap{
+				padding: 0;
+				margin: 0;
+				overflow: hidden;
+				width: 100%;
+				height: 100%;
+			}
+			
+			.magicwall{
+				width: 100%;
+				height: 100%;
+			}
 
-        $(document).ready(function() {
-            $(".imagefit").imagefit({
-                mode: 'outside',
-                force: 'false',
-                halign: 'center',
-                valign: 'middle'
-            });
-
-            var effect = $("#hdn_effect").val();
-            var timeout = $("#hdn_timeout").val();
-
-            changeEffect(effect, timeout);
-        });
-
-        function changeEffect(eff, timeout) {
-//            $("#slider").cycle({
-//                fx: eff,
-//                timeout: timeout
-//            });
-        }
-
-    </script>
+		</style>
 </head>
 <body>
     <form id="form1" runat="server">
-            <div id="slider" class="cycle-slideshow" data-cycle-timeout=<%= timeout %> style="height:1080px;width:1920px;overflow:hidden;float:left;">
-                <asp:PlaceHolder runat="server" ID="ph_images" />
-            </div>
-            
-            <asp:HiddenField runat="server" ID="hdn_effect" Value="tileSlide" ClientIDMode="Static" />
-            <asp:HiddenField runat="server" ID="hdn_timeout" Value="1000" ClientIDMode="Static" />
-
+    <div id="main-wrap" style="width:1920px;height:1080px;">
+			<div id="demo" class="magicwall">
+				<ul class="magicwall-grid">
+				    <asp:PlaceHolder runat="server" ID="ph_images" />
+				</ul>
+			</div><!-- .magicwall -->
+		</div><!-- #main-wrap -->
+		
+	<!-- SCRIPTS -->
+		<script type="text/javascript" src="/visual/jquery.1.9.1.min.js"></script>
+		<script type="text/javascript" src="/visual/jquery.easing.min.js"></script>
+		<script type="text/javascript" src="/visual/jquery.magicwall.min.js"></script>
+		<script type="text/javascript">
+			$(".magicwall").magicWall({
+				maxItemWidth: <%= max_width %>,
+				maxItemHeight: <%= max_height %>,
+                delay: <%= delay %>
+			});
+		</script>
     </form>
 </body>
 </html>
