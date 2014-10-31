@@ -36,9 +36,6 @@ namespace overrideSocial
     partial void Insertplatform(platform instance);
     partial void Updateplatform(platform instance);
     partial void Deleteplatform(platform instance);
-    partial void Insertdisplay(display instance);
-    partial void Updatedisplay(display instance);
-    partial void Deletedisplay(display instance);
     partial void Insertpermission(permission instance);
     partial void Updatepermission(permission instance);
     partial void Deletepermission(permission instance);
@@ -69,6 +66,9 @@ namespace overrideSocial
     partial void Insertdropbox_media(dropbox_media instance);
     partial void Updatedropbox_media(dropbox_media instance);
     partial void Deletedropbox_media(dropbox_media instance);
+    partial void Insertdisplay(display instance);
+    partial void Updatedisplay(display instance);
+    partial void Deletedisplay(display instance);
     #endregion
 		
 		public FNTech_MediaDataContext() : 
@@ -114,14 +114,6 @@ namespace overrideSocial
 			get
 			{
 				return this.GetTable<platform>();
-			}
-		}
-		
-		public System.Data.Linq.Table<display> displays
-		{
-			get
-			{
-				return this.GetTable<display>();
 			}
 		}
 		
@@ -205,6 +197,14 @@ namespace overrideSocial
 			}
 		}
 		
+		public System.Data.Linq.Table<display> displays
+		{
+			get
+			{
+				return this.GetTable<display>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.events_get_authorized")]
 		public ISingleResult<events_get_authorizedResult> events_get_authorized([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> user_id)
 		{
@@ -217,6 +217,13 @@ namespace overrideSocial
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), user_id);
 			return ((ISingleResult<permissions_get_by_userResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.displays_get_by_event")]
+		public ISingleResult<displays_get_by_eventResult> displays_get_by_event([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> event_id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), event_id);
+			return ((ISingleResult<displays_get_by_eventResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -415,188 +422,6 @@ namespace overrideSocial
 					this._active = value;
 					this.SendPropertyChanged("active");
 					this.OnactiveChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.displays")]
-	public partial class display : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private int _view_id;
-		
-		private bool _randomize;
-		
-		private System.Nullable<System.DateTime> _startdate;
-		
-		private System.Nullable<System.DateTime> _enddate;
-		
-		private int _slide_duration;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void Onview_idChanging(int value);
-    partial void Onview_idChanged();
-    partial void OnrandomizeChanging(bool value);
-    partial void OnrandomizeChanged();
-    partial void OnstartdateChanging(System.Nullable<System.DateTime> value);
-    partial void OnstartdateChanged();
-    partial void OnenddateChanging(System.Nullable<System.DateTime> value);
-    partial void OnenddateChanged();
-    partial void Onslide_durationChanging(int value);
-    partial void Onslide_durationChanged();
-    #endregion
-		
-		public display()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_view_id", DbType="Int NOT NULL")]
-		public int view_id
-		{
-			get
-			{
-				return this._view_id;
-			}
-			set
-			{
-				if ((this._view_id != value))
-				{
-					this.Onview_idChanging(value);
-					this.SendPropertyChanging();
-					this._view_id = value;
-					this.SendPropertyChanged("view_id");
-					this.Onview_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_randomize", DbType="Bit NOT NULL")]
-		public bool randomize
-		{
-			get
-			{
-				return this._randomize;
-			}
-			set
-			{
-				if ((this._randomize != value))
-				{
-					this.OnrandomizeChanging(value);
-					this.SendPropertyChanging();
-					this._randomize = value;
-					this.SendPropertyChanged("randomize");
-					this.OnrandomizeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_startdate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> startdate
-		{
-			get
-			{
-				return this._startdate;
-			}
-			set
-			{
-				if ((this._startdate != value))
-				{
-					this.OnstartdateChanging(value);
-					this.SendPropertyChanging();
-					this._startdate = value;
-					this.SendPropertyChanged("startdate");
-					this.OnstartdateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_enddate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> enddate
-		{
-			get
-			{
-				return this._enddate;
-			}
-			set
-			{
-				if ((this._enddate != value))
-				{
-					this.OnenddateChanging(value);
-					this.SendPropertyChanging();
-					this._enddate = value;
-					this.SendPropertyChanged("enddate");
-					this.OnenddateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slide_duration", DbType="Int NOT NULL")]
-		public int slide_duration
-		{
-			get
-			{
-				return this._slide_duration;
-			}
-			set
-			{
-				if ((this._slide_duration != value))
-				{
-					this.Onslide_durationChanging(value);
-					this.SendPropertyChanging();
-					this._slide_duration = value;
-					this.SendPropertyChanged("slide_duration");
-					this.Onslide_durationChanged();
 				}
 			}
 		}
@@ -3834,6 +3659,212 @@ namespace overrideSocial
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.displays")]
+	public partial class display : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private int _view_id;
+		
+		private bool _randomize;
+		
+		private System.Nullable<System.DateTime> _startdate;
+		
+		private System.Nullable<System.DateTime> _enddate;
+		
+		private int _slide_duration;
+		
+		private int _event_id;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onview_idChanging(int value);
+    partial void Onview_idChanged();
+    partial void OnrandomizeChanging(bool value);
+    partial void OnrandomizeChanged();
+    partial void OnstartdateChanging(System.Nullable<System.DateTime> value);
+    partial void OnstartdateChanged();
+    partial void OnenddateChanging(System.Nullable<System.DateTime> value);
+    partial void OnenddateChanged();
+    partial void Onslide_durationChanging(int value);
+    partial void Onslide_durationChanged();
+    partial void Onevent_idChanging(int value);
+    partial void Onevent_idChanged();
+    #endregion
+		
+		public display()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_view_id", DbType="Int NOT NULL")]
+		public int view_id
+		{
+			get
+			{
+				return this._view_id;
+			}
+			set
+			{
+				if ((this._view_id != value))
+				{
+					this.Onview_idChanging(value);
+					this.SendPropertyChanging();
+					this._view_id = value;
+					this.SendPropertyChanged("view_id");
+					this.Onview_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_randomize", DbType="Bit NOT NULL")]
+		public bool randomize
+		{
+			get
+			{
+				return this._randomize;
+			}
+			set
+			{
+				if ((this._randomize != value))
+				{
+					this.OnrandomizeChanging(value);
+					this.SendPropertyChanging();
+					this._randomize = value;
+					this.SendPropertyChanged("randomize");
+					this.OnrandomizeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_startdate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> startdate
+		{
+			get
+			{
+				return this._startdate;
+			}
+			set
+			{
+				if ((this._startdate != value))
+				{
+					this.OnstartdateChanging(value);
+					this.SendPropertyChanging();
+					this._startdate = value;
+					this.SendPropertyChanged("startdate");
+					this.OnstartdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_enddate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> enddate
+		{
+			get
+			{
+				return this._enddate;
+			}
+			set
+			{
+				if ((this._enddate != value))
+				{
+					this.OnenddateChanging(value);
+					this.SendPropertyChanging();
+					this._enddate = value;
+					this.SendPropertyChanged("enddate");
+					this.OnenddateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slide_duration", DbType="Int NOT NULL")]
+		public int slide_duration
+		{
+			get
+			{
+				return this._slide_duration;
+			}
+			set
+			{
+				if ((this._slide_duration != value))
+				{
+					this.Onslide_durationChanging(value);
+					this.SendPropertyChanging();
+					this._slide_duration = value;
+					this.SendPropertyChanged("slide_duration");
+					this.Onslide_durationChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_event_id", DbType="Int NOT NULL")]
+		public int event_id
+		{
+			get
+			{
+				return this._event_id;
+			}
+			set
+			{
+				if ((this._event_id != value))
+				{
+					this.Onevent_idChanging(value);
+					this.SendPropertyChanging();
+					this._event_id = value;
+					this.SendPropertyChanged("event_id");
+					this.Onevent_idChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	public partial class events_get_authorizedResult
 	{
 		
@@ -4475,6 +4506,158 @@ namespace overrideSocial
 				if ((this._full_name != value))
 				{
 					this._full_name = value;
+				}
+			}
+		}
+	}
+	
+	public partial class displays_get_by_eventResult
+	{
+		
+		private int _id;
+		
+		private int _view_id;
+		
+		private bool _randomize;
+		
+		private System.Nullable<System.DateTime> _startdate;
+		
+		private System.Nullable<System.DateTime> _enddate;
+		
+		private int _slide_duration;
+		
+		private int _event_id;
+		
+		private string _title;
+		
+		public displays_get_by_eventResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_view_id", DbType="Int NOT NULL")]
+		public int view_id
+		{
+			get
+			{
+				return this._view_id;
+			}
+			set
+			{
+				if ((this._view_id != value))
+				{
+					this._view_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_randomize", DbType="Bit NOT NULL")]
+		public bool randomize
+		{
+			get
+			{
+				return this._randomize;
+			}
+			set
+			{
+				if ((this._randomize != value))
+				{
+					this._randomize = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_startdate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> startdate
+		{
+			get
+			{
+				return this._startdate;
+			}
+			set
+			{
+				if ((this._startdate != value))
+				{
+					this._startdate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_enddate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> enddate
+		{
+			get
+			{
+				return this._enddate;
+			}
+			set
+			{
+				if ((this._enddate != value))
+				{
+					this._enddate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slide_duration", DbType="Int NOT NULL")]
+		public int slide_duration
+		{
+			get
+			{
+				return this._slide_duration;
+			}
+			set
+			{
+				if ((this._slide_duration != value))
+				{
+					this._slide_duration = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_event_id", DbType="Int NOT NULL")]
+		public int event_id
+		{
+			get
+			{
+				return this._event_id;
+			}
+			set
+			{
+				if ((this._event_id != value))
+				{
+					this._event_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_title", DbType="VarChar(255)")]
+		public string title
+		{
+			get
+			{
+				return this._title;
+			}
+			set
+			{
+				if ((this._title != value))
+				{
+					this._title = value;
 				}
 			}
 		}

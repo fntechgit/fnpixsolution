@@ -17,6 +17,11 @@ namespace fnpix.visual
         {
             Int32 event_id = Convert.ToInt32(Page.RouteData.Values["id"] as string);
 
+            if (Page.RouteData.Values["delay"] != null)
+            {
+                hdn_interval.Value = Page.RouteData.Values["delay"].ToString();
+            }
+
             List<Media> med = _media.get_instagram(event_id);
 
             hdn_max.Value = (med.Count - 1).ToString();

@@ -18,6 +18,11 @@ namespace fnpix.visual
         {
             overrideSocial.dropbox _dropbox = new overrideSocial.dropbox();
 
+            if (Page.RouteData.Values["delay"] != null)
+            {
+                delay = Page.RouteData.Values["delay"].ToString() + "000";
+            }
+
             foreach (Dropbox d in _dropbox.select_list(Convert.ToInt32(Page.RouteData.Values["id"] as string), true))
             {
                 ph_images.Controls.Add(new LiteralControl("<li data-thumb=\"" + d.stream + "\"></li>"));

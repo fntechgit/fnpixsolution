@@ -29,53 +29,59 @@
 		                    <a href="/media">
 		                        <span class="pull-right label label-primary"><%= total_media %></span>
 		                        <i class="fa fa-photo" aria-hidden="true"></i>
-		                        <span>Media All</span>
+		                        <span>All Media</span>
 		                    </a>
 		                </li>
                         <li>
 		                    <a href="/media/unapproved">
 		                        <span class="pull-right label label-primary"><%= unapproved_media %></span>
 		                        <i class="fa fa-question-circle" aria-hidden="true"></i>
-		                        <span>Unapproved Media</span>
+		                        <span>Unapproved</span>
 		                    </a>
 		                </li>
                         <li>
 		                    <a href="/media#instagram">
 		                        <span class="pull-right label label-primary"><%= instagram_media %></span>
 		                        <i class="fa fa-instagram" aria-hidden="true"></i>
-		                        <span>Instagram Media</span>
+		                        <span>Instagram</span>
 		                    </a>
 		                </li>
                         <li>
 		                    <a href="/media#twitter">
 		                        <span class="pull-right label label-primary"><%= twitter_media %></span>
 		                        <i class="fa fa-twitter" aria-hidden="true"></i>
-		                        <span>Twitter Media</span>
+		                        <span>Twitter</span>
 		                    </a>
 		                </li>
                         <li>
-		                    <a href="/media#facebook">
+		                    <a href="/dropbox">
 		                        <span class="pull-right label label-primary"><%= facebook_media %></span>
-		                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
-		                        <span>Facebook Media</span>
+		                        <i class="fa fa-dropbox" aria-hidden="true"></i>
+		                        <span>Dropbox</span>
 		                    </a>
 		                </li>
-                        <li>
+                        <li id="user_link" runat="server" Visible="false">
 		                    <a href="/users">
 		                        <i class="fa fa-users" aria-hidden="true"></i>
 		                        <span>Users</span>
 		                    </a>
 		                </li>
-                        <li>
+                        <li id="preference_link" runat="server" Visible="false">
 		                    <a href="/preferences">
 		                        <i class="fa fa-gears" aria-hidden="true"></i>
-		                        <span>System Preferences</span>
+		                        <span>Preferences</span>
 		                    </a>
 		                </li>
                         <li id="event_link" runat="server" Visible="false" class="nav-active">
 		                    <a href="/events">
 		                        <i class="fa fa-calendar" aria-hidden="true"></i>
 		                        <span>Events</span>
+		                    </a>
+		                </li>
+                        <li id="display_link" runat="server" Visible="false">
+		                    <a href="/displays">
+		                        <i class="fa fa-desktop" aria-hidden="true"></i>
+		                        <span>Displays</span>
 		                    </a>
 		                </li>
 		            </ul>

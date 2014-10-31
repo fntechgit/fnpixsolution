@@ -10,11 +10,18 @@ namespace fnpix.visual
 {
     public partial class effect1 : System.Web.UI.Page
     {
+        public string delay = @"1000";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             overrideSocial.mediaManager _media = new overrideSocial.mediaManager();
 
             Int32 event_id = Convert.ToInt32(Page.RouteData.Values["id"] as string);
+
+            if (Page.RouteData.Values["delay"] != null)
+            {
+                delay = Page.RouteData.Values["delay"].ToString() + "000";
+            }
 
             foreach (Media m in _media.get_instagram(event_id))
             {

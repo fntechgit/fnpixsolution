@@ -18,13 +18,11 @@ namespace fnpix
         private overrideSocial.mediaManager _media = new overrideSocial.mediaManager();
         private overrideSocial.stats _stats = new overrideSocial.stats();
         private overrideSocial.dropbox _dropbox = new overrideSocial.dropbox();
+        private overrideSocial.permissions _permissions = new overrideSocial.permissions();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Session["event_id"] as string))
-            {
-                Response.Redirect("/login");
-            }
+            permissions();;
 
             List<Media> _all = _media.get_all(Convert.ToInt32(Session["event_id"].ToString()));
             List<Media> _twitter = _media.get_twitter(Convert.ToInt32(Session["event_id"].ToString()));
@@ -47,6 +45,42 @@ namespace fnpix
             foreach (Statistic s in _stats.get_top(cnt, Convert.ToInt32(Session["event_id"].ToString())))
             {
                 ph_imports.Controls.Add(new LiteralControl("<tr><td>" + s.id.ToString() + "</td><td>" + s.pulldate.ToShortDateString() + " " + s.pulldate.ToShortTimeString() + "</td><td><span class=\"label label-success\">Success</span></td><td>" + s.instagram.ToString() + "</td><td>" + s.twitter.ToString() + "</td><td>" + s.facebook.ToString() + "</td><td>" + s.total.ToString() + "</td></tr>"));
+            }
+        }
+
+        private void permissions()
+        {
+            if (string.IsNullOrEmpty(Session["event_id"] as string))
+            {
+                Response.Redirect("/login");
+            }
+
+            if (string.IsNullOrEmpty(Session["user_access"] as string))
+            {
+                Response.Redirect("/login");
+            }
+            else
+            {
+                check_levels(Session["user_access"] as string);
+            }
+        }
+
+        private void check_levels(string user_level)
+        {
+            switch (user_level)
+            {
+                case "system":
+                    event_link.Visible = true;
+                    display_link.Visible = true;
+                    user_link.Visible = true;
+                    preference_link.Visible = true;
+                    break;
+                case "event":
+                    display_link.Visible = true;
+                    preference_link.Visible = true;
+                    break;
+                case "content":
+                    break;
             }
         }
     }

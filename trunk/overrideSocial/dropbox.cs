@@ -292,6 +292,10 @@ namespace overrideSocial
             {
                 d.id = db_test.id;
 
+                d.approved = db_test.approved;
+                d.approved_by = db_test.approved_by;
+                d.approved_date = db_test.approved_date;
+
                 update(d);
 
                 Console.WriteLine(d.filename + " Updated");

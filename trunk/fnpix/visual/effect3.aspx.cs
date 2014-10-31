@@ -20,6 +20,11 @@ namespace fnpix.visual
         {
             overrideSocial.mediaManager _media = new overrideSocial.mediaManager();
 
+            if (Page.RouteData.Values["delay"] != null)
+            {
+                delay = Page.RouteData.Values["delay"].ToString() + "000";
+            }
+
             foreach (Media m in _media.get_all(Convert.ToInt32(Page.RouteData.Values["id"] as string), true))
             {
                 ph_images.Controls.Add(new LiteralControl("<li data-thumb=\"" + m.source + "\"></li>"));

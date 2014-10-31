@@ -3,7 +3,7 @@
     <!-- Specific Page Vendor CSS -->	<link rel="stylesheet" href="/assets/vendor/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css" />	<link rel="stylesheet" href="/assets/vendor/select2/select2.css" />	<link rel="stylesheet" href="/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css" />	<link rel="stylesheet" href="/assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.css" />	<link rel="stylesheet" href="/assets/vendor/bootstrap-colorpicker/css/bootstrap-colorpicker.css" />	<link rel="stylesheet" href="/assets/vendor/bootstrap-timepicker/css/bootstrap-timepicker.css" />	<link rel="stylesheet" href="/assets/vendor/dropzone/css/basic.css" />	<link rel="stylesheet" href="/assets/vendor/dropzone/css/dropzone.css" />	<link rel="stylesheet" href="/assets/vendor/bootstrap-markdown/css/bootstrap-markdown.min.css" />	<link rel="stylesheet" href="/assets/vendor/summernote/summernote.css" />	<link rel="stylesheet" href="/assets/vendor/summernote/summernote-bs3.css" />	<link rel="stylesheet" href="/assets/vendor/codemirror/lib/codemirror.css" />	<link rel="stylesheet" href="/assets/vendor/codemirror/theme/monokai.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="navigation_sidebar" runat="server">
-    <!-- start: sidebar goes into the  -->
+ <!-- start: sidebar goes into the  -->
 	<aside id="sidebar-left" class="sidebar-left">
 				
 		<div class="sidebar-header">
@@ -29,53 +29,59 @@
 		                    <a href="/media">
 		                        <span class="pull-right label label-primary"><%= total_media %></span>
 		                        <i class="fa fa-photo" aria-hidden="true"></i>
-		                        <span>Media All</span>
+		                        <span>All Media</span>
 		                    </a>
 		                </li>
                         <li>
 		                    <a href="/media/unapproved">
 		                        <span class="pull-right label label-primary"><%= unapproved_media %></span>
 		                        <i class="fa fa-question-circle" aria-hidden="true"></i>
-		                        <span>Unapproved Media</span>
+		                        <span>Unapproved</span>
 		                    </a>
 		                </li>
                         <li>
 		                    <a href="/media#instagram">
 		                        <span class="pull-right label label-primary"><%= instagram_media %></span>
 		                        <i class="fa fa-instagram" aria-hidden="true"></i>
-		                        <span>Instagram Media</span>
+		                        <span>Instagram</span>
 		                    </a>
 		                </li>
                         <li>
 		                    <a href="/media#twitter">
 		                        <span class="pull-right label label-primary"><%= twitter_media %></span>
 		                        <i class="fa fa-twitter" aria-hidden="true"></i>
-		                        <span>Twitter Media</span>
-		                    </a>
-		                </li>
-                        <li>
-		                    <a href="/media#facebook">
-		                        <span class="pull-right label label-primary"><%= facebook_media %></span>
-		                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
-		                        <span>Facebook Media</span>
+		                        <span>Twitter</span>
 		                    </a>
 		                </li>
                         <li class="nav-active">
+		                    <a href="/dropbox">
+		                        <span class="pull-right label label-primary"><%= facebook_media %></span>
+		                        <i class="fa fa-dropbox" aria-hidden="true"></i>
+		                        <span>Dropbox</span>
+		                    </a>
+		                </li>
+                        <li id="user_link" runat="server" Visible="false">
 		                    <a href="/users">
 		                        <i class="fa fa-users" aria-hidden="true"></i>
 		                        <span>Users</span>
 		                    </a>
 		                </li>
-                        <li>
+                        <li id="preference_link" runat="server" Visible="false">
 		                    <a href="/preferences">
 		                        <i class="fa fa-gears" aria-hidden="true"></i>
-		                        <span>System Preferences</span>
+		                        <span>Preferences</span>
 		                    </a>
 		                </li>
-                        <li id="event_link" runat="server" Visible="false" class="nav-active">
+                        <li id="event_link" runat="server" Visible="false">
 		                    <a href="/events">
 		                        <i class="fa fa-calendar" aria-hidden="true"></i>
 		                        <span>Events</span>
+		                    </a>
+		                </li>
+                        <li id="display_link" runat="server" Visible="false">
+		                    <a href="/displays">
+		                        <i class="fa fa-desktop" aria-hidden="true"></i>
+		                        <span>Displays</span>
 		                    </a>
 		                </li>
 		            </ul>

@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="add_display.aspx" />
     <Content Include="add_event.aspx" />
     <Content Include="add_permission.aspx" />
     <Content Include="add_preference.aspx" />
@@ -1598,10 +1599,12 @@
     <Content Include="assets\vendor\summernote\summernote.css" />
     <Content Include="assets\vendor\summernote\summernote.js" />
     <Content Include="dashboard.aspx" />
+    <Content Include="delete_display.aspx" />
     <Content Include="delete_event.aspx" />
     <Content Include="delete_permission.aspx" />
     <Content Include="delete_tag.aspx" />
     <Content Include="delete_user.aspx" />
+    <Content Include="displays.aspx" />
     <Content Include="dropbox.aspx" />
     <Content Include="dropbox_media.aspx" />
     <Content Include="dropbox_update.aspx" />
@@ -1686,6 +1689,7 @@
     <Content Include="visual\js\jquery.easing.min.js" />
     <Content Include="visual\js\jquery.mousewheel.min.js" />
     <Content Include="visual\loading.gif" />
+    <Content Include="visual\master.aspx" />
     <Content Include="visual\PolaroidGallery\bg.jpg" />
     <Content Include="visual\PolaroidGallery\bi-imgs\buttons\cata_down.png" />
     <Content Include="visual\PolaroidGallery\bi-imgs\buttons\cata_over.png" />
@@ -1740,6 +1744,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="add_display.aspx.cs">
+      <DependentUpon>add_display.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="add_display.aspx.designer.cs">
+      <DependentUpon>add_display.aspx</DependentUpon>
+    </Compile>
     <Compile Include="add_event.aspx.cs">
       <DependentUpon>add_event.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1782,6 +1793,13 @@
     <Compile Include="dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="delete_display.aspx.cs">
+      <DependentUpon>delete_display.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="delete_display.aspx.designer.cs">
+      <DependentUpon>delete_display.aspx</DependentUpon>
+    </Compile>
     <Compile Include="delete_event.aspx.cs">
       <DependentUpon>delete_event.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1809,6 +1827,13 @@
     </Compile>
     <Compile Include="delete_user.aspx.designer.cs">
       <DependentUpon>delete_user.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="displays.aspx.cs">
+      <DependentUpon>displays.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="displays.aspx.designer.cs">
+      <DependentUpon>displays.aspx</DependentUpon>
     </Compile>
     <Compile Include="dropbox.aspx.cs">
       <DependentUpon>dropbox.aspx</DependentUpon>
@@ -1933,6 +1958,13 @@
     </Compile>
     <Compile Include="visual\effect4.aspx.designer.cs">
       <DependentUpon>effect4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="visual\master.aspx.cs">
+      <DependentUpon>master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="visual\master.aspx.designer.cs">
+      <DependentUpon>master.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

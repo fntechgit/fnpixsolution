@@ -55,12 +55,23 @@ namespace fnpix
             routes.MapPageRoute("dropbox-media-main-route", "dropbox", "~/dropbox_media.aspx");
             routes.MapPageRoute("dropbox-media-unapproved-route", "dropbox/{unapproved}", "~/dropbox_media.aspx");
             routes.MapPageRoute("dropbox-visual-theme-route", "displays/dropbox/{id}", "~/visual/dropbox.aspx");
+            routes.MapPageRoute("dropbox-visual-theme-route-with-timing", "displays/dropbox/{id}/{delay}", "~/visual/dropbox.aspx");
             routes.MapPageRoute("dropbox-approve-unapprove-route", "dropbox/{status}/{id}", "~/dropbox_update.aspx");
 
             // ######################## DISPLAYS SECTION ################################### //
             routes.MapPageRoute("visual-display-mixed-route-1", "displays/mixed1/{id}", "~/visual/effect1.aspx");
+            routes.MapPageRoute("visual-display-mixed-route-1-with-timing", "displays/mixed1/{id}/{delay}", "~/visual/effect1.aspx");
             routes.MapPageRoute("visual-display-instagram-route", "displays/instagram/{id}", "~/visual/effect2.aspx");
+            routes.MapPageRoute("visual-display-instagram-route-with-timing", "displays/instagram/{id}/{delay}", "~/visual/effect2.aspx");
             routes.MapPageRoute("visual-display-magicwall-route", "displays/magicwall/{id}", "~/visual/effect3.aspx");
+            routes.MapPageRoute("visual-display-magicwall-route-with-timing", "displays/magicwall/{id}/{display}", "~/visual/effect3.aspx");
+            routes.MapPageRoute("master-display-route", "displays/master/{id}", "~/visual/master.aspx");
+
+            // ######################## DISPLAYS SECTION ################################### //
+            routes.MapPageRoute("displays-manage-route", "displays", "~/displays.aspx");
+            routes.MapPageRoute("displays-add-route", "displays/add", "~/add_display.aspx");
+            routes.MapPageRoute("displays-edit-route", "displays/edit/{id}", "~/add_display.aspx");
+            routes.MapPageRoute("displays-delete-route", "displays/delete/{id}", "~/delete_display.aspx");
 
             // this has to be last!!!!
             //routes.MapPageRoute("page-by-url-route", "{url}", "~/page.aspx");
