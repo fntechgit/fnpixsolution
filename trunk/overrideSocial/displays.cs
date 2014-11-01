@@ -109,7 +109,7 @@ namespace overrideSocial
 
         public List<Display> select(Int32 event_id, DateTime whatTime)
         {
-            return select(event_id).Where(x => x.startdate <= whatTime).Where(x => x.enddate <= whatTime).ToList();
+            return select(event_id).Where(x => x.startdate <= whatTime).Where(x => x.enddate >= whatTime).ToList();
         }
 
         public Display single(Int32 id)
@@ -133,7 +133,7 @@ namespace overrideSocial
         {
             Random rnd = new Random();
 
-            var records = @select(event_id, DateTime.Now);
+            var records = select(event_id, DateTime.Now);
 
             Display myview = new Display();
 
