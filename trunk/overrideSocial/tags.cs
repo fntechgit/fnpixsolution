@@ -130,6 +130,7 @@ namespace overrideSocial
                 ta.twitter = item.twitter;
                 ta.value = item.value;
                 ta.event_id = item.event_id;
+                ta.entire_event = item.entire_event;
 
                 _tags.Add(ta);
             }

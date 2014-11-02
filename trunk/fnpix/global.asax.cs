@@ -16,6 +16,7 @@ namespace fnpix
         {
             // ######################## LOGIN SECTION ################################### //
             routes.MapPageRoute("login-route", "login", "~/login.aspx");
+            routes.MapPageRoute("no-events-route", "login/{noevents}", "~/login.aspx");
             routes.MapPageRoute("logout-route", "logout", "~/logout.aspx");
 
             // ######################## DASHBOARD SECTION ################################### //

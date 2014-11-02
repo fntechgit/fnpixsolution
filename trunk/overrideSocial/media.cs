@@ -161,6 +161,7 @@ namespace overrideSocial
             List<Media> _entries = new List<Media>();
 
             var result = from themedia in db.medias
+                         where themedia.approved==true
                          orderby themedia.createdate 
                          select themedia;
 

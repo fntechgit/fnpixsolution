@@ -25,7 +25,16 @@ namespace fnpix
 
             if (Page.RouteData.Values["unapproved"] != null)
             {
-                render_media(_media.get_unapproved(Convert.ToInt32(Session["event_id"].ToString())));
+                string status = Page.RouteData.Values["unapproved"].ToString();
+
+                if (status == "unapproved")
+                {
+                    render_media(_media.get_unapproved(Convert.ToInt32(Session["event_id"].ToString())));
+                }
+                else
+                {
+                    render_media(_media.get_all(Convert.ToInt32(Session["event_id"].ToString()), true));   
+                }
             }
             else
             {

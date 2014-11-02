@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using overrideSocial;
 
 namespace fnpix
@@ -14,7 +15,10 @@ namespace fnpix
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Page.RouteData.Values["noevents"] != null)
+            {
+                pnl_no_events_assigned.Visible = true;
+            }
         }
 
         protected void signin(object sender, EventArgs e)
@@ -31,9 +35,18 @@ namespace fnpix
                 Session["user_pic"] = u.picture;
                 Session["user_access"] = u.security_desc;
 
-                Session["event_id"] = _permissions.select_permitted_events(Convert.ToInt32(Session["user_id"].ToString()))[0].id.ToString();
+                List<Event> myevents = _permissions.select_permitted_events(Convert.ToInt32(Session["user_id"].ToString()));
 
-                Response.Redirect("/dashboard");
+                if (myevents.Count > 0)
+                {
+                    Session["event_id"] = myevents[0].id.ToString();
+
+                    Response.Redirect("/dashboard");
+                }
+                else
+                {
+                    pnl_no_events_assigned.Visible = true;
+                }
             }
             else
             {

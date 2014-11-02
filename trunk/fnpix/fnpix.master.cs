@@ -34,18 +34,25 @@ namespace fnpix
                 {
                     List<Event> myevents = _permissions.select_permitted_events(Convert.ToInt32(Session["user_id"].ToString()));
 
-                    ddl_event.DataSource = myevents;
-                    ddl_event.DataValueField = "id";
-                    ddl_event.DataTextField = "title";
-                    ddl_event.DataBind();
-
-                    if (Session["event_id"] != null)
+                    if (myevents.Count > 0)
                     {
-                        ddl_event.SelectedValue = Session["event_id"].ToString();
+                        ddl_event.DataSource = myevents;
+                        ddl_event.DataValueField = "id";
+                        ddl_event.DataTextField = "title";
+                        ddl_event.DataBind();
+
+                        if (Session["event_id"] != null)
+                        {
+                            ddl_event.SelectedValue = Session["event_id"].ToString();
+                        }
+                        else
+                        {
+                            Session["event_id"] = myevents[0].id.ToString();
+                        }
                     }
                     else
                     {
-                        Session["event_id"] = myevents[0].id.ToString();    
+                        Response.Redirect("/login/no-events-allowed");   
                     }
                 }
             }

@@ -29,41 +29,78 @@
 		                        <span>Dashboard</span>
 		                    </a>
 		                </li>
-		                <li>
-		                    <a href="/media">
-		                        <span class="pull-right label label-primary"><%= total_media %></span>
-		                        <i class="fa fa-photo" aria-hidden="true"></i>
-		                        <span>All Media</span>
-		                    </a>
-		                </li>
-                        <li>
-		                    <a href="/media/unapproved">
-		                        <span class="pull-right label label-primary"><%= unapproved_media %></span>
-		                        <i class="fa fa-question-circle" aria-hidden="true"></i>
-		                        <span>Unapproved</span>
-		                    </a>
-		                </li>
-                        <li>
-		                    <a href="/media#instagram">
-		                        <span class="pull-right label label-primary"><%= instagram_media %></span>
-		                        <i class="fa fa-instagram" aria-hidden="true"></i>
-		                        <span>Instagram</span>
-		                    </a>
-		                </li>
-                        <li>
-		                    <a href="/media#twitter">
-		                        <span class="pull-right label label-primary"><%= twitter_media %></span>
-		                        <i class="fa fa-twitter" aria-hidden="true"></i>
-		                        <span>Twitter</span>
-		                    </a>
-		                </li>
-                        <li class="nav-active">
-		                    <a href="/dropbox">
-		                        <span class="pull-right label label-primary"><%= facebook_media %></span>
-		                        <i class="fa fa-dropbox" aria-hidden="true"></i>
-		                        <span>Dropbox</span>
-		                    </a>
-		                </li>
+                        <li class="nav-parent">
+                            <a>
+                                <i class="fa fa-photo" aria-hidden="true"></i>
+                                <span>Media</span>
+                            </a>
+                            <ul class="nav nav-children">
+                                <li>
+		                            <a href="/media">
+		                                <span class="pull-right label label-primary"><%= total_media %></span>
+		                                <i class="fa fa-photo" aria-hidden="true"></i>
+		                                <span>All</span>
+		                            </a>
+		                        </li>
+                                <li>
+		                            <a href="/media/unapproved">
+		                                <span class="pull-right label label-primary"><%= unapproved_media %></span>
+		                                <i class="fa fa-question-circle" aria-hidden="true"></i>
+		                                <span>Unapproved</span>
+		                            </a>
+		                        </li>
+                                <li>
+		                            <a href="/media/approved">
+		                                <i class="fa fa-check-circle" aria-hidden="true"></i>
+		                                <span>Approved</span>
+		                            </a>
+		                        </li>
+                                <li>
+		                            <a href="/media#instagram">
+		                                <span class="pull-right label label-primary"><%= instagram_media %></span>
+		                                <i class="fa fa-instagram" aria-hidden="true"></i>
+		                                <span>Instagram</span>
+		                            </a>
+		                        </li>
+                                <li>
+		                            <a href="/media#twitter">
+		                                <span class="pull-right label label-primary"><%= twitter_media %></span>
+		                                <i class="fa fa-twitter" aria-hidden="true"></i>
+		                                <span>Twitter</span>
+		                            </a>
+		                        </li>
+                            </ul>
+                        </li>
+		                
+                        <li class="nav-parent" class="nav-active">
+                            <a>
+                                <i class="fa fa-dropbox" aria-hidden="true"></i>
+                                <span>Dropbox</span>
+                            </a>
+                            <ul class="nav nav-children">
+                                <li>
+		                            <a href="/dropbox">
+		                                <span class="pull-right label label-primary"><%= facebook_media %></span>
+		                                <i class="fa fa-dropbox" aria-hidden="true"></i>
+		                                <span>Dropbox</span>
+		                            </a>
+		                        </li>
+                                <li>
+                                    <a href="/dropbox/unapproved">
+                                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+                                        <span>Unapproved</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/dropbox/approved">
+                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                        <span>Approved</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        
                         <li id="user_link" runat="server" Visible="false">
 		                    <a href="/users">
 		                        <i class="fa fa-users" aria-hidden="true"></i>

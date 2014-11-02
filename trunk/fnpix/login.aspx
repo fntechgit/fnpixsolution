@@ -57,6 +57,13 @@
                                     <strong>Login Incorrect</strong> your email &amp; password you provided were incorrect, you can try again or use the <a href="/forgot-password">Forgot Password</a> page to receive your password.
                                 </div>
                             </asp:Panel>
+                            
+                            <asp:Panel runat="server" ID="pnl_no_events_assigned" Visible="false">
+                                <div class="alert alert-danger">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                    <strong>No Events Assigned</strong> You do not have any events assigned to your account.  Please contact your Event Administrator at FNTech for permission.
+                                </div>
+                            </asp:Panel>
 
 							<div class="form-group mb-lg">
 								<label>Email</label>

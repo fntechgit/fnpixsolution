@@ -29,7 +29,16 @@ namespace fnpix
 
             if (Page.RouteData.Values["unapproved"] != null)
             {
-                render_media(_dropbox.select_list(Convert.ToInt32(Session["event_id"].ToString()), false));
+                string status = Page.RouteData.Values["unapproved"].ToString();
+
+                if (status == "unapproved")
+                {
+                    render_media(_dropbox.select_list(Convert.ToInt32(Session["event_id"].ToString()), false));
+                }
+                else
+                {
+                    render_media(_dropbox.select_list(Convert.ToInt32(Session["event_id"].ToString()), true));   
+                }
             }
             else
             {
