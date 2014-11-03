@@ -1631,6 +1631,7 @@
     <Content Include="visual\effect2.aspx" />
     <Content Include="visual\effect3.aspx" />
     <Content Include="visual\effect4.aspx" />
+    <Content Include="visual\effect5.aspx" />
     <Content Include="visual\examples\dummy\abstract.jpg" />
     <Content Include="visual\examples\dummy\abstract_thumb.jpg" />
     <Content Include="visual\examples\examples.css" />
@@ -1639,6 +1640,7 @@
     <Content Include="visual\examples\slider.html" />
     <Content Include="visual\examples\variations.html" />
     <Content Include="visual\fnpix.displays.css" />
+    <Content Include="visual\fnpix.twitter.displays.css" />
     <Content Include="visual\gfx\20\btn-autopause.png" />
     <Content Include="visual\gfx\20\btn-autoplay.png" />
     <Content Include="visual\gfx\20\btn-contact.png" />
@@ -1690,6 +1692,7 @@
     <Content Include="visual\js\jquery.mousewheel.min.js" />
     <Content Include="visual\loading.gif" />
     <Content Include="visual\master.aspx" />
+    <Content Include="visual\mixed_twitter_and_instagram.aspx" />
     <Content Include="visual\PolaroidGallery\bg.jpg" />
     <Content Include="visual\PolaroidGallery\bi-imgs\buttons\cata_down.png" />
     <Content Include="visual\PolaroidGallery\bi-imgs\buttons\cata_over.png" />
@@ -1959,12 +1962,26 @@
     <Compile Include="visual\effect4.aspx.designer.cs">
       <DependentUpon>effect4.aspx</DependentUpon>
     </Compile>
+    <Compile Include="visual\effect5.aspx.cs">
+      <DependentUpon>effect5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="visual\effect5.aspx.designer.cs">
+      <DependentUpon>effect5.aspx</DependentUpon>
+    </Compile>
     <Compile Include="visual\master.aspx.cs">
       <DependentUpon>master.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="visual\master.aspx.designer.cs">
       <DependentUpon>master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="visual\mixed_twitter_and_instagram.aspx.cs">
+      <DependentUpon>mixed_twitter_and_instagram.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="visual\mixed_twitter_and_instagram.aspx.designer.cs">
+      <DependentUpon>mixed_twitter_and_instagram.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

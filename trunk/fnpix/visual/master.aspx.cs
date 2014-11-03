@@ -30,6 +30,9 @@ namespace fnpix.visual
                 case 1003:
                     Response.Redirect("/displays/dropbox/" + d.event_id + "/" + d.slide_duration);
                     break;
+                case 1004:
+                    Response.Redirect("/displays/twitter/" + d.event_id + "/" + d.slide_duration);
+                    break;
                 default:
 
                     d.event_id = Convert.ToInt32(Page.RouteData.Values["id"] as string);

@@ -8,7 +8,7 @@ using overrideSocial;
 
 namespace fnpix.visual
 {
-    public partial class effect2 : System.Web.UI.Page
+    public partial class effect5 : System.Web.UI.Page
     {
         private overrideSocial.functions _functions = new overrideSocial.functions();
         private overrideSocial.mediaManager _media = new overrideSocial.mediaManager();
@@ -22,7 +22,7 @@ namespace fnpix.visual
                 hdn_interval.Value = Page.RouteData.Values["delay"].ToString();
             }
 
-            List<Media> med = _media.get_instagram_reverse(event_id);
+            List<Media> med = _media.get_twitter_reverse(event_id);
 
             hdn_max.Value = (med.Count - 1).ToString();
 
@@ -30,7 +30,7 @@ namespace fnpix.visual
 
             foreach (Media m in med)
             {
-                ph_photos.Controls.Add(new LiteralControl("<div id=\"content" + i + "\" class=\"content\"><div class=\"photo_holder\"><img src=\"" + m.source + "\" width=\"960\" height=\"960\" /></div><div class=\"content_holder\"><div class=\"userinfo\"><span class=\"fullname\">" + m.full_name + "</span><span class=\"username\">" + m.username + "</span><br /><span class=\"postdate\">" + _functions.relative_time(m.createdate) + "</span></div><div class=\"profile-pic\"><img src=\"" + m.profilepic + "\" /></div><br clear=\"all\"/><br clear=\"all\"/><br clear=\"all\"/><div class=\"description\">" + m.description + "</div><br clear=\"all\"/><br clear=\"all\"/>"));
+                ph_photos.Controls.Add(new LiteralControl("<div id=\"content" + i + "\" class=\"content\"><div class=\"photo_holder\"><img src=\"" + m.source + "\" style=\"width:100%;max-height:100%;margin: auto auto;\" /></div><div class=\"content_holder\"><div class=\"userinfo\"><span class=\"fullname\">" + m.full_name + "</span><span class=\"username\">" + m.username + "</span><br /><span class=\"postdate\">" + _functions.relative_time(m.createdate) + "</span></div><div class=\"profile-pic\"><img src=\"" + m.profilepic.Replace("_normal", "") + "\" width=\"150\" height=\"150\" /></div><br clear=\"all\"/><br clear=\"all\"/><br clear=\"all\"/><div class=\"description\">" + m.description + "</div><br clear=\"all\"/><br clear=\"all\"/>"));
 
                 if (!string.IsNullOrEmpty(m.latitude) && m.latitude != "0")
                 {

@@ -32,6 +32,7 @@ namespace overrideSocial
             us.notify_every_minutes = u.notify_every_minutes;
             us.pic = u.picture;
             us.pwd = u.password;
+            us.security = u.security;
             
             db.users.InsertOnSubmit(us);
 
@@ -107,6 +108,7 @@ namespace overrideSocial
             u.notify_every_minutes = us.notify_every_minutes;
             u.pwd = us.password;
             u.pic = us.picture;
+            u.security = us.security;
 
             db.SubmitChanges();
 

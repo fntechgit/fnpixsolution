@@ -67,8 +67,12 @@ namespace fnpix
             routes.MapPageRoute("visual-display-magicwall-route", "displays/magicwall/{id}", "~/visual/effect3.aspx");
             routes.MapPageRoute("visual-display-magicwall-route-with-timing", "displays/magicwall/{id}/{display}", "~/visual/effect3.aspx");
             routes.MapPageRoute("master-display-route", "displays/master/{id}", "~/visual/master.aspx");
+            routes.MapPageRoute("displays-twitter-route", "displays/twitter/{id}", "~/visual/effect5.aspx");
+            routes.MapPageRoute("displays-twitter-route-with-timing", "displays/twitter/{id}/{display}", "~/visual/effect5.aspx");
+            routes.MapPageRoute("displays-instagram-twitter-random-route", "displays/twitter-instagram/{id}", "~/visual/mixed_twitter_and_instagram.aspx");
+            routes.MapPageRoute("displays-instagram-twitter-random-route-with-timing", "displays/twitter-instagram/{id}/{display}", "~/visual/mixed_twitter_and_instagram.aspx");
 
-            // ######################## DISPLAYS SECTION ################################### //
+            // ######################## DISPLAYS MANAGEMENT SECTION ################################### //
             routes.MapPageRoute("displays-manage-route", "displays", "~/displays.aspx");
             routes.MapPageRoute("displays-add-route", "displays/add", "~/add_display.aspx");
             routes.MapPageRoute("displays-edit-route", "displays/edit/{id}", "~/add_display.aspx");
