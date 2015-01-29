@@ -76,6 +76,15 @@ namespace fnpix {
         protected global::System.Web.UI.WebControls.TextBox last_name;
         
         /// <summary>
+        /// security_level control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl security_level;
+        
+        /// <summary>
         /// security control.
         /// </summary>
         /// <remarks>

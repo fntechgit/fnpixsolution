@@ -15,7 +15,7 @@ namespace fnpix.visual
 
             Int32 event_id = Convert.ToInt32(Page.RouteData.Values["id"] as string);
 
-            if (rnd.Next(0, 1) == 0)
+            if (rnd.Next(0, 2) == 0)
             {
                 Response.Redirect("/displays/instagram/" + event_id);
             }

@@ -11,6 +11,7 @@ namespace overrideSocial
     {
         settings _settings = new settings();
         mediaManager _media = new mediaManager();
+        private events _events = new events();
 
         // pull by Instagram Hashtag
         public Int32 fetch(string tag, Int32 count, Int32 event_id, Int32 tag_id)
@@ -20,6 +21,8 @@ namespace overrideSocial
             var config = new InstagramConfig("https://api.instagram.com/v1", "https://api.instagram.com/oauth", _settings.instagram_client_id(), _settings.instagram_client_secret(), "http://overridepro.com/portfolio");
 
             var tag_photos = new InstaSharp.Endpoints.Tags.Unauthenticated(config).Recent(tag, count);
+
+            Event ev = _events.@select(event_id);
 
             Media m = new Media();
 
@@ -56,9 +59,16 @@ namespace overrideSocial
 
                 m.tags = "#" + string.Join(" #", item.Tags);
 
-                _media.add(m);
+                if (ev.moderate == false)
+                {
+                    m.approved = true;
+                    m.approved_by = 1;
+                    m.approved_date = DateTime.Now;
+                }
 
-                total_count++;
+                    _media.add(m);
+
+                    total_count++;
             }
 
             return total_count;
@@ -122,9 +132,12 @@ namespace overrideSocial
 
                     m.tags = "#" + string.Join(" #", item.Tags);
 
-                    _media.add(m);
+                    if (m.createdate >= new DateTime(2014, 11, 1))
+                    {
+                        _media.add(m);
 
-                    total_count++;
+                        total_count++;
+                    }
                 }
 
                 return total_count;

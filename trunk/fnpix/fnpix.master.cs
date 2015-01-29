@@ -40,6 +40,7 @@ namespace fnpix
                         ddl_event.DataValueField = "id";
                         ddl_event.DataTextField = "title";
                         ddl_event.DataBind();
+                        ddl_event.SelectedIndex = 0;
 
                         if (Session["event_id"] != null)
                         {

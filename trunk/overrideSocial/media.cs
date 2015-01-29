@@ -21,17 +21,30 @@ namespace overrideSocial
 
             md.added_to_db_date = DateTime.Now;
 
-            if (!_settings.moderate_event())
+            //if (!_settings.moderate_event())
+            //{
+            //    md.approved = true;
+            //    md.approved_by = 1;
+            //    md.approved_date = DateTime.Now;
+            //}
+            //else
+            //{
+            //    md.approved = false;
+            //    md.approved_by = null;
+            //    md.approved_date = null;    
+            //}
+
+            if (m.approved == true)
             {
                 md.approved = true;
-                md.approved_by = 1;
-                md.approved_date = DateTime.Now;
+                md.approved_by = m.approved_by;
+                md.approved_date = m.approved_date;
             }
             else
             {
                 md.approved = false;
                 md.approved_by = null;
-                md.approved_date = null;    
+                md.approved_date = null;
             }
 
             md.createdate = m.createdate;

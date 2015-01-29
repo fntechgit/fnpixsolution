@@ -88,9 +88,12 @@ namespace overrideSocial
                             m.is_video = true;
                         }
 
-                        _media.add(m);
+                        if (m.createdate >= new DateTime(2014, 11, 1))
+                        {
+                            _media.add(m);
 
-                        total++;
+                            total++;
+                        }
                     }
                     
                 }
@@ -118,6 +121,8 @@ namespace overrideSocial
 
             options.ScreenName = tag;
             options.Count = count;
+            options.ExcludeReplies = true;
+            options.IncludeRts = false;
 
             var tweets = service.ListTweetsOnUserTimeline(options);
 
@@ -174,9 +179,12 @@ namespace overrideSocial
                         m.is_video = true;
                     }
 
-                    _media.add(m);
+                    if (m.createdate >= new DateTime(2014, 11, 1))
+                    {
+                        _media.add(m);
 
-                    total++;
+                        total++;
+                    }
                 }
             }
 

@@ -190,7 +190,7 @@
 												</div>
 											</div>
                                             
-                                            <div class="form-group">
+                                            <div class="form-group" id="security_level" runat="server">
 												<label class="col-md-3 control-label">Master Security Level</label>
 												<div class="col-md-6">
 												    <asp:DropDownList runat="server" ID="security" data-plugin-multiselect>

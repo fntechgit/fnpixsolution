@@ -71,6 +71,7 @@ namespace fnpix
             routes.MapPageRoute("displays-twitter-route-with-timing", "displays/twitter/{id}/{display}", "~/visual/effect5.aspx");
             routes.MapPageRoute("displays-instagram-twitter-random-route", "displays/twitter-instagram/{id}", "~/visual/mixed_twitter_and_instagram.aspx");
             routes.MapPageRoute("displays-instagram-twitter-random-route-with-timing", "displays/twitter-instagram/{id}/{display}", "~/visual/mixed_twitter_and_instagram.aspx");
+            routes.MapPageRoute("volcom-display-route", "displays/volcom/{id}", "~/visual/volcom.aspx");
 
             // ######################## DISPLAYS MANAGEMENT SECTION ################################### //
             routes.MapPageRoute("displays-manage-route", "displays", "~/displays.aspx");

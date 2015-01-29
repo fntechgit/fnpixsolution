@@ -36,6 +36,8 @@ namespace fnpix
                 btn_process.Text = "Add";
             }
 
+
+
             if (!Page.IsPostBack)
             {
                 if (Page.RouteData.Values["id"] != null)
@@ -161,8 +163,10 @@ namespace fnpix
                 case "event":
                     display_link.Visible = true;
                     preference_link.Visible = true;
+                    security_level.Visible = false;
                     break;
                 case "content":
+                    security_level.Visible = false;
                     break;
             }
         }

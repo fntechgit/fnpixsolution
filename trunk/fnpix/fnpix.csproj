@@ -1641,6 +1641,7 @@
     <Content Include="visual\examples\variations.html" />
     <Content Include="visual\fnpix.displays.css" />
     <Content Include="visual\fnpix.twitter.displays.css" />
+    <Content Include="visual\fnpix.volcom.displays.css" />
     <Content Include="visual\gfx\20\btn-autopause.png" />
     <Content Include="visual\gfx\20\btn-autoplay.png" />
     <Content Include="visual\gfx\20\btn-contact.png" />
@@ -1738,6 +1739,7 @@
     <Content Include="visual\PolaroidGallery\library.js" />
     <Content Include="visual\PolaroidGallery\music\readMe.txt" />
     <Content Include="visual\PolaroidGallery\style.css" />
+    <Content Include="visual\volcom.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1982,6 +1984,13 @@
     </Compile>
     <Compile Include="visual\mixed_twitter_and_instagram.aspx.designer.cs">
       <DependentUpon>mixed_twitter_and_instagram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="visual\volcom.aspx.cs">
+      <DependentUpon>volcom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="visual\volcom.aspx.designer.cs">
+      <DependentUpon>volcom.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
