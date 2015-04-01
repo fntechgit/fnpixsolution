@@ -8,6 +8,7 @@ namespace overrideSocial
     {
         settings _settings = new settings();
         mediaManager _media = new mediaManager();
+        private events _events = new events();
 
         // get by twitter hashtag
         public Int32 fetch(string tag, Int32 count, Int32 event_id, Int32 tag_id)
@@ -24,6 +25,8 @@ namespace overrideSocial
             options.IncludeEntities = true;
             options.Lang = "en";
             options.Resulttype = TwitterSearchResultType.Recent;
+
+            Event ev = _events.@select(event_id);
 
             TwitterSearchResult tweets = new TwitterSearchResult();
 
@@ -88,12 +91,16 @@ namespace overrideSocial
                             m.is_video = true;
                         }
 
-                        if (m.createdate >= new DateTime(2014, 11, 1))
+                        if (!ev.moderate)
                         {
+                            m.approved = true;
+                            m.approved_by = 1;
+                            m.approved_date = DateTime.Now;
+                        }
+
                             _media.add(m);
 
                             total++;
-                        }
                     }
                     
                 }

@@ -1,28 +1,27 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="effect2.aspx.cs" Inherits="fnpix.visual.effect2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="instagram_1280.aspx.cs" Inherits="fnpix.visual.instagram_1280" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    
+<html lang="en">
+<head id="Head1" runat="server">
     <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 
-    <link type="text/css" rel="stylesheet" href="/visual/fnpix.volcom.displays.css" media="all" />
+    <link type="text/css" rel="stylesheet" href="/visual/fnpix.twitter.1280.displays.css" media="all" />
     
     <script type="text/javascript">
 
-        $(document).ready(function() {
+        $(document).ready(function () {
 
             $(".content").each(function (index, value) {
 
-                var top_value = index * 1012;
+                var top_value = index * 682;
 
                 $(this).css("top", top_value + "px");
             });
 
-            var interval = <%= delay %>;
+            var interval = parseInt($("#hdn_interval").val()) * 1000;
 
-            window.setInterval(function() {
+            window.setInterval(function () {
 
                 var max_up = parseInt($("#hdn_max").val());
                 var max_down = parseInt($("#hdn_min").val());
@@ -81,11 +80,11 @@
         });
 
         function scrollUp(cnt) {
-            $(".content").animate({ "top": "-=" + (1012 * cnt) + "px" }, 750, "linear");
+            $(".content").animate({ "top": "-=" + (682 * cnt) + "px" }, 750, "linear");
         }
 
         function scrollDown(cnt) {
-            $(".content").animate({ "top": "+=" + (1012 * cnt) + "px" }, 750, "linear");
+            $(".content").animate({ "top": "+=" + (682 * cnt) + "px" }, 750, "linear");
         }
 
         function getRandomInt(min, max) {
@@ -93,12 +92,10 @@
         }
 
     </script>
-
 </head>
 <body id="bdy" runat="server">
     <form id="form1" runat="server">
-        
-        <asp:HiddenField runat="server" ID="hdn_max" Value="2"/>
+    <asp:HiddenField runat="server" ID="hdn_max" Value="2"/>
         <asp:HiddenField runat="server" ID="hdn_min" Value="0"/>
         <asp:HiddenField runat="server" ID="hdn_interval" Value="12"/>
 

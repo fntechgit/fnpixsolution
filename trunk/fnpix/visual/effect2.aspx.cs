@@ -13,13 +13,23 @@ namespace fnpix.visual
         private overrideSocial.functions _functions = new overrideSocial.functions();
         private overrideSocial.mediaManager _media = new overrideSocial.mediaManager();
 
+        public string delay = @"12";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Int32 event_id = Convert.ToInt32(Page.RouteData.Values["id"] as string);
 
+            if (event_id == 1004)
+            {
+                bdy.Attributes.CssStyle.Add("background-image", "/assets/bghpocp1920.jpg");
+            }
+
             if (Page.RouteData.Values["delay"] != null)
             {
-                hdn_interval.Value = Page.RouteData.Values["delay"].ToString();
+                hdn_interval.Value = "12";//Page.RouteData.Values["delay"].ToString();
+
+                delay = Page.RouteData.Values["delay"] as string;
+                delay = delay + @"000";
             }
 
             List<Media> med = _media.get_instagram_reverse(event_id);

@@ -6,7 +6,7 @@
 <head runat="server">
     <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 
-    <link type="text/css" rel="stylesheet" href="/visual/fnpix.twitter.displays.css" media="all" />
+    <link type="text/css" rel="stylesheet" href="/visual/fnpix.volcom.displays.css" media="all" />
     
     <script type="text/javascript">
 
@@ -19,7 +19,7 @@
                 $(this).css("top", top_value + "px");
             });
 
-            var interval = parseInt($("#hdn_interval").val()) * 1000;
+            var interval = <%= delay %>;
 
             window.setInterval(function () {
 
@@ -93,11 +93,11 @@
 
     </script>
 </head>
-<body>
+<body id="bdy" runat="server">
     <form id="form1" runat="server">
     <asp:HiddenField runat="server" ID="hdn_max" Value="2"/>
         <asp:HiddenField runat="server" ID="hdn_min" Value="0"/>
-        <asp:HiddenField runat="server" ID="hdn_interval" Value="5"/>
+        <asp:HiddenField runat="server" ID="hdn_interval" Value="12"/>
 
         <div id="wrapper">
             <asp:PlaceHolder runat="server" ID="ph_photos" />

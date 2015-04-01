@@ -1640,6 +1640,7 @@
     <Content Include="visual\examples\slider.html" />
     <Content Include="visual\examples\variations.html" />
     <Content Include="visual\fnpix.displays.css" />
+    <Content Include="visual\fnpix.twitter.1280.displays.css" />
     <Content Include="visual\fnpix.twitter.displays.css" />
     <Content Include="visual\fnpix.volcom.displays.css" />
     <Content Include="visual\gfx\20\btn-autopause.png" />
@@ -1683,6 +1684,7 @@
     <Content Include="visual\images\loading.gif" />
     <Content Include="visual\images\loading_background.png" />
     <Content Include="visual\images\overlay.png" />
+    <Content Include="visual\instagram_1280.aspx" />
     <Content Include="visual\jquery.imagefit.js" />
     <Content Include="visual\js-image-slider.css" />
     <Content Include="visual\js-image-slider.js" />
@@ -1739,6 +1741,7 @@
     <Content Include="visual\PolaroidGallery\library.js" />
     <Content Include="visual\PolaroidGallery\music\readMe.txt" />
     <Content Include="visual\PolaroidGallery\style.css" />
+    <Content Include="visual\twitter_1280.aspx" />
     <Content Include="visual\volcom.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -1971,6 +1974,13 @@
     <Compile Include="visual\effect5.aspx.designer.cs">
       <DependentUpon>effect5.aspx</DependentUpon>
     </Compile>
+    <Compile Include="visual\instagram_1280.aspx.cs">
+      <DependentUpon>instagram_1280.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="visual\instagram_1280.aspx.designer.cs">
+      <DependentUpon>instagram_1280.aspx</DependentUpon>
+    </Compile>
     <Compile Include="visual\master.aspx.cs">
       <DependentUpon>master.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1984,6 +1994,13 @@
     </Compile>
     <Compile Include="visual\mixed_twitter_and_instagram.aspx.designer.cs">
       <DependentUpon>mixed_twitter_and_instagram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="visual\twitter_1280.aspx.cs">
+      <DependentUpon>twitter_1280.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="visual\twitter_1280.aspx.designer.cs">
+      <DependentUpon>twitter_1280.aspx</DependentUpon>
     </Compile>
     <Compile Include="visual\volcom.aspx.cs">
       <DependentUpon>volcom.aspx</DependentUpon>
