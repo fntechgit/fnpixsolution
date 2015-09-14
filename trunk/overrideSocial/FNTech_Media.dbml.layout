@@ -62,12 +62,6 @@
         <elementListCompartment Id="f85d4419-a592-4e9e-bfbc-3d7e6c37d830" absoluteBounds="11.14, 4.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="20b0e8e6-dc7a-4fbf-8a25-53020b4fa8d6" absoluteBounds="1, 2.125, 2, 6.1938297526041657">
-      <DataClassMoniker Name="/FNTech_MediaDataContext/event_master" />
-      <nestedChildShapes>
-        <elementListCompartment Id="7c88ddff-972a-4e20-b148-b4485fa36528" absoluteBounds="1.0150000000000001, 2.585, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="00da63a6-f688-4eb6-9ef1-5931ce3dfbea" absoluteBounds="3.875, 6.5, 2, 4.0785139973958326">
       <DataClassMoniker Name="/FNTech_MediaDataContext/dropbox_media" />
       <nestedChildShapes>
@@ -78,6 +72,12 @@
       <DataClassMoniker Name="/FNTech_MediaDataContext/display" />
       <nestedChildShapes>
         <elementListCompartment Id="48b6d566-4962-4380-9d67-a0f6e36e53d8" absoluteBounds="3.765, 0.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dab061c8-cffa-44c4-96f2-a679f0d675d7" absoluteBounds="0.625, 2.625, 2, 6.5784326171875">
+      <DataClassMoniker Name="/FNTech_MediaDataContext/event_master" />
+      <nestedChildShapes>
+        <elementListCompartment Id="23b3fa05-4701-4c36-be10-cf59f8283937" absoluteBounds="0.64000000000000012, 3.085, 1.9700000000000002, 6.0184326171875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

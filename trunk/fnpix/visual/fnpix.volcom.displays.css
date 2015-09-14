@@ -1,4 +1,4 @@
-﻿body { width: 1920px;height: 1080px;border: 0;background-color: #82be42;background-image: url('/assets/bgocp1920.jpg');background-repeat: no-repeat;margin: 0; }
+﻿body { width: 1920px;height: 1080px;border: 0;background-color: #000;background-image: url('/assets/bgocp1920.jpg');background-repeat: no-repeat;margin: 0; }
 
 #wrapper { width: 1520px;height: 992px;margin: 40px auto 120px;overflow: hidden;position: relative; }
 .content { width: 1520px;height: 1012px;margin: 0;padding: 0;position: absolute; }

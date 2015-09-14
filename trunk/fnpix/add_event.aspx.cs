@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using System.Xml.Linq;
 using overrideSocial;
 using DropNet;
+using System.IO;
 
 namespace fnpix
 {
@@ -67,6 +68,16 @@ namespace fnpix
                     end_time.Text = ev.end.ToShortTimeString();
                     moderate.Checked = ev.moderate;
                     listenSlider.Value = ev.interval.ToString();
+
+                    if (!string.IsNullOrEmpty(ev.background_1280))
+                    {
+                        ph_current_1280.Controls.Add(new LiteralControl("<h6>Current 1280 x 720 Background</h6><p><img src=\"/uploads/" + ev.background_1280 + "\" width=\"100%\" /></p>"));
+                    }
+
+                    if (!string.IsNullOrEmpty(ev.background_1920))
+                    {
+                        ph_current_1920.Controls.Add(new LiteralControl("<h6>Current 1920 x 1280 Background</h6><p><img src=\"/uploads/" + ev.background_1920 + "\" width=\"100%\" /></p>"));
+                    }
 
                     pnl_map.Visible = true;
                     btn_dropbox.Visible = true;
@@ -163,6 +174,28 @@ namespace fnpix
             ev.country = country.SelectedValue.ToString();
             ev.interval = Convert.ToInt32(listenSlider.Value);
             ev.moderate = moderate.Checked;
+
+            if (background_1920.HasFile)
+            {
+                string path = Server.MapPath("~/uploads/");
+                string extension = Path.GetExtension(background_1920.FileName.ToString());
+                string unique = Guid.NewGuid().ToString();
+
+                background_1920.SaveAs(path + unique + extension);
+
+                ev.background_1920 = unique + extension;
+            }
+
+            if (background_1280.HasFile)
+            {
+                string path = Server.MapPath("~/uploads/");
+                string extension = Path.GetExtension(background_1280.FileName.ToString());
+                string unique = Guid.NewGuid().ToString();
+
+                background_1280.SaveAs(path + unique + extension);
+
+                ev.background_1280 = unique + extension;
+            }
 
             if (!string.IsNullOrEmpty(start_date.Text.ToString()) && !string.IsNullOrEmpty(start_time.Text.ToString()))
             {

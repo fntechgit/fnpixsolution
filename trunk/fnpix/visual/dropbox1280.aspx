@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="dropbox.aspx.cs" Inherits="fnpix.visual.dropbox" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="dropbox1280.aspx.cs" Inherits="fnpix.visual.dropbox1280" %>
 
 <!DOCTYPE html>
 
@@ -34,7 +34,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div id="main-wrap" style="width:1920px;height:1080px;">
+    <div id="main-wrap" style="width:1280px;height:720px;">
 			<div id="demo" class="magicwall">
 				<ul class="magicwall-grid">
 				    <asp:PlaceHolder runat="server" ID="ph_images" />

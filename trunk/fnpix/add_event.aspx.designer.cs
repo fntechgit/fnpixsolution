@@ -193,6 +193,42 @@ namespace fnpix {
         protected global::System.Web.UI.WebControls.CheckBox moderate;
         
         /// <summary>
+        /// background_1920 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload background_1920;
+        
+        /// <summary>
+        /// ph_current_1920 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder ph_current_1920;
+        
+        /// <summary>
+        /// background_1280 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload background_1280;
+        
+        /// <summary>
+        /// ph_current_1280 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder ph_current_1280;
+        
+        /// <summary>
         /// listenSlider control.
         /// </summary>
         /// <remarks>

@@ -57,6 +57,7 @@ namespace fnpix
             routes.MapPageRoute("dropbox-media-unapproved-route", "dropbox/{unapproved}", "~/dropbox_media.aspx");
             routes.MapPageRoute("dropbox-visual-theme-route", "displays/dropbox/{id}", "~/visual/dropbox.aspx");
             routes.MapPageRoute("dropbox-visual-theme-route-with-timing", "displays/dropbox/{id}/{delay}", "~/visual/dropbox.aspx");
+            routes.MapPageRoute("dropbox-visual-theme-route-with-timing-2", "displays/dropbox-1280/{id}/{delay}", "~/visual/dropbox1280.aspx");
             routes.MapPageRoute("dropbox-approve-unapprove-route", "dropbox/{status}/{id}", "~/dropbox_update.aspx");
 
             // ######################## DISPLAYS SECTION ################################### //

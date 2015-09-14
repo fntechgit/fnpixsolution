@@ -570,6 +570,28 @@
 											</div>
                                             
                                             <div class="form-group">
+												<label class="col-md-3 control-label">Background (1920 x 1080)</label>
+												<div class="col-md-6">
+													<div class="fileupload fileupload-new" data-provides="fileupload">
+														<asp:FileUpload runat="server" ID="background_1920" ClientIDMode="Static" />
+													</div>
+												</div>
+											</div>
+                                            
+                                            <asp:PlaceHolder runat="server" ID="ph_current_1920"></asp:PlaceHolder>
+                                            
+                                            <div class="form-group">
+												<label class="col-md-3 control-label">Background (1280 x 720)</label>
+												<div class="col-md-6">
+													<div class="fileupload fileupload-new" data-provides="fileupload">
+														<asp:FileUpload runat="server" ID="background_1280" ClientIDMode="Static" />
+													</div>
+												</div>
+											</div>
+                                            
+                                            <asp:PlaceHolder runat="server" ID="ph_current_1280"></asp:PlaceHolder>
+                                            
+                                            <div class="form-group">
 												<label class="col-md-3 control-label">Update Interval (minutes)</label>
 												<div class="col-md-6">
 													<div class="m-md slider-primary" data-plugin-slider data-plugin-options='{ "value": 30, "range": "min" : 5, "max": 60 }' data-plugin-slider-output="#listenSlider">

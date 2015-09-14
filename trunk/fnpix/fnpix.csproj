@@ -1627,6 +1627,7 @@
     <Content Include="visual\css\crystal-gallery.css" />
     <Content Include="visual\demo.css" />
     <Content Include="visual\dropbox.aspx" />
+    <Content Include="visual\dropbox1280.aspx" />
     <Content Include="visual\effect1.aspx" />
     <Content Include="visual\effect2.aspx" />
     <Content Include="visual\effect3.aspx" />
@@ -1938,6 +1939,13 @@
     </Compile>
     <Compile Include="visual\dropbox.aspx.designer.cs">
       <DependentUpon>dropbox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="visual\dropbox1280.aspx.cs">
+      <DependentUpon>dropbox1280.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="visual\dropbox1280.aspx.designer.cs">
+      <DependentUpon>dropbox1280.aspx</DependentUpon>
     </Compile>
     <Compile Include="visual\effect1.aspx.cs">
       <DependentUpon>effect1.aspx</DependentUpon>

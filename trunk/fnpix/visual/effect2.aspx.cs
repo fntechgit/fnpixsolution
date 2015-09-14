@@ -12,6 +12,7 @@ namespace fnpix.visual
     {
         private overrideSocial.functions _functions = new overrideSocial.functions();
         private overrideSocial.mediaManager _media = new overrideSocial.mediaManager();
+        private overrideSocial.events _events = new overrideSocial.events();
 
         public string delay = @"12";
 
@@ -19,9 +20,11 @@ namespace fnpix.visual
         {
             Int32 event_id = Convert.ToInt32(Page.RouteData.Values["id"] as string);
 
-            if (event_id == 1004)
+            overrideSocial.Event ev = _events.@select(event_id);
+
+            if (!string.IsNullOrEmpty(ev.background_1920))
             {
-                bdy.Attributes.CssStyle.Add("background-image", "/assets/bghpocp1920.jpg");
+                bdy.Attributes.CssStyle.Add("background-image", "/uploads/" + ev.background_1920);
             }
 
             if (Page.RouteData.Values["delay"] != null)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 
 namespace overrideSocial
@@ -51,6 +52,8 @@ namespace overrideSocial
             ev.dropbox_referral = null;
             ev.dropbox_uid = null;
             ev.dropbox_username = null;
+            ev.background_1280 = e.background_1280;
+            ev.background_1920 = e.background_1920;
 
             db.event_masters.InsertOnSubmit(ev);
 
@@ -107,6 +110,8 @@ namespace overrideSocial
             ev.dropbox_referral = e.dropbox_referral;
             ev.dropbox_uid = e.dropbox_uid;
             ev.dropbox_username = e.dropbox_username;
+            ev.background_1280 = e.background_1280;
+            ev.background_1920 = e.background_1920;
 
             db.SubmitChanges();
 
@@ -168,6 +173,8 @@ namespace overrideSocial
             e.dropbox_referral = ev.dropbox_referral;
             e.dropbox_uid = ev.dropbox_uid;
             e.dropbox_username = ev.dropbox_username;
+            e.background_1280 = ev.background_1280;
+            e.background_1920 = ev.background_1920;
 
             return e;
         }
@@ -291,6 +298,8 @@ namespace overrideSocial
         public string dropbox_quota { get; set; }
         public Int64? dropbox_uid { get; set; }
         public string dropbox_referral { get; set; }
+        public string background_1920 { get; set; }
+        public string background_1280 { get; set; }
     }
 
     #endregion

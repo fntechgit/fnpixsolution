@@ -26,50 +26,59 @@ namespace overrideSocial
 
             Media m = new Media();
 
-            foreach (var item in tag_photos.Data)
-            {
-                m.full_name = item.User.FullName;
-                m.username = item.User.Username;
-                m.profilepic = item.User.ProfilePicture;
-                m.source_id = item.Id;
-                m.service = "Instagram";
-                m.source = item.Images.StandardResolution.Url;
-                m.width = item.Images.StandardResolution.Width;
-                m.height = item.Images.StandardResolution.Height;
-                m.link = item.Link;
-                m.event_id = event_id;
-                m.tag_id = tag_id;
-
-                dynamic dyn = JsonConvert.DeserializeObject(item.Caption);
-
-                if (dyn != null)
+            
+                try
                 {
-                    m.description = dyn.text;    
-                }
-                
-                m.createdate = item.CreatedTime;
-                m.likes = item.Likes.Count;
+                    foreach (var item in tag_photos.Data)
+                    {
+                        m.full_name = item.User.FullName;
+                        m.username = item.User.Username;
+                        m.profilepic = item.User.ProfilePicture;
+                        m.source_id = item.Id;
+                        m.service = "Instagram";
+                        m.source = item.Images.StandardResolution.Url;
+                        m.width = item.Images.StandardResolution.Width;
+                        m.height = item.Images.StandardResolution.Height;
+                        m.link = item.Link;
+                        m.event_id = event_id;
+                        m.tag_id = tag_id;
 
-                if (item.Location != null)
+                        dynamic dyn = JsonConvert.DeserializeObject(item.Caption);
+
+                        if (dyn != null)
+                        {
+                            m.description = dyn.text;
+                        }
+
+                        m.createdate = item.CreatedTime;
+                        m.likes = item.Likes.Count;
+
+                        if (item.Location != null)
+                        {
+                            m.location_name = item.Location.Name;
+                            m.latitude = item.Location.Latitude.ToString();
+                            m.longitude = item.Location.Longitude.ToString();
+                        }
+
+                        m.tags = "#" + string.Join(" #", item.Tags);
+
+                        if (ev.moderate == false)
+                        {
+                            m.approved = true;
+                            m.approved_by = 1;
+                            m.approved_date = DateTime.Now;
+                        }
+
+                        _media.add(m);
+
+                        total_count++;
+                    }
+                }
+                catch (NullReferenceException ex)
                 {
-                    m.location_name = item.Location.Name;
-                    m.latitude = item.Location.Latitude.ToString();
-                    m.longitude = item.Location.Longitude.ToString();
+                    Console.WriteLine("No Data Available for #" + tag);    
                 }
-
-                m.tags = "#" + string.Join(" #", item.Tags);
-
-                if (ev.moderate == false)
-                {
-                    m.approved = true;
-                    m.approved_by = 1;
-                    m.approved_date = DateTime.Now;
-                }
-
-                    _media.add(m);
-
-                    total_count++;
-            }
+           
 
             return total_count;
         }
