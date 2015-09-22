@@ -6,7 +6,7 @@
 <head id="Head1" runat="server">
     <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 
-    <link type="text/css" rel="stylesheet" href="/visual/fnpix.twitter.1280.displays.css" media="all" />
+    <link type="text/css" rel="stylesheet" href="/visual/fnpix.twitter.1280.displays.css?ver=9.21.15" media="all" />
     
     <script type="text/javascript">
 
