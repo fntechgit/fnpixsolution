@@ -1,4 +1,4 @@
-﻿body { width: 1280px;height: 720px;border: 0;background-color: #000;background-image: url('/assets/bgocp1280.jpg');background-repeat: no-repeat;margin: 0; }
+﻿body { width: 1280px;height: 720px;border: 0;background-color: #000;background-repeat: no-repeat;margin: 0; }
 
 #wrapper { width: 1020px;height: 662px;margin: 30px auto;overflow: hidden;position: relative; }
 .content { width: 1020px;height: 682px;margin: 0;padding: 0;position: absolute; }

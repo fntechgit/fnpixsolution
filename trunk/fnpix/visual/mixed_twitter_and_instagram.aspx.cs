@@ -19,7 +19,10 @@ namespace fnpix.visual
 
             if (Page.RouteData.Values["resolution"] != null)
             {
-                resolution = "-" + Page.RouteData.Values["resolution"] as string;
+                if (Page.RouteData.Values["resolution"].ToString() == "1280")
+                {
+                    resolution = "-" + Page.RouteData.Values["resolution"] as string;
+                }
             }
 
             string timing = string.Empty;

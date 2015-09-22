@@ -1,6 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 using InstaSharp;
+using System.Text.RegularExpressions;
 
 // test
 using System.IO;
@@ -96,57 +97,68 @@ namespace overrideSocial
             else
             {
                 // get by user
+                Regex rgx = new Regex("[^A-Za-z0-9]");
+
+                username = rgx.Replace(username, "");
+
                 var config = new InstagramConfig("https://api.instagram.com/v1", "https://api.instagram.com/oauth", _settings.instagram_client_id(), _settings.instagram_client_secret(), "http://overridepro.com/portfolio");
 
-                var theusers = new InstaSharp.Endpoints.Users.Unauthenticated(config).Search(username, 1);
-
-                Int32 user_id = 0;
-
-                foreach (var r in theusers.Data)
+                try
                 {
-                    user_id = Convert.ToInt32(r.Id);
+                    var theusers = new InstaSharp.Endpoints.Users.Unauthenticated(config).Search(username, 1);
+
+                    Int32 user_id = 0;
+
+                    foreach (var r in theusers.Data)
+                    {
+                        user_id = Convert.ToInt32(r.Id);
+                    }
+
+                    var tag_photos = new InstaSharp.Endpoints.Tags.Unauthenticated(config).RecentByUser(user_id.ToString());
+
+                    Media m = new Media();
+
+                    foreach (var item in tag_photos.Data)
+                    {
+                        m.full_name = item.User.FullName;
+                        m.username = item.User.Username;
+                        m.profilepic = item.User.ProfilePicture;
+                        m.source_id = item.Id;
+                        m.service = "Instagram";
+                        m.source = item.Images.StandardResolution.Url;
+                        m.width = item.Images.StandardResolution.Width;
+                        m.height = item.Images.StandardResolution.Height;
+                        m.link = item.Link;
+                        m.event_id = event_id;
+                        m.tag_id = tag_id;
+
+                        dynamic dyn = JsonConvert.DeserializeObject(item.Caption);
+
+                        m.description = dyn.text;
+
+                        m.createdate = item.CreatedTime;
+                        m.likes = item.Likes.Count;
+
+                        if (item.Location != null)
+                        {
+                            m.location_name = item.Location.Name;
+                            m.latitude = item.Location.Latitude.ToString();
+                            m.longitude = item.Location.Longitude.ToString();
+                        }
+
+                        m.tags = "#" + string.Join(" #", item.Tags);
+
+                        if (m.createdate >= new DateTime(2014, 11, 1))
+                        {
+                            _media.add(m);
+
+                            total_count++;
+                        }
+                    }
                 }
-
-                var tag_photos = new InstaSharp.Endpoints.Tags.Unauthenticated(config).RecentByUser(user_id.ToString());
-
-                Media m = new Media();
-
-                foreach (var item in tag_photos.Data)
+                catch (JsonReaderException ex)
                 {
-                    m.full_name = item.User.FullName;
-                    m.username = item.User.Username;
-                    m.profilepic = item.User.ProfilePicture;
-                    m.source_id = item.Id;
-                    m.service = "Instagram";
-                    m.source = item.Images.StandardResolution.Url;
-                    m.width = item.Images.StandardResolution.Width;
-                    m.height = item.Images.StandardResolution.Height;
-                    m.link = item.Link;
-                    m.event_id = event_id;
-                    m.tag_id = tag_id;
-
-                    dynamic dyn = JsonConvert.DeserializeObject(item.Caption);
-
-                    m.description = dyn.text;
-
-                    m.createdate = item.CreatedTime;
-                    m.likes = item.Likes.Count;
-
-                    if (item.Location != null)
-                    {
-                        m.location_name = item.Location.Name;
-                        m.latitude = item.Location.Latitude.ToString();
-                        m.longitude = item.Location.Longitude.ToString();
-                    }
-
-                    m.tags = "#" + string.Join(" #", item.Tags);
-
-                    if (m.createdate >= new DateTime(2014, 11, 1))
-                    {
-                        _media.add(m);
-
-                        total_count++;
-                    }
+                    Console.WriteLine(ex.InnerException);
                 }
 
                 return total_count;
