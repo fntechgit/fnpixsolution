@@ -242,6 +242,19 @@ namespace fnpix
                 ev = _events.add(ev);
             }
 
+            ph_current_1280.Controls.Clear();
+            ph_current_1920.Controls.Clear();
+
+            if (!string.IsNullOrEmpty(ev.background_1280))
+            {
+                ph_current_1280.Controls.Add(new LiteralControl("<h6>Current 1280 x 720 Background</h6><p><img src=\"/uploads/" + ev.background_1280 + "\" width=\"100%\" /></p>"));
+            }
+
+            if (!string.IsNullOrEmpty(ev.background_1920))
+            {
+                ph_current_1920.Controls.Add(new LiteralControl("<h6>Current 1920 x 1280 Background</h6><p><img src=\"/uploads/" + ev.background_1920 + "\" width=\"100%\" /></p>"));
+            }
+
             pnl_success.Visible = true;
         }
     }

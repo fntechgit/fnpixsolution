@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using overrideSocial;
 using DropNet;
+using ImageMagick;
 
 namespace fnpix_dropbox_updater
 {
@@ -29,6 +32,8 @@ namespace fnpix_dropbox_updater
                 Console.WriteLine("");
                 Console.WriteLine("");
 
+                string optimized = "";
+
                 DropNetClient _client = new DropNetClient(_settings.dropbox_api_key(), _settings.dropbox_api_secret(), ev.request_token, ev.access_token);
 
                 var metaDeta = _client.GetMetaData("/Public");
@@ -37,19 +42,41 @@ namespace fnpix_dropbox_updater
 
                 foreach (DropNet.Models.MetaData md in metaDeta.Contents)
                 {
+                    // download the file
+                    string path = @"C:\sites\fnpix.fntech.com\uploads\";
+
+                    WebRequest requestPic = WebRequest.Create(_dropbox.source(md, ev));
+
+                    WebResponse responsePic = requestPic.GetResponse();
+
+                    //using (MagickImage img = new MagickImage(responsePic.GetResponseStream()))
+                    //{
+                    //    MagickGeometry size = new MagickGeometry(960, 960);
+
+                    //    size.IgnoreAspectRatio = false;
+
+                    //    img.Resize(size);
+
+                    //    img.Write(path + md.Name);
+
+                    //    optimized = path + md.Name;
+
+                    //    // now store the data with the record
+                    //}
+
                     if (md.Is_Dir)
                     {
                         foreach (DropNet.Models.MetaData md2 in _client.GetMetaData(md.Path).Contents)
                         {
                             if (!md2.Is_Dir)
                             {
-                                _dropbox.log_file(md2, ev);
+                                _dropbox.log_file(md2, ev, optimized);
                             }
                         }
                     }
                     else
                     {
-                        _dropbox.log_file(md, ev);
+                        _dropbox.log_file(md, ev, optimized);
                     }
                 }
 

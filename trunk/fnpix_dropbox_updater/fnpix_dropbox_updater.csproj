@@ -38,11 +38,22 @@
     <Reference Include="DropNet">
       <HintPath>..\packages\DropNet.1.9.6\lib\net40\DropNet.dll</HintPath>
     </Reference>
+    <Reference Include="Magick.NET-x86">
+      <HintPath>..\packages\Magick.NET-Q16-x86.7.0.0.0021\lib\net40-client\Magick.NET-x86.dll</HintPath>
+    </Reference>
+    <Reference Include="Magick.NET.Core, Version=7.0.0.0, Culture=neutral, PublicKeyToken=2004825badfa91ec, processorArchitecture=MSIL">
+      <HintPath>..\packages\Magick.NET-Q16-x86.7.0.0.0021\lib\net40-client\Magick.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Magick.NET.Wrapper-x86, Version=7.0.0.0, Culture=neutral, PublicKeyToken=2004825badfa91ec, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Magick.NET.Wrapper-x86.dll</HintPath>
+    </Reference>
     <Reference Include="RestSharp">
       <HintPath>..\packages\RestSharp.104.1\lib\net4-client\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />

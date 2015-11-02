@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="FNPIX > Manage Events" Language="C#" MasterPageFile="~/fnpix.master" AutoEventWireup="true" CodeBehind="events.aspx.cs" Inherits="fnpix.events" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 

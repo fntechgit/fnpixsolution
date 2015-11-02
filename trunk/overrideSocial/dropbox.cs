@@ -230,7 +230,14 @@ namespace overrideSocial
             return is_video;
         }
 
-        public Boolean log_file(DropNet.Models.MetaData md, Event ev)
+        public string source(DropNet.Models.MetaData md, Event ev)
+        {
+            DropNetClient _client = new DropNetClient(_settings.dropbox_api_key(), _settings.dropbox_api_secret(), ev.request_token, ev.access_token);
+
+            return _client.GetMedia(md.Path).Url;
+        }
+
+        public Boolean log_file(DropNet.Models.MetaData md, Event ev, string optimized)
         {
             DropNetClient _client = new DropNetClient(_settings.dropbox_api_key(), _settings.dropbox_api_secret(), ev.request_token, ev.access_token);
 
@@ -285,6 +292,7 @@ namespace overrideSocial
             d.stream = mediaLink.Url;
             d.uid = ev.dropbox_uid.ToString();
             d.username = ev.dropbox_username;
+            d.optimized = optimized;
 
             Dropbox db_test = select(d.path);
 
@@ -330,5 +338,6 @@ namespace overrideSocial
         public Int32 event_id { get; set; }
         public string username { get; set; }
         public string email { get; set; }
+        public string optimized { get; set; }
     }
 }

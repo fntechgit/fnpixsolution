@@ -7,12 +7,12 @@ namespace fnpix
 {
     public partial class dashboard : System.Web.UI.Page
     {
-
         public string total_media = "0";
         public string facebook_media = "0";
         public string instagram_media = "0";
         public string twitter_media = "0";
         public string unapproved_media = "0";
+        public string approved_media = "0";
         public string all_media = "0";
 
         private overrideSocial.mediaManager _media = new overrideSocial.mediaManager();
@@ -36,6 +36,7 @@ namespace fnpix
             instagram_media = _instagram.Count.ToString("0.#");
             twitter_media = _twitter.Count.ToString("0.#");
             unapproved_media = _unapproved.Count.ToString("0.#");
+            approved_media = (_all.Count - _unapproved.Count).ToString("0.#");
 
             render_stats(10);
         }

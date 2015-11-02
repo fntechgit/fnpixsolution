@@ -19,7 +19,7 @@
 		    <div class="nano-content">
 		        <nav id="menu" class="nav-main" role="navigation">
 		            <ul class="nav nav-main">
-		                <li class="nav-active">
+		                <li>
 		                    <a href="/">
 		                        <i class="fa fa-tachometer" aria-hidden="true"></i>
 		                        <span>Dashboard</span>
@@ -47,6 +47,7 @@
 		                        </li>
                                 <li>
 		                            <a href="/media/approved">
+		                                <span class="pull-right label label-primary"><%= approved_media %></span>
 		                                <i class="fa fa-check-circle" aria-hidden="true"></i>
 		                                <span>Approved</span>
 		                            </a>
@@ -109,7 +110,7 @@
 		                        <span>Preferences</span>
 		                    </a>
 		                </li>
-                        <li id="event_link" runat="server" Visible="false">
+                        <li id="event_link" runat="server" Visible="false" class="nav-active">
 		                    <a href="/events">
 		                        <i class="fa fa-calendar" aria-hidden="true"></i>
 		                        <span>Events</span>
@@ -292,7 +293,6 @@
 		            <!-- end: page -->
 		        </section>
 </asp:Content>
-
 
 <asp:Content ID="Content4" ContentPlaceHolderID="footer_scripts" runat="server">
     <script src="assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>

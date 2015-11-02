@@ -130,7 +130,7 @@ namespace overrideSocial
 
             var result = from themedia in db.medias
                          where themedia.event_id == event_id
-                         orderby themedia.createdate descending
+                         orderby themedia.id descending 
                          select themedia;
 
             foreach (var item in result)
