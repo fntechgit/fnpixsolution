@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using overrideSocial;
+
 
 namespace fnpix_updater
 {
@@ -57,14 +59,14 @@ namespace fnpix_updater
                         {
                             Console.WriteLine("Importing Records from Instagram for Hashtag #" + t.value);
 
-                            instagram_count = instagram_count + _instagram.fetch(t.value, fetch_count, ev.id, t.id);
+                            instagram_count = instagram_count + _instagram.fetch2(t.value, ev.id, t.id);
                         }
-                        else
-                        {
-                            Console.WriteLine("Importing Records from Instagram for Username @" + t.value);
+                        //else
+                        //{
+                        //    Console.WriteLine("Importing Records from Instagram for Username @" + t.value);
 
-                            instagram_count = instagram_count + _instagram.fetch(t.value, fetch_count, true, ev.id, t.id);
-                        }
+                        //    instagram_count = instagram_count + _instagram.fetch(t.value, true, ev.id, t.id);
+                        //}
                     }
 
                     if (t.twitter)

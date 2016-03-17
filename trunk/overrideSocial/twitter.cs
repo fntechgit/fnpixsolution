@@ -91,7 +91,7 @@ namespace overrideSocial
                             m.is_video = true;
                         }
 
-                        if (!ev.moderate)
+                        if (ev.moderate == false)
                         {
                             m.approved = true;
                             m.approved_by = 1;
@@ -173,6 +173,8 @@ namespace overrideSocial
                 m.event_id = event_id;
                 m.tag_id = tag_id;
 
+                Event ev = _events.@select(event_id);
+
                 // ################## NOW THE IMAGE STUFF 
                 foreach (TwitterMedia photo in item.Entities.Media)
                 {
@@ -184,6 +186,13 @@ namespace overrideSocial
                     if (photo.MediaType.ToString() != "Photo")
                     {
                         m.is_video = true;
+                    }
+
+                    if (ev.moderate == false)
+                    {
+                        m.approved = true;
+                        m.approved_by = 1;
+                        m.approved_date = DateTime.Now;
                     }
 
                     if (m.createdate >= new DateTime(2014, 11, 1))

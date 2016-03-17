@@ -1,0 +1,219 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="fnpix.master.cs" Inherits="fnpix.fnpix" %>
+
+<!doctype html>
+<html class="fixed">
+    
+<head runat="server">
+    <meta charset="UTF-8">
+
+		<title>FNPIX Management System</title>
+		<meta name="keywords" content="FNTech, FNPIX, Event Management" />
+		<meta name="description" content="FNPIX Management System" />
+		<meta name="author" content="fntech.com" />
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<!-- Web Fonts  -->
+		<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css" />
+
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.css" />
+		<link rel="stylesheet" href="/assets/vendor/magnific-popup/magnific-popup.css" />
+		<link rel="stylesheet" href="/assets/vendor/bootstrap-datepicker/css/datepicker3.css" />
+
+		<!-- Specific Page Vendor CSS -->
+		
+		<link rel="stylesheet" href="/assets/vendor/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css" />
+		<link rel="stylesheet" href="/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css" />
+		<link rel="stylesheet" href="/assets/vendor/morris/morris.css" />
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="/assets/stylesheets/theme.css" />
+
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="/assets/stylesheets/skins/default.css" />
+
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="/assets/stylesheets/theme-custom.css">
+
+		<!-- Head Libs -->
+		<script type="text/javascript" src="/assets/vendor/modernizr/modernizr.js"></script>
+    
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <section class="body">
+
+			<!-- start: header -->
+			<header class="header">
+				<div class="logo-container">
+					<a href="/" class="logo">
+						<img src="/assets/images/logo.png" height="35" alt="FNPIX" />
+					</a>
+                    <div>
+                        <div class="col-md-2" style="padding-top:10px;">
+                            <asp:DropDownList runat="server" ID="ddl_event" AutoPostBack="true" CssClass="form-control" OnSelectedIndexChanged="change_event" data-plugin-multiselect />							
+						</div>
+					</div>
+					<div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
+						<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+					</div>
+				</div>
+			
+				<!-- start: search & user box -->
+				<div class="header-right">
+					<ul class="notifications">
+						<li>
+							<a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
+								<i class="fa fa-bell"></i>
+								<span class="badge"><%= unapproved_count %></span>
+							</a>
+			
+							<div class="dropdown-menu notification-menu">
+								<div class="notification-title">
+									<span class="pull-right label label-default"><%= unapproved_count %></span>
+									Unapproved
+								</div>
+			
+								<div class="content">
+									<ul>
+										<li>
+											<a href="/media/unapproved" class="clearfix">
+												<div class="image">
+													<i class="fa fa-thumbs-down bg-danger"></i>
+												</div>
+												<span class="title"><%= unapproved_count %> PIX to Approve</span>
+												<span class="message"><%= DateTime.Now.ToShortTimeString() %></span>
+											</a>
+										</li>
+									</ul>
+			
+									<hr />
+			
+									<div class="text-right">
+										<a href="/media" class="view-more">View All</a>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+			
+					<span class="separator"></span>
+			
+					<div id="userbox" class="userbox">
+						<a href="#" data-toggle="dropdown">
+							<figure class="profile-picture">
+								<img src="<%= user_picture %>" alt="<%= user_name %>" class="img-circle" data-lock-picture="<%= user_picture %>" />
+							</figure>
+							<div class="profile-info" data-lock-name="<%= user_name %>" data-lock-email="<%= user_email %>">
+								<span class="name"><%= user_name %></span>
+								<span class="role"><%= company_name %></span>
+							</div>
+			
+							<i class="fa custom-caret"></i>
+						</a>
+			
+						<div class="dropdown-menu">
+							<ul class="list-unstyled">
+								<li class="divider"></li>
+								<li>
+									<a role="menuitem" tabindex="-1" href="/users/edit/<%= Session["user_id"].ToString() %>"><i class="fa fa-user"></i> My Profile</a>
+								</li>
+								<li>
+									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
+								</li>
+                                <li>
+                                    <asp:LinkButton runat="server" role="menuitem" TabIndex="-1" OnClick="auth_dropbox"><i class="fa fa-dropbox"></i> Authorize Dropbox</asp:LinkButton>
+                                </li>
+								<li>
+									<a role="menuitem" tabindex="-1" href="/logout"><i class="fa fa-power-off"></i> Logout</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- end: search & user box -->
+			</header>
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+                <asp:ContentPlaceHolder ID="navigation_sidebar" runat="server">
+        
+                </asp:ContentPlaceHolder>
+            
+                <asp:ContentPlaceHolder runat="server" ID="content_main">
+                    
+
+                </asp:ContentPlaceHolder>
+                 </div>
+
+			<aside id="sidebar-right" class="sidebar-right">
+				<div class="nano">
+					<div class="nano-content">
+						<a href="#" class="mobile-close visible-xs">
+							Collapse <i class="fa fa-chevron-right"></i>
+						</a>
+			
+						<div class="sidebar-right-wrapper">
+			
+							<div class="sidebar-widget widget-calendar">
+								<h6>Upcoming Events</h6>
+								<div data-plugin-datepicker data-plugin-skin="dark" ></div>
+			
+								<ul>
+									<li>
+										<time datetime="2014-11-03T00:00+00:00">01/08/2015</time>
+										<span>Orlando Surf Expo</span>
+									</li>
+                                    <li>
+										<time datetime="2014-11-03T00:00+00:00">01/09/2015</time>
+										<span>Orlando Surf Expo</span>
+									</li>
+                                    <li>
+										<time datetime="2014-11-03T00:00+00:00">01/10/2015</time>
+										<span>Orlando Surf Expo</span>
+									</li>
+								</ul>
+							</div>
+			
+							
+			
+						</div>
+					</div>
+				</div>
+			</aside>
+		</section>
+
+		<!-- Vendor -->
+		<script src="/assets/vendor/jquery/jquery.js"></script>
+		<script src="/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+		<script src="/assets/vendor/bootstrap/js/bootstrap.js"></script>
+		<script src="/assets/vendor/nanoscroller/nanoscroller.js"></script>
+		<script src="/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+		<script src="/assets/vendor/magnific-popup/magnific-popup.js"></script>
+		<script src="/assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+        <script src="/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+
+        <asp:ContentPlaceHolder runat="server" ID="footer_scripts"></asp:ContentPlaceHolder>
+        
+        <!-- Theme Base, Components and Settings -->
+		<script src="/assets/javascripts/theme.js"></script>
+		
+		<!-- Theme Custom -->
+		<script src="/assets/javascripts/theme.custom.js"></script>
+		
+		<!-- Theme Initialization Files -->
+		<script src="/assets/javascripts/theme.init.js"></script>
+        
+        <script src="/assets/javascripts/forms/examples.advanced.form.js" /></script>
+        
+        <script src="/assets/javascripts/dashboard/examples.dashboard.js"></script>
+            
+    </form>
+</body>
+</html>

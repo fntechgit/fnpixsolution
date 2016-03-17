@@ -32,6 +32,8 @@ namespace fnpix.visual
                 hdn_interval.Value = "12";//Page.RouteData.Values["delay"].ToString();
                 delay = Page.RouteData.Values["display"] as string;
                 delay = delay + @"000";
+
+                hdn_interval.Value = delay;
             }
 
             List<Media> med = _media.get_twitter_reverse(event_id);

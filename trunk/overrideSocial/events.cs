@@ -223,6 +223,8 @@ namespace overrideSocial
                 e.dropbox_referral = ev.dropbox_referral;
                 e.dropbox_uid = ev.dropbox_uid;
                 e.dropbox_username = ev.dropbox_username;
+                e.background_1280 = ev.background_1280;
+                e.background_1920 = ev.background_1920;
 
                 _events.Add(e);
             }

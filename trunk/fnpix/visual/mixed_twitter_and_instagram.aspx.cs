@@ -32,14 +32,9 @@ namespace fnpix.visual
                 timing = "/" + Page.RouteData.Values["display"] as string;
             }
 
-            if (rnd.Next(0, 2) == 0)
-            {
-                Response.Redirect("/displays/instagram" + resolution + "/" + event_id + timing);
-            }
-            else
-            {
-                Response.Redirect("/displays/twitter" + resolution + "/" + event_id + timing);
-            }
+            
+            Response.Redirect("/displays/instagram-twitter" + resolution + "/" + event_id + timing);
+            
         }
     }
 }

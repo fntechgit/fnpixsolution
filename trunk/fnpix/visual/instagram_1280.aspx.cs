@@ -27,7 +27,7 @@ namespace fnpix.visual
 
             if (Page.RouteData.Values["display"] != null)
             {
-                hdn_interval.Value = Page.RouteData.Values["display"].ToString();
+                hdn_interval.Value = Page.RouteData.Values["display"].ToString() + "000";
             }
 
             List<Media> med = _media.get_instagram_reverse(event_id);

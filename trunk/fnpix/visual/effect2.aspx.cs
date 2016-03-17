@@ -33,6 +33,7 @@ namespace fnpix.visual
 
                 delay = Page.RouteData.Values["delay"] as string;
                 delay = delay + @"000";
+                hdn_interval.Value = delay;
             }
 
             List<Media> med = _media.get_instagram_reverse(event_id);
