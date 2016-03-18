@@ -54,6 +54,8 @@ namespace overrideSocial
             ev.dropbox_username = null;
             ev.background_1280 = e.background_1280;
             ev.background_1920 = e.background_1920;
+            ev.force_refresh = false;
+            ev.last_screen_refresh = DateTime.Now;
 
             db.event_masters.InsertOnSubmit(ev);
 
@@ -112,6 +114,8 @@ namespace overrideSocial
             ev.dropbox_username = e.dropbox_username;
             ev.background_1280 = e.background_1280;
             ev.background_1920 = e.background_1920;
+            ev.last_screen_refresh = DateTime.Now;
+            ev.force_refresh = false;
 
             db.SubmitChanges();
 
@@ -175,6 +179,8 @@ namespace overrideSocial
             e.dropbox_username = ev.dropbox_username;
             e.background_1280 = ev.background_1280;
             e.background_1920 = ev.background_1920;
+            e.force_refresh = ev.force_refresh;
+            e.last_screen_refresh = ev.last_screen_refresh;
 
             return e;
         }
@@ -225,6 +231,8 @@ namespace overrideSocial
                 e.dropbox_username = ev.dropbox_username;
                 e.background_1280 = ev.background_1280;
                 e.background_1920 = ev.background_1920;
+                e.force_refresh = ev.force_refresh;
+                e.last_screen_refresh = ev.last_screen_refresh;
 
                 _events.Add(e);
             }
@@ -262,7 +270,35 @@ namespace overrideSocial
         public List<Event> dropbox_authorized()
         {
             return select_list(true).Where(x => !string.IsNullOrEmpty(x.access_token)).ToList();
-        } 
+        }
+
+        public Boolean queue_force_refresh(Int32 event_id)
+        {
+            event_master ev = db.event_masters.Single(x => x.id == event_id);
+
+            ev.force_refresh = true;
+
+            db.SubmitChanges();
+
+            return true;
+        }
+
+        public Boolean force_refresh(Int32 event_id)
+        {
+            event_master ev = db.event_masters.Single(x => x.id == event_id);
+
+            ev.force_refresh = false;
+            ev.last_screen_refresh = DateTime.Now;
+
+            db.SubmitChanges();
+
+            return true;
+        }
+
+        public Boolean check_for_refresh(Int32 event_id)
+        {
+            return @select(event_id).force_refresh;
+        }
 
         #endregion
     }
@@ -302,6 +338,8 @@ namespace overrideSocial
         public string dropbox_referral { get; set; }
         public string background_1920 { get; set; }
         public string background_1280 { get; set; }
+        public Boolean force_refresh { get; set; }
+        public DateTime last_screen_refresh { get; set; }
     }
 
     #endregion

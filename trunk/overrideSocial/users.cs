@@ -128,7 +128,7 @@ namespace overrideSocial
             u.id = 0;
 
             var result = from us in db.users
-                where us.email == email && us.pwd == password
+                where us.email == email && us.pwd == password && us.active == true
                 select us;
 
             foreach (var item in result)

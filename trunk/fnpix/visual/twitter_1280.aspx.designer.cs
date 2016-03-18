@@ -67,6 +67,15 @@ namespace fnpix.visual {
         protected global::System.Web.UI.WebControls.HiddenField hdn_interval;
         
         /// <summary>
+        /// hdn_event_id control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdn_event_id;
+        
+        /// <summary>
         /// ph_photos control.
         /// </summary>
         /// <remarks>

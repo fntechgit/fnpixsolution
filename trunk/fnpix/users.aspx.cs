@@ -80,10 +80,12 @@ namespace fnpix
                     preference_link.Visible = true;
                     break;
                 case "event":
+                    Response.Redirect("/dashboard");
                     display_link.Visible = true;
                     preference_link.Visible = true;
                     break;
                 case "content":
+                    Response.Redirect("/dashboard");
                     break;
             }
         }

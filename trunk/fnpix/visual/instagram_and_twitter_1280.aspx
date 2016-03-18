@@ -9,7 +9,7 @@
 
     <link type="text/css" rel="stylesheet" href="/visual/fnpix.twitter.1280.displays.css?ver=9.21.15" media="all" />
     
-    <script type="text/javascript" src="//fnpix.fntech.com/visual/js/fnpix.scroller.js"></script>
+    <script type="text/javascript" src="//fnpix.fntech.com/visual/js/fnpix.scroller.js?ver=2"></script>
 
 </head>
 <body id="bdy" runat="server">
@@ -17,6 +17,7 @@
     <asp:HiddenField runat="server" ID="hdn_max" Value="2"/>
         <asp:HiddenField runat="server" ID="hdn_min" Value="0"/>
         <asp:HiddenField runat="server" ID="hdn_interval" Value="12"/>
+        <asp:HiddenField runat="server" ID="hdn_event_id" Value="0"/>
 
         <div id="wrapper">
             <asp:PlaceHolder runat="server" ID="ph_photos" />

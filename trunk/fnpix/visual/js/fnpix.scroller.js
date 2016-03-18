@@ -21,9 +21,11 @@ $(document).ready(function() {
     max_down = parseInt($("#hdn_min").val());
     interval = $("#hdn_interval").val();
 
-    console.log('Reset Complete...');
+    //console.log('Reset Complete...');
 
     window.setInterval(move, interval);
+
+    window.setInterval(check_force_reset, 10000);
 
 });
 
@@ -38,13 +40,13 @@ function reset() {
 
 function randomUp() {
 
-    console.log('Random Up Fired...');
+    //console.log('Random Up Fired...');
 
-    console.log('Max Up: ' + max_up);
+    //console.log('Max Up: ' + max_up);
 
     var proposed = getRandomInt(1, max_up);
 
-    console.log('Proposed: ' + proposed);
+    //console.log('Proposed: ' + proposed);
 
     allowed(proposed, 1);
 }
@@ -57,11 +59,11 @@ function randomDown() {
 
 function allowed(prop, direction) {
 
-    console.log('Allowed Fired...');
+    //console.log('Allowed Fired...');
 
     var current_position = parseInt($(".content").css('top'), 10);
 
-    console.log('Current Position: ' + current_position);
+    //console.log('Current Position: ' + current_position);
 
     var proposed_position = current_position + ((prop * direction) * 1012);
 
@@ -76,7 +78,7 @@ function allowed(prop, direction) {
     } else {
         last.push(proposed_position);
 
-        console.log('Last Array: ' + last);
+        //console.log('Last Array: ' + last);
 
         if (last.length >= 5) {
             last.shift();
@@ -93,7 +95,7 @@ function allowed(prop, direction) {
 
 function move() {
 
-    console.log('Move Fired...');
+    //console.log('Move Fired...');
 
     if (up_or_down() == 1) {
         randomUp();
@@ -133,4 +135,23 @@ function up_or_down() {
     }
 
     return up_down;
+}
+
+function check_force_reset() {
+    var event_id = $("#hdn_event_id").val();
+
+    $.ajax({
+        type: "POST",
+        url: "/services/media.asmx/force_refresh",
+        data: "{'event_id': " + event_id + "}",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (data) {
+            if (data.d == true) {
+                location.reload();
+            } else {
+                console.log('We are all good...');
+            }
+        }
+    });
 }

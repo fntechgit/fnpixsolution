@@ -57,8 +57,11 @@ namespace fnpix
 
                     pnl_current_image.Visible = true;
 
-                    btn_add_permission.NavigateUrl = "/permissions/add/" + u.id;
-                    btn_add_permission.Visible = true;
+                    if (Session["user_access"] != "content")
+                    {
+                        btn_add_permission.NavigateUrl = "/permissions/add/" + u.id;
+                        btn_add_permission.Visible = true;
+                    }
                 }
             }
         }
@@ -166,7 +169,9 @@ namespace fnpix
                     security_level.Visible = false;
                     break;
                 case "content":
+                    active.Visible = false;
                     security_level.Visible = false;
+                    btn_add_permission.Visible = false;
                     break;
             }
         }

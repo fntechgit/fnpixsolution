@@ -122,6 +122,12 @@
 		                        <span>Displays</span>
 		                    </a>
 		                </li>
+                        <li id="force_refresh" runat="server" Visible="true">
+                            <a href="/force-refresh/<%= Session["event_id"] %>">
+                                <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                                <span>Force Refresh</span>
+                            </a>
+                        </li>
 		            </ul>
 		        </nav>
 		    </div>

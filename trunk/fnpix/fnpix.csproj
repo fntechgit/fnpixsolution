@@ -1622,6 +1622,7 @@
     <Content Include="dropbox_media.aspx" />
     <Content Include="dropbox_update.aspx" />
     <Content Include="events.aspx" />
+    <Content Include="force_refresh.aspx" />
     <Content Include="global.asax" />
     <Content Include="js\jquery.cycle2.js" />
     <Content Include="js\jquery.flip.js" />
@@ -1894,6 +1895,13 @@
     </Compile>
     <Compile Include="fnpix.master.designer.cs">
       <DependentUpon>fnpix.master</DependentUpon>
+    </Compile>
+    <Compile Include="force_refresh.aspx.cs">
+      <DependentUpon>force_refresh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="force_refresh.aspx.designer.cs">
+      <DependentUpon>force_refresh.aspx</DependentUpon>
     </Compile>
     <Compile Include="global.asax.cs">
       <DependentUpon>global.asax</DependentUpon>

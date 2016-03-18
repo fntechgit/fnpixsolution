@@ -19,6 +19,7 @@ namespace fnpix.services
     public class media : System.Web.Services.WebService
     {
         private overrideSocial.mediaManager _media = new overrideSocial.mediaManager();
+        private overrideSocial.events _events = new overrideSocial.events();
 
         [WebMethod(Description = "Approve Items Async", EnableSession = true)]
         public Boolean approve_list(string[] images)
@@ -48,6 +49,12 @@ namespace fnpix.services
             {
                 return false;
             }
+        }
+
+        [WebMethod(Description = "Check for Force Refresh", EnableSession = true)]
+        public Boolean force_refresh(Int32 event_id)
+        {
+            return _events.check_for_refresh(event_id);
         }
 
     }

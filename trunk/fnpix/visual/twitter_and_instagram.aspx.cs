@@ -20,6 +20,10 @@ namespace fnpix.visual
         {
             Int32 event_id = Convert.ToInt32(Page.RouteData.Values["id"] as string);
 
+            _events.force_refresh(event_id);
+
+            hdn_event_id.Value = event_id.ToString();
+
             overrideSocial.Event ev = _events.@select(event_id);
 
             if (!string.IsNullOrEmpty(ev.background_1920))

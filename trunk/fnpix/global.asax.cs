@@ -87,6 +87,9 @@ namespace fnpix
             routes.MapPageRoute("displays-edit-route", "displays/edit/{id}", "~/add_display.aspx");
             routes.MapPageRoute("displays-delete-route", "displays/delete/{id}", "~/delete_display.aspx");
 
+            // ########################### FORCE REFRESH ############################## //
+            routes.MapPageRoute("force-refresh-route", "force-refresh/{id}", "~/force_refresh.aspx");
+
             // this has to be last!!!!
             //routes.MapPageRoute("page-by-url-route", "{url}", "~/page.aspx");
         }
