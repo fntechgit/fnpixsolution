@@ -26,6 +26,8 @@ namespace fnpix
             routes.MapPageRoute("media-all-route", "media", "~/media.aspx");
             routes.MapPageRoute("media-approve-route", "media/approve/{id}", "~/approve.aspx");
             routes.MapPageRoute("media-unapproved-route", "media/{unapproved}", "~/media.aspx");
+            routes.MapPageRoute("media-unreviewed-route", "unreviewed", "~/unreviewed.aspx");
+            routes.MapPageRoute("media-unreviewed-approved-route", "unreviewed-approved", "~/unreviewed_approved.aspx");
 
             // ######################## SYSTEM PREFERENCES SECTION ################################### //
             routes.MapPageRoute("preferences-route", "preferences", "~/preferences.aspx");

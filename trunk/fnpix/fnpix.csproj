@@ -1635,6 +1635,8 @@
     <Content Include="preferences.aspx" />
     <Content Include="services\manager.asmx" />
     <Content Include="services\media.asmx" />
+    <Content Include="unreviewed.aspx" />
+    <Content Include="unreviewed_approved.aspx" />
     <Content Include="users.aspx" />
     <Content Include="visual\bullet.png" />
     <Content Include="visual\css\crystal-gallery-system.css" />
@@ -1949,6 +1951,20 @@
     <Compile Include="services\media.asmx.cs">
       <DependentUpon>media.asmx</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="unreviewed.aspx.cs">
+      <DependentUpon>unreviewed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="unreviewed.aspx.designer.cs">
+      <DependentUpon>unreviewed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="unreviewed_approved.aspx.cs">
+      <DependentUpon>unreviewed_approved.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="unreviewed_approved.aspx.designer.cs">
+      <DependentUpon>unreviewed_approved.aspx</DependentUpon>
     </Compile>
     <Compile Include="users.aspx.cs">
       <DependentUpon>users.aspx</DependentUpon>

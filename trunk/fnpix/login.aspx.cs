@@ -45,7 +45,17 @@ namespace fnpix
                 }
                 else
                 {
-                    pnl_no_events_assigned.Visible = true;
+                    // if admin and no events exist at ALL, login and set the event_id to nothing and redirect to the Events page
+                    if (u.security_desc == "system")
+                    {
+                        Session["event_id"] = "0";
+
+                        Response.Redirect("/events");
+                    }   
+                    else
+                    {
+                        pnl_no_events_assigned.Visible = true;    
+                    }
                 }
             }
             else

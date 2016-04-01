@@ -20,6 +20,9 @@ namespace fnpix
         private overrideSocial.dropbox _dropbox = new overrideSocial.dropbox();
         private overrideSocial.permissions _permissions = new overrideSocial.permissions();
 
+        public string unreviewed_unapproved = "0";
+        public string unreviewed_approvedm = "0";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             permissions();;
@@ -29,6 +32,8 @@ namespace fnpix
             List<Media> _instagram = _media.get_instagram(Convert.ToInt32(Session["event_id"].ToString()));
             List<Media> _unapproved = _media.get_unapproved(Convert.ToInt32(Session["event_id"].ToString()));
             List<Dropbox> _dropbox_total = _dropbox.select_list(Convert.ToInt32(Session["event_id"].ToString()));
+            List<Media> _unapproved_unreviewed = _media.unapproved_unreviewed(Convert.ToInt32(Session["event_id"].ToString()));
+            List<Media> _approved_unreviewed = _media.approved_unreviewed(Convert.ToInt32(Session["event_id"].ToString()));
 
             facebook_media = _dropbox_total.Count.ToString("0.#");
             total_media = _all.Count.ToString("0.#");
@@ -37,6 +42,9 @@ namespace fnpix
             twitter_media = _twitter.Count.ToString("0.#");
             unapproved_media = _unapproved.Count.ToString("0.#");
             approved_media = (_all.Count - _unapproved.Count).ToString("0.#");
+
+            unreviewed_approvedm = _approved_unreviewed.Count.ToString("0.#");
+            unreviewed_unapproved = _unapproved_unreviewed.Count.ToString("0.#");
 
             render_stats(10);
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web.UI.WebControls;
 using overrideSocial;
 using DropNet;
 
@@ -53,7 +54,16 @@ namespace fnpix
                     }
                     else
                     {
-                        Response.Redirect("/login/no-events-allowed");   
+                        if (Session["user_access"] == "system")
+                        {
+                            ListItem item = new ListItem("No Events", "0");
+
+                            ddl_event.Items.Insert(0, item);
+                        }
+                        else
+                        {
+                            Response.Redirect("/login/no-events-allowed");
+                        }
                     }
                 }
             }

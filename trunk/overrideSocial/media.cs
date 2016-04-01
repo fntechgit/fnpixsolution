@@ -66,6 +66,7 @@ namespace overrideSocial
             md.tags = m.tags;
             md.event_id = m.event_id;
             md.tag_id = m.tag_id;
+            md.reviewed = false;
 
             var result = from med in db.medias
                 where med.source == md.source
@@ -117,6 +118,7 @@ namespace overrideSocial
                 m.tag_id = item.tag_id;
                 m.latitude = item.latitude;
                 m.longitude = item.longitude;
+                m.reviewed = item.reviewed;
                 
                 _entries.Add(m);
             }
@@ -157,6 +159,7 @@ namespace overrideSocial
                 m.approved_date = item.approved_date;
                 m.event_id = item.event_id;
                 m.tag_id = item.tag_id;
+                m.reviewed = item.reviewed;
 
                 _entries.Add(m);
             }
@@ -279,6 +282,13 @@ namespace overrideSocial
             return m;
         }
 
+        public Boolean review(Int32 event_id)
+        {
+            db.review_all(event_id);
+
+            return true;
+        }
+
         public Boolean unapprove(Int32 id)
         {
             media md = db.medias.Single(x => x.id == id);
@@ -290,6 +300,16 @@ namespace overrideSocial
             db.SubmitChanges();
 
             return true;
+        }
+
+        public List<Media> approved_unreviewed(Int32 event_id)
+        {
+            return get_all(event_id, true).Where(x => x.reviewed == false).ToList();
+        }
+
+        public List<Media> unapproved_unreviewed(Int32 event_id)
+        {
+            return get_all(event_id, false).Where(x => x.reviewed == false).ToList();
         }
 
         public Media get_by_id(Int32 id)
@@ -321,6 +341,7 @@ namespace overrideSocial
             md.id = m.id;
             md.event_id = m.event_id;
             md.tag_id = m.tag_id;
+            md.reviewed = m.reviewed;
 
             return md;
         }
@@ -356,6 +377,7 @@ namespace overrideSocial
         public string tags { get; set; }
         public Int32 event_id { get; set; }
         public Int32 tag_id { get; set; }
+        public Boolean reviewed { get; set; }
     }
 
     #endregion

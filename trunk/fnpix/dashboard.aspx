@@ -46,10 +46,24 @@
 		                            </a>
 		                        </li>
                                 <li>
+		                            <a href="/unreviewed">
+		                                <span class="pull-right label label-primary"><%= unreviewed_unapproved %></span>
+		                                <i class="fa fa-question-circle" aria-hidden="true"></i>
+		                                <span>Unreviewed</span>
+		                            </a>
+		                        </li>
+                                <li>
 		                            <a href="/media/approved">
 		                                <span class="pull-right label label-primary"><%= approved_media %></span>
 		                                <i class="fa fa-check-circle" aria-hidden="true"></i>
 		                                <span>Approved</span>
+		                            </a>
+		                        </li>
+                                <li>
+		                            <a href="/unreviewed-approved">
+		                                <span class="pull-right label label-primary"><%= unreviewed_approvedm %></span>
+		                                <i class="fa fa-question-circle" aria-hidden="true"></i>
+		                                <span>Unreviewed (Approved)</span>
 		                            </a>
 		                        </li>
                                 <li>
