@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Web;
+using System.Web.Script.Services;
 using System.Web.Services;
 using overrideSocial;
 
@@ -11,7 +12,7 @@ namespace fnpix.services
     /// <summary>
     /// Summary description for manager
     /// </summary>
-    [WebService(Namespace = "http://fnpix.fntech.com")]
+    [WebService(Namespace = "http://fnpix.fntech.com/services/manager")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
@@ -20,6 +21,7 @@ namespace fnpix.services
     {
         private overrideSocial.mediaManager _media = new overrideSocial.mediaManager();
         private overrideSocial.dropbox _dropbox = new overrideSocial.dropbox();
+        private overrideSocial.events _events = new overrideSocial.events();
 
         [WebMethod(Description = "Approve Dropbox Items Async", EnableSession = true)]
         public Boolean approve_dropbox(string images)
@@ -87,6 +89,13 @@ namespace fnpix.services
             }
         }
 
+        [WebMethod(Description = "Active Events", EnableSession = true)]
+        [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
+        public List<Event> active_events()
+        {
+            return _events.select_list(true);
+        }
+        
         [WebMethod(Description = "Unapprove Items Async", EnableSession = true)]
         public Boolean unapprove_list(string images)
         {

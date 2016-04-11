@@ -92,6 +92,9 @@ namespace fnpix
             // ########################### FORCE REFRESH ############################## //
             routes.MapPageRoute("force-refresh-route", "force-refresh/{id}", "~/force_refresh.aspx");
 
+            // services
+            
+
             // this has to be last!!!!
             //routes.MapPageRoute("page-by-url-route", "{url}", "~/page.aspx");
         }

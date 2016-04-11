@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "overrideSocial", "overrideSocial\overrideSocial.csproj", "{44FF47B2-421C-4D11-8EF1-4F4A47E3D056}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fnpix_updater", "api_test\fnpix_updater.csproj", "{8070BC0B-796A-49B9-A6D8-D86D823936AC}"
@@ -10,6 +8,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fnpix", "fnpix\fnpix.csproj", "{2FDCEB23-4644-45BC-9079-13AB0A2329F1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fnpix_dropbox_updater", "fnpix_dropbox_updater\fnpix_dropbox_updater.csproj", "{C5B6CC34-BF10-40F2-8754-25E5F1C6E177}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pixapi", "pixapi\pixapi.csproj", "{526DD65C-3587-4C93-A9EB-A550AB444DD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +61,16 @@ Global
 		{C5B6CC34-BF10-40F2-8754-25E5F1C6E177}.Release|Mixed Platforms.Build.0 = Release|x86
 		{C5B6CC34-BF10-40F2-8754-25E5F1C6E177}.Release|x86.ActiveCfg = Release|x86
 		{C5B6CC34-BF10-40F2-8754-25E5F1C6E177}.Release|x86.Build.0 = Release|x86
+		{526DD65C-3587-4C93-A9EB-A550AB444DD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{526DD65C-3587-4C93-A9EB-A550AB444DD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{526DD65C-3587-4C93-A9EB-A550AB444DD7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{526DD65C-3587-4C93-A9EB-A550AB444DD7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{526DD65C-3587-4C93-A9EB-A550AB444DD7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{526DD65C-3587-4C93-A9EB-A550AB444DD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{526DD65C-3587-4C93-A9EB-A550AB444DD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{526DD65C-3587-4C93-A9EB-A550AB444DD7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{526DD65C-3587-4C93-A9EB-A550AB444DD7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{526DD65C-3587-4C93-A9EB-A550AB444DD7}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
