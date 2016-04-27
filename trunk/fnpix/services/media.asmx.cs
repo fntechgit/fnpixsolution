@@ -20,6 +20,7 @@ namespace fnpix.services
     {
         private overrideSocial.mediaManager _media = new overrideSocial.mediaManager();
         private overrideSocial.events _events = new overrideSocial.events();
+        private overrideSocial.displays _displays = new overrideSocial.displays();
 
         [WebMethod(Description = "Approve Items Async", EnableSession = true)]
         public Boolean approve_list(string[] images)
@@ -55,6 +56,14 @@ namespace fnpix.services
         public Boolean force_refresh(Int32 event_id)
         {
             return _events.check_for_refresh(event_id);
+        }
+
+        [WebMethod(Description = "Get Current Display", EnableSession = true)]
+        public Display find(Int32 event_id)
+        {
+            List<Display> displays = _displays.@select(event_id, DateTime.Now);
+
+            return displays[0];
         }
 
     }

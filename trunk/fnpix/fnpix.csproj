@@ -1628,6 +1628,7 @@
     <Content Include="js\jquery.flip.js" />
     <Content Include="js\jquery.fnpix.dropbox.js" />
     <Content Include="js\jquery.fnpix.media.js" />
+    <Content Include="js\schedule.js" />
     <Content Include="login.aspx" />
     <Content Include="logout.aspx" />
     <Content Include="media.aspx" />
@@ -1760,6 +1761,7 @@
     <Content Include="visual\PolaroidGallery\library.js" />
     <Content Include="visual\PolaroidGallery\music\readMe.txt" />
     <Content Include="visual\PolaroidGallery\style.css" />
+    <Content Include="visual\schedule.aspx" />
     <Content Include="visual\twitter_1280.aspx" />
     <Content Include="visual\twitter_and_instagram.aspx" />
     <Content Include="visual\volcom.aspx" />
@@ -2049,6 +2051,13 @@
     </Compile>
     <Compile Include="visual\mixed_twitter_and_instagram.aspx.designer.cs">
       <DependentUpon>mixed_twitter_and_instagram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="visual\schedule.aspx.cs">
+      <DependentUpon>schedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="visual\schedule.aspx.designer.cs">
+      <DependentUpon>schedule.aspx</DependentUpon>
     </Compile>
     <Compile Include="visual\twitter_1280.aspx.cs">
       <DependentUpon>twitter_1280.aspx</DependentUpon>

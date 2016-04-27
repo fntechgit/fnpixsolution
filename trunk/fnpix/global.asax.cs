@@ -83,6 +83,8 @@ namespace fnpix
             routes.MapPageRoute("visual-display-instagram-twitter-route-with-timing", "displays/instagram-twitter/{id}/{display}", "~/visual/twitter_and_instagram.aspx");
             routes.MapPageRoute("visual-display-instagram-twitter-route-with-timing-1280", "displays/instagram-twitter-1280/{id}/{display}", "~/visual/instagram_and_twitter_1280.aspx");
 
+            routes.MapPageRoute("display-by-schedule", "displays/by-schedule/{id}", "~/visual/schedule.aspx");
+
             // ######################## DISPLAYS MANAGEMENT SECTION ################################### //
             routes.MapPageRoute("displays-manage-route", "displays", "~/displays.aspx");
             routes.MapPageRoute("displays-add-route", "displays/add", "~/add_display.aspx");
