@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
+using System.Linq.Expressions;
 using RestSharp.Extensions;
 
 namespace overrideSocial
@@ -113,6 +116,41 @@ namespace overrideSocial
             setting s = db.settings.Single(x => x.id == id);
 
             return s.value;
+        }
+
+        public Setting single(int id)
+        {
+            setting setting = this.db.settings.Single<setting>((Expression<Func<setting, bool>>)(x => x.id == id));
+            return new Setting()
+            {
+                id = setting.id,
+                name = setting.name,
+                value = setting.value
+            };
+        }
+
+        public Setting update(Setting s)
+        {
+            setting setting = this.db.settings.Single<setting>((Expression<Func<setting, bool>>)(x => x.id == s.id));
+            setting.name = s.name;
+            setting.value = s.value;
+            this.db.SubmitChanges();
+            return s;
+        }
+
+        public List<Setting> all()
+        {
+            List<Setting> settingList = new List<Setting>();
+            Table<setting> settings = this.db.settings;
+            Expression<Func<setting, string>> keySelector = (Expression<Func<setting, string>>)(sets => sets.name);
+            foreach (setting setting in (IEnumerable<setting>)settings.OrderBy<setting, string>(keySelector))
+                settingList.Add(new Setting()
+                {
+                    id = setting.id,
+                    name = setting.name,
+                    value = setting.value
+                });
+            return settingList;
         }
 
         #endregion
