@@ -61,12 +61,12 @@ namespace fnpix_updater
 
                             instagram_count = instagram_count + _instagram.fetch2(t.value, ev.id, t.id);
                         }
-                        //else
-                        //{
-                        //    Console.WriteLine("Importing Records from Instagram for Username @" + t.value);
+                        else
+                        {
+                            Console.WriteLine("Importing Records from Instagram for Username @" + t.value);
 
-                        //    instagram_count = instagram_count + _instagram.fetch(t.value, true, ev.id, t.id);
-                        //}
+                            instagram_count = instagram_count + _instagram.fetch_by_username(t.value, ev.id, t.id);
+                        }
                     }
 
                     if (t.twitter)

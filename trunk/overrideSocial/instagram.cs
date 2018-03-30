@@ -17,10 +17,119 @@ namespace overrideSocial
 {
     public class instagram
     {
+        private string access_token = "7392031217.c32dfe9.99d8df280f0b4501a9aa8c09436455ed";
+        //"54772586.9bf8632.352fdf6a439d4f27a43948203f11ce87"
+
         settings _settings = new settings();
         mediaManager _media = new mediaManager();
         private events _events = new events();
         public Int32 page_count = 0;
+
+        //Get media by user name
+        public Int32 fetch_by_username(string tag, Int32 event_id, Int32 tag_id)
+        {
+            tag = get_userid_by_tag(tag);
+
+            if (string.IsNullOrEmpty(tag))
+                return 0;
+
+            var client = new RestClient("https://api.instagram.com/v1/");
+
+            var request = new RestRequest("users/" + tag + "/media/recent");
+
+            request.AddParameter("access_token", access_token);
+
+            IRestResponse response = client.Execute(request);
+
+            RestSharp.Deserializers.JsonDeserializer deserial = new JsonDeserializer();
+
+            var mySessions = JsonConvert.DeserializeObject<InstagramModel>(response.Content);
+
+            string next_url = mySessions.pagination.next_url;
+
+            Event ev = _events.@select(event_id);
+
+            foreach (var item in mySessions.data)
+            {
+                Media m = new Media();
+
+                m.added_to_db_date = DateTime.Now;
+
+                if (ev.moderate == false)
+                {
+                    m.approved = true;
+                    m.approved_by = 1;
+                    m.approved_date = DateTime.Now;
+                }
+
+                m.createdate = DateTime.Now;
+                m.description = item.caption.text;
+                m.event_id = event_id;
+                m.full_name = item.user.full_name;
+
+                if (item.images.standard_image != null)
+                {
+                    m.height = Convert.ToInt32(item.images.standard_image.height);
+                    m.source = item.images.standard_image.url;
+                    m.width = Convert.ToInt32(item.images.standard_image.width);
+                }
+                else
+                {
+                    m.height = Convert.ToInt32(item.images.low_resolution.height);
+                    m.source = item.images.low_resolution.url;
+                    m.width = Convert.ToInt32(item.images.low_resolution.width);
+                }
+
+                m.is_video = item.type != "image";
+
+                if (item.location != null)
+                {
+                    m.latitude = item.location.latitude.ToString();
+                    m.location_name = item.location.name;
+                    m.longitude = item.location.longitude.ToString();
+                }
+
+                m.likes = item.likes.count;
+                m.link = item.link;
+                m.profilepic = item.user.profile_picture;
+                m.service = "Instagram";
+
+                m.source_id = item.id;
+                m.tag_id = tag_id;
+                m.tags = string.Join(", ", item.tags);
+                m.username = item.user.username;
+
+
+                _media.add(m);
+            }
+
+            Int32 return_count = 0;
+
+            page_count = 1;
+
+            return mySessions.data.Count();
+        }
+
+        private string get_userid_by_tag(string tag)
+        {
+            var client = new RestClient("https://api.instagram.com/v1/");
+
+            var request = new RestRequest("users/search");
+
+            request.AddParameter("access_token", access_token);
+            request.AddParameter("q", tag);
+
+            IRestResponse response = client.Execute(request);
+
+            RestSharp.Deserializers.JsonDeserializer deserial = new JsonDeserializer();
+
+            InstagramModel userData = JsonConvert.DeserializeObject<InstagramModel>(response.Content);
+            if (userData != null && userData.data.Count() == 1)
+                return userData.data[0].id;
+
+            return null;
+        }
+
 
         public Int32 fetch2(string tag, Int32 event_id, Int32 tag_id)
         {
@@ -28,7 +137,8 @@ namespace overrideSocial
 
             var request = new RestRequest("tags/" + tag + "/media/recent");
 
-            request.AddParameter("access_token", "54772586.9bf8632.352fdf6a439d4f27a43948203f11ce87");
+            request.AddParameter("access_token", access_token);
+            
 
             IRestResponse response = client.Execute(request);
 

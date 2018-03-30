@@ -1765,7 +1765,9 @@
     <Content Include="visual\twitter_1280.aspx" />
     <Content Include="visual\twitter_and_instagram.aspx" />
     <Content Include="visual\volcom.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
