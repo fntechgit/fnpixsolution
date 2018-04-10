@@ -17,8 +17,7 @@ namespace overrideSocial
 {
     public class instagram
     {
-        private string access_token = "7392031217.c32dfe9.99d8df280f0b4501a9aa8c09436455ed";
-        //"54772586.9bf8632.352fdf6a439d4f27a43948203f11ce87"
+        private string access_token = "1950830710.f6008a8.77a2b786fd324ce28a67123851ca777e";
 
         settings _settings = new settings();
         mediaManager _media = new mediaManager();
