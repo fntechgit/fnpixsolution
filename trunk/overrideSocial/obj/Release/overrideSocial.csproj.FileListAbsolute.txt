@@ -14,4 +14,3 @@ D:\Development\Tipit\FNTech\fnpixsolution\trunk\overrideSocial\obj\Release\overr
 D:\Development\Tipit\FNTech\fnpixsolution\trunk\overrideSocial\obj\Release\overrideSocial.pdb
 D:\Development\Tipit\FNTech\fnpixsolution\trunk\overrideSocial\bin\Release\Hammock.dll
 D:\Development\Tipit\FNTech\fnpixsolution\trunk\overrideSocial\bin\Release\Hammock.pdb
-D:\Development\Tipit\FNTech\fnpixsolution\trunk\overrideSocial\obj\Release\overrideSocial.csprojResolveAssemblyReference.cache

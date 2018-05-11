@@ -89,7 +89,7 @@ namespace overrideSocial
             List<Tag> _tags = new List<Tag>();
 
             var result = from t in db.tags
-                         where t.event_id==event_id && t.entire_event == true || (t.start_time <= DateTime.Now && t.end_time >= DateTime.Now)
+                         where t.event_id==event_id && (t.entire_event == true || (t.start_time <= DateTime.Now && t.end_time >= DateTime.Now))
                          select t;
 
             foreach (var item in result)
