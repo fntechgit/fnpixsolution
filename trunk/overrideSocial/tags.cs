@@ -131,6 +131,8 @@ namespace overrideSocial
                 ta.value = item.value;
                 ta.event_id = item.event_id;
                 ta.entire_event = item.entire_event;
+                ta.start_time = item.start_time;
+                ta.end_time = item.end_time;
 
                 _tags.Add(ta);
             }
